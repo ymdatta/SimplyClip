@@ -6,7 +6,7 @@
 <placeholder builds>
 <placeholder doi>
 <placeholder tests>
-
+https://img.shields.io/uptimerobot/ratio/m789313708-ea25af592e8a7a84c009055e
 
 SimplyClip is a google chrome extension which enables singular shared clipboard for research students and power users.
 
