@@ -1,1 +1,34 @@
-HTML file for the popup code.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SimplyClip</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid p-5 bg-primary text-white text-center">
+    <h2>SimplyClip</h2>
+    <p>Copy, paste and edit stuff!</p>
+  </div>
+  <!-- <nav class="navbar navbar-dark fixed-top">
+    </nav> -->
+  <div id="empty-div" class="jumbotron jumbotron-fluid hide-div">
+    <div class="container">
+      <h4 id="empty-title">No text found !!</h4>
+      <p class="lead">All your copied text will appear here, select any of them to paste </p>
+      <a target="_blank" id="learn-btn" href="https://github.com/lalit10/SimplyClip">
+        More about clipboard manager
+      </a>
+    </div>
+  </div>
+  <ul id="clipboard_list"></ul>
+  <div id="snackbar">Text copied!</div>
+  <script type="text/javascript" src="popup.js"></script>
+</body>
+</html>
