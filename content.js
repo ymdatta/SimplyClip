@@ -27,3 +27,24 @@ const setClipboardText = async (clipText)=>{
         chrome.storage.sync.set({'list':list},status=>console.log("Debug : Clipboard Text pushed to list"));
     })
 }
+
+window.addEventListener('mouseout',function(){
+    if(time_interval_set===undefined)
+        time_interval_set = setInterval(readClipboardText,2000)
+})
+window.addEventListener('mouseover',function(){
+    clearInterval(time_interval_set);
+    time_interval_set=undefined;
+})
+window.addEventListener('copy',function(){
+    readClipboardText();
+})
+document.addEventListener('visibilitychange',function(){
+    if(document.hidden){
+        clearInterval(time_interval_set);
+        time_interval_set=undefined;
+    }else{
+        if(time_interval_set==undefined)
+        time_interval_set = setInterval(readClipboardText,2000);
+    }
+})
