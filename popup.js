@@ -1,147 +1,169 @@
 let _clipboardList = document.querySelector("#clipboard_list");
-function getClipboardText(){
-	chrome.storage.sync.get(['list'],clipboard=>{
+function getClipboardText() {
+    chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
-        console.log("Inside getting list:--", list )
         let emptyDiv = document.getElementById('empty-div');
-        if(list===undefined || list.length===0){            
+        if (list === undefined || list.length === 0) {
             emptyDiv.classList.remove('hide-div');
         }
-		else{
-        	emptyDiv.classList.add('hide-div');
-        	if (typeof list !== undefined)
-        	list.forEach(item => {
-            	console.log(item);
-            	addClipboardListItem(item)
-        	});
-    	}
+        else {
+            emptyDiv.classList.add('hide-div');
+            if (typeof list !== undefined)
+                list.forEach(item => {
+                    console.log(item);
+                    addClipboardListItem(item)
+                });
+        }
     });
 }
 
-function getThumbnail(textContent){
-//     	console.log(textContent);
-    	let ind = textContent.indexOf('https://www.youtube.com/');
-    	if (ind===0)
-    	{
-    		let videoId = "";
-    		let idIndex = textContent.indexOf('watch?v=');
-    		let endIndex = textContent.indexOf('&');
-    		console.log(`${idIndex} ${endIndex}`);
-    		if (endIndex !== -1)
-    			videoId = textContent.substring(idIndex+8,endIndex);
-    		else
-                videoId = textContent.substring(idIndex+8,textContent.length);
-            let url = `https://img.youtube.com/vi/${videoId}/1.jpg`;
-            console.log(`https://img.youtube.com/vi/${videoId}/1.jpg`);
-            return {
-                sourceUrl:textContent,
-                imageUrl:url,
-                isVideo:true,
-            };
-        }
-		else
-    	{
-    		let ind = textContent.indexOf('http');
-    		if (ind===0)
-    		{
-    			let url = new URL(textContent);
-			let ans = "https://favicons.githubusercontent.com/"+url.hostname;
-    			// console.log(`https://favicons.githubusercontent.com/${url.hostname}`);
-			return {
-				sourceUrl:textContent,
-                imageUrl:ans,
-                isVideo:false
-			}
-    		}
-    	}
+function getThumbnail(textContent) {
+    let ind = textContent.indexOf('https://www.youtube.com/');
+    if (ind === 0) {
+        let videoId = "";
+        let idIndex = textContent.indexOf('watch?v=');
+        let endIndex = textContent.indexOf('&');
+        if (endIndex !== -1)
+            videoId = textContent.substring(idIndex + 8, endIndex);
+        else
+            videoId = textContent.substring(idIndex + 8, textContent.length);
+        let url = `https://img.youtube.com/vi/${videoId}/1.jpg`;
         return {
-            sourceUrl:"",
-            imageUrl:""
+            sourceUrl: textContent,
+            imageUrl: url,
+            isVideo: true,
         };
+    }
+    else {
+        let ind = textContent.indexOf('http');
+        if (ind === 0) {
+            let url = new URL(textContent);
+            let ans = "https://favicons.githubusercontent.com/" + url.hostname;
+            return {
+                sourceUrl: textContent,
+                imageUrl: ans,
+                isVideo: false
+            }
+        }
+    }
+    return {
+        sourceUrl: "",
+        imageUrl: ""
+    }
+        ;
 }
-function addClipboardListItem(text){
-    let {sourceUrl,imageUrl,isVideo} = getThumbnail(text);
+function addClipboardListItem(text) {
+    let { sourceUrl, imageUrl, isVideo } = getThumbnail(text);
     let listItem = document.createElement("li"),
         listDiv = document.createElement("div"),
         imageDiv = document.createElement("div"),
-        deleteDiv =document.createElement("div"),
-        contentDiv = document.createElement("div");
-        deleteImage = document.createElement("img");
-        deleteImage.setAttribute("data-toggle","tooltip");
-        deleteImage.setAttribute("data-placement","bottom");
-        deleteImage.setAttribute("title","Click to delete the text entry!");
-        listPara = document.createElement("p"),
-        listText = document.createTextNode(text),
-        listPara.setAttribute("data-toggle","tooltip");
-        listPara.setAttribute("data-placement","bottom");
-        listPara.setAttribute("title","Click to copy the below text:\n"+text);
-        popupDiv = document.createElement('div'),
-        popupLink = document.createElement('a'),
-        imagePopup  = document.createElement('img');
-    
-    if(imageUrl.length>0){
+        deleteDiv = document.createElement("div"),
+        editDiv = document.createElement("div"),
+        contentDiv = document.createElement("div"),
+        editImage = document.createElement("img");
+    editImage.setAttribute("data-toggle", "tooltip");
+    editImage.setAttribute("data-placement", "bottom");
+    editImage.setAttribute("title", "Click to edit the text entry!");
+    let deleteImage = document.createElement("img");
+    deleteImage.setAttribute("data-toggle", "tooltip");
+    deleteImage.setAttribute("data-placement", "bottom");
+    deleteImage.setAttribute("title", "Click to delete the text entry!");
+    let listPara = document.createElement("p");
+    let listText = document.createTextNode(text);
+    listPara.setAttribute("data-toggle", "tooltip");
+    listPara.setAttribute("data-placement", "bottom");
+    listPara.setAttribute("title", "Click to copy the below text:\n" + text);
+    let popupDiv = document.createElement('div');
+    let popupLink = document.createElement('a');
+    let imagePopup = document.createElement('img');
+    prevText = text;
+
+    if (imageUrl.length > 0) {
         console.log("IMage Url found")
         imagePopup.src = imageUrl;
-        if(!isVideo){
-            imagePopup.style.width='32px'
-            imagePopup.style.height='32px';
-            
+        if (!isVideo) {
+            imagePopup.style.width = '32px'
+            imagePopup.style.height = '32px';
+
         }
-        else{
-            imagePopup.style['margin-left']='0px';
-            imagePopup.style['margin-top']='0px';
+        else {
+            imagePopup.style['margin-left'] = '0px';
+            imagePopup.style['margin-top'] = '0px';
             listPara.style['max-width'] = '12rem'
         }
         popupLink.href = sourceUrl;
-        popupLink.target='_blank';
+        popupLink.target = '_blank';
         popupLink.appendChild(imagePopup);
         listDiv.appendChild(popupLink);
-        
+
     }
-    
+
     listPara.appendChild(listText)
     listDiv.appendChild(listPara);
+    listPara.addEventListener('focusout', (event) => {
+        event.target.setAttribute("contenteditable", "false");
+        newText = event.target.textContent;
+        console.log(newText);
+        chrome.storage.sync.get(['list'], clipboard => {
+            let list = clipboard.list;
+            let index = list.indexOf(prevText);
+            list[index] = newText;
+            chrome.storage.sync.set({ 'list': list }, () => { console.log("Text updated"); });
+        })
+    })
     listDiv.classList.add("list-div");
     contentDiv.appendChild(listDiv);
-    deleteImage.src='https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-1432400-1211078.png'
+    editImage.src = './images/edit.png';
+    editImage.classList.add("delete");
+    deleteImage.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-1432400-1211078.png'
     deleteImage.classList.add("delete")
-    
+
+    editDiv.appendChild(editImage);
+    contentDiv.appendChild(editDiv);
     deleteDiv.appendChild(deleteImage);
     contentDiv.appendChild(deleteDiv);
     contentDiv.classList.add("content");
     listItem.appendChild(contentDiv);
 
     _clipboardList.appendChild(listItem);
-    deleteImage.addEventListener('click',(event)=>{        
+    editImage.addEventListener('click', (event) => {
+        console.log("Edit button clicked");
+        prevText = listPara.textContent;
+        console.log(prevText);
+        listPara.setAttribute("contenteditable", "true");
+        listPara.focus();
+    })
+    deleteImage.addEventListener('click', (event) => {
         console.log("Delete clicked");
-        chrome.storage.sync.get(['list'],clipboard=>{
+        chrome.storage.sync.get(['list'], clipboard => {
             let list = clipboard.list;
             let index = list.indexOf(text);
-            list.splice(index,1);
-            _clipboardList.innerHTML="";
-            chrome.storage.sync.set({'list':list},()=>getClipboardText());
+            list.splice(index, 1);
+            _clipboardList.innerHTML = "";
+            chrome.storage.sync.set({ 'list': list }, () => getClipboardText());
         })
     })
-    
-    listDiv.addEventListener('click',(event)=>{
-        let {textContent} = event.target;
+
+    listDiv.addEventListener('click', (event) => {
+        let { textContent } = event.target;
         navigator.clipboard.writeText(textContent)
-        .then(()=>{
-            console.log(`Text saved to clipboard`);
-            chrome.storage.sync.get(['list'],clipboard=>{
-                let list = clipboard.list;
-                let index = list.indexOf(textContent);
-                if (index !== -1)
-                    list.splice(index,1);
-                list.unshift(textContent);
-                _clipboardList.innerHTML = "";
-                chrome.storage.sync.set({'list':list},()=>getClipboardText());
+            .then(() => {
+                console.log(`Text saved to clipboard`);
+                chrome.storage.sync.get(['list'], clipboard => {
+                    let list = clipboard.list;
+                    let index = list.indexOf(textContent);
+                    if (index !== -1)
+                        list.splice(index, 1);
+
+                    list.unshift(textContent);
+                    _clipboardList.innerHTML = "";
+                    chrome.storage.sync.set({ 'list': list }, () => getClipboardText());
+                });
             });
-        });
         let x = document.getElementById("snackbar");
-  		x.className = "show";
-  		setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-    });  
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+    });
 }
 
 getClipboardText();
