@@ -1,5 +1,6 @@
+
 ![icon](https://github.com/lalit10/SimplyClip/blob/main/images/paper-clip_32.png)
-#SimplyClip
+# SimplyClip
 ##  The clipboard made easy for research
 
 <placeholder builds>
