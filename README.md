@@ -10,7 +10,7 @@
 <placeholder doi>
 <placeholder tests>
 
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 SimplyClip is a google chrome extension which enables singular shared clipboard for research students and power users.
 
 - Ability to recognise multiple text selections
