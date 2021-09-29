@@ -1,7 +1,7 @@
 
 body{
-    /* width: 25rem;
-    height: 15rem; */
+    width: 10rem;
+    height: 10rem; 
     /* display: flex; */
     flex-direction: column;
     position: relative;
@@ -10,7 +10,7 @@ body{
     /* font-family: Roboto, sans-serif;     */
 }
 nav{
-    background:#9942f5;
+    background:#2df1f8;
     height:15px;
     font-family: 'Roboto', sans-serif;
 }
@@ -65,14 +65,18 @@ ul li{
     font-size: 16px;
     height: 4rem;
     border-bottom: 1px solid;
-    border-bottom-color: #00BFFF;
+    border-bottom-color: #90e3ff;
     box-shadow: 0.3px 0 5px -2.1px rgba(0,0,0,0.5);
     cursor: pointer;
-    white-space: nowrap
+    white-space: nowrap;
+    -webkit-border-radius: 10px; /* Setting cross browser rounded edges*/
+    -moz-border-radius: 10px;
+    border-radius: 10px;
     
 }
 ul li:hover{
-    background: whitesmoke
+    background: whitesmoke;
+    transform: translateX(10px);
 }
 .content{
     overflow: hidden;
@@ -122,18 +126,26 @@ ul li:hover{
     border: none;
     outline: none;
 }
+.icon_32{
+    background: url('images/paper-clip_32.png');
+    height: 32px;
+    width: 32px;
+    display:block;
+    /* Other styles here */
+}
+
 
 #snackbar {
-  visibility: hidden; /* Hidden by default. Visible on click */
+  visibility: hidden; 
   width:94%;
   position:fixed;
-  margin-left: 3%;/*  Divide value of min-width by 2 */
-  background-color: #00BFFF; /* Black background color */
+  margin-left: 3%;
+  background-color: #90e3ff; /* Blue background color */
   color: #fff; /* White text color */
-  text-align: center; /* Centered text */
-  border-radius: 2px; /* Rounded borders */
-  position: fixed; /* Sit on top of the screen */
-  z-index: 1; /* Add a z-index if needed */
+  text-align: center; 
+  border-radius: 2px;
+  position: fixed; 
+  z-index: 1; 
   bottom: 1px;
 }
 	
