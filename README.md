@@ -1,4 +1,5 @@
-#![icon](https://github.com/lalit10/SimplyClip/blob/main/images/paper-clip_128.png)Simplyclip
+![icon](https://github.com/lalit10/SimplyClip/blob/main/images/paper-clip_32.png)
+#SimplyClip
 ##  The clipboard made easy for research
 
 <placeholder builds>
@@ -6,7 +7,7 @@
 <placeholder tests>
 
 
-Simplyclip is a google chrome extension which enables singular shared clipboard for research students and power users.
+SimplyClip is a google chrome extension which enables singular shared clipboard for research students and power users.
 
 - Ability to recognise multiple text selections
 - Cross tab selection
@@ -21,6 +22,6 @@ Simplyclip is a google chrome extension which enables singular shared clipboard 
 - No more switching tabs, say no to all distractions!!
 
  
-As T. S. Eliot once famoulsly said
+As T. S. Eliot once famously said
 
 > Distracted from distraction by distraction.
