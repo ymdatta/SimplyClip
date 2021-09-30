@@ -22,6 +22,9 @@ SimplyClip is a google chrome extension which enables singular shared clipboard 
 - Cross tab selection
 - Works like a charm for research work.
 - Unlimited focus!
+ 
+https://user-images.githubusercontent.com/11155124/135506703-20cc36a5-ba2d-4c6e-9caa-7e1da63392fe.mp4
+ 
 
 ## Features
 
