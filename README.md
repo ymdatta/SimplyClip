@@ -4,6 +4,9 @@
 
 ![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m789313708-ea25af592e8a7a84c009055e)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![GitHub issues](https://img.shields.io/github/issues/lalit10/SimplyClip)
+![GitHub contributors](https://img.shields.io/github/contributors/lalit10/SimplyClip)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/lalit10/SimplyClip)
 
 ##  The clipboard made easy for research
 
