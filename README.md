@@ -7,6 +7,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/lalit10/SimplyClip)
 ![GitHub contributors](https://img.shields.io/github/contributors/lalit10/SimplyClip)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/lalit10/SimplyClip)
+[![Build Status](https://app.travis-ci.com/lalit10/SimplyClip.svg?branch=main)](https://app.travis-ci.com/lalit10/SimplyClip)
 [![Coverage Status](https://coveralls.io/repos/github/lalit10/SimplyClip/badge.svg?branch=main)](https://coveralls.io/github/lalit10/SimplyClip?branch=main)
 
 ##  The clipboard made easy for research
