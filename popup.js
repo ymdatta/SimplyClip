@@ -56,7 +56,6 @@ function addClipboardListItem(text) {
     let { sourceUrl, imageUrl, isVideo } = getThumbnail(text);
     let listItem = document.createElement("li"),
         listDiv = document.createElement("div"),
-        imageDiv = document.createElement("div"),
         deleteDiv = document.createElement("div"),
         editDiv = document.createElement("div"),
         contentDiv = document.createElement("div"),
@@ -73,7 +72,6 @@ function addClipboardListItem(text) {
     listPara.setAttribute("data-toggle", "tooltip");
     listPara.setAttribute("data-placement", "bottom");
     listPara.setAttribute("title", "Click to copy the below text:\n" + text);
-    let popupDiv = document.createElement('div');
     let popupLink = document.createElement('a');
     let imagePopup = document.createElement('img');
     prevText = text;
