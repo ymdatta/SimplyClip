@@ -106,6 +106,13 @@ prettier --write and prettier --check are the most common ways to run Prettier
 ## Why
 While working on finding reuse we spent significant amount of time searching and saving text snippets for further evaluation.Such a repetitive workflow sparked an idea of a clipboard workspace to manage all the recent snippets we have collected while researching.This in turn lead to the development of SimplyClip, in which not only clipboard text is saved, but can also be edited and deleted.Future development pipeline includes cross browser compatibility, exporting and cloud functionalities.
 
+## Functions Descriptions
+#### 1. Copying to the extension clipboard :
+Any text copied from the browser page automatically gets copied to the extension's clipboard (given the URL has access to the system clipboard).
+#### 2. Copying to the system clipboard :
+User can select the text chunk to copy from the extension clipboard by simply clicking on the text entry. The entry automatically gets copied into the system clipboard.
+#### 3. Editing the extension clipboard :
+User is even allowed to edit the text entry copied to the extension clipboard. The user can edit the entry by clicking on the pencil icon and edit the text entry. Once edited, the entry gets saved automatically on clicking anywhere outside the focus of the text entry.
 
 ## Roadmap
  
