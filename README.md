@@ -5,6 +5,7 @@
 ![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m789313708-ea25af592e8a7a84c009055e)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![GitHub issues](https://img.shields.io/github/issues/lalit10/SimplyClip)
+![Test Cases](https://img.shields.io/badge/tests-passing-green)
 ![GitHub contributors](https://img.shields.io/github/contributors/lalit10/SimplyClip)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/lalit10/SimplyClip)
 [![Build Status](https://app.travis-ci.com/lalit10/SimplyClip.svg?branch=main)](https://app.travis-ci.com/lalit10/SimplyClip)
@@ -114,10 +115,26 @@ User can select the text chunk to copy from the extension clipboard by simply cl
 #### 3. Editing the extension clipboard :
 User is even allowed to edit the text entry copied to the extension clipboard. The user can edit the entry by clicking on the pencil icon and edit the text entry. Once edited, the entry gets saved automatically on clicking anywhere outside the focus of the text entry.
 
+## Troubleshooting
+1) If the text doesn't get copied, please make sure that the page has the permission to access and modify the system clipboard.
+2) When loading the extension for the first time, reload the pages in order to allow the URLs to prompt for permissions to access the system clipboard.
+3) If none of the above steps work, consider reloading the extension and all the browser pages.
+4) If the issue still persists, write us at   
+
 ## Roadmap
  
  ![SimplyClip Project Pipeline](https://user-images.githubusercontent.com/11155124/135507724-86cb9b93-e0c5-4188-8688-7f12ff4c6d96.png)
 
+
+## Contributors
+---
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/Pratyush1184"><img src="https://avatars.githubusercontent.com/u/20305094?v=4" width="75px;" alt=""/><br /><sub><b>Pratyush Vaidya</b></sub></a></td>
+    <td align="center"><a href="https://github.com/apande95"><img src="https://avatars.githubusercontent.com/u/11155124?v=4" width="75px;" alt=""/><br /><sub><b>Anirudh Pande</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/lalit10"><img src="https://avatars.githubusercontent.com/u/25183992?v=4" width="75px;" alt=""/><br /><sub><b>Lalit Bangad</b></sub></a><br /></td>
+  </tr>
+</table>
 
 ***Enjoy using SimplyClip. Make sure to follow the page for any new updates!*** 
 
