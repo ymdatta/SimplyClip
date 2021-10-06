@@ -97,6 +97,18 @@ prettier --write and prettier --check are the most common ways to run Prettier
 - Linting is the automated checking of your source code for programmatic and syntax errors.
 - `npm run lint` to check the linter to check errors in code formatting in the code.
 
+
+## Use Case
+---
+* ***Students***: Students and Research grads can take out snippets from text for easy reference later. We as grad students recently found ourselves in a position where we had to reference a lot of text snippets while recognizing reuses in research papers, SimplyClip does wonders for speeding up similar workflows.
+
+* ***Professionals/ Casual Users:***: It’s one issue to fill a repetitive and boring form. It’s an entirely another when we fill multiple of such forms with questions with repeating answers. SimplyClip fits really well in such a case where simple text clips can be saved and reused saving time and effort.
+
+## Why
+---
+While working on finding reuse we spent significant amount of time searching and saving text snippets for further evaluation.Such a repetitive workflow sparked an idea of a clipboard workspace to manage all the recent snippets we have collected while researching.This in turn lead to the development of SimplyClip, in which not only clipboard text is saved, but can also be edited and deleted.Future development pipeline includes cross browser compatibility, exporting and cloud functionalities.
+
+
 ## Roadmap
  
  ![SimplyClip Project Pipeline](https://user-images.githubusercontent.com/11155124/135507724-86cb9b93-e0c5-4188-8688-7f12ff4c6d96.png)
