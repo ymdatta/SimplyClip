@@ -66,7 +66,7 @@ Sr. No| Notes|Self-assement|Evidence|
 60| Each source code releases a snapshot of the repository |2 ||
 61| Releases are tagged in the repository | 3 | https://github.com/lalit10/SimplyClip/releases/tag/1.0.0 |
 62| There is a branch of the repository that is always stable | 3 | The main branch is always stable |
-63| Back-up your repository | 0| No backups yet|
+63| Back-up your repository | 3| No backups yet|
 64| Provide publicly available instructions for building the software from the source code | 3| https://github.com/lalit10/SimplyClip#setting-up-the-extension|
 65| Build, or package, the software using an automated tool | 3| The code is readily packaged and can be loaded at will|
 66| Provide publicly-available instructions for deploying the software | 2|https://github.com/lalit10/SimplyClip#setting-up-the-extension|
