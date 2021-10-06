@@ -68,6 +68,16 @@ https://user-images.githubusercontent.com/11155124/135507262-f26999c1-83b6-4225-
 - Node.js
 - NPM
 
+## IDE 
+
+- IDE : [VSCode](https://code.visualstudio.com/)
+
+- Code Style Formatter Extension: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
+
+- Code Syntax Checker Extension : [Eslint](https://https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for Vscode plugin.
+
+VS Code uses js-beautify internally, but it lacks the ability to modify the style you wish to use. This extension enables running js-beautify in VS Code, AND honouring any .jsbeautifyrc file in the open file's path tree to load your code styling. Run with F1 Beautify (to beautify a selection) or F1 Beautify file.
+
 ## Style Checker and Analyzer 
 
 - Javascript Standard Style is style guide, linter, and formatter for Javascript and styling means ranking the importance of code clarity.
