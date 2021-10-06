@@ -57,11 +57,40 @@ https://user-images.githubusercontent.com/11155124/135507262-f26999c1-83b6-4225-
     - Enable the chrome extension. 
 ![Extension](https://github.com/lalit10/SimplyClip/blob/main/Docs/images/Extensions.png)
 
-***Enjoy using SimplyClip. Make sure to follow the page for any new updates!*** 
+## Languages
 
+- JavaScript
+- HTML
+- CSS
+
+## Software Requirements
+
+- Node.js
+- NPM
+
+## Style Checker and Analyzer 
+
+- Javascript Standard Style is style guide, linter, and formatter for Javascript and styling means ranking the importance of code clarity.
+- `npx standard --fix ` is used to fix the the style 
+
+## Code Formatter 
+
+### Prettier 
+- Prettier is an opinionated code formatter which will format your code in structured way.
+- `npx prettier --write .` to check the errors in code formating
+- `npx prettier --check .` to check the errors in code formatting but only checks that files are already formatted, rather than overwriting them.
+prettier --write and prettier --check are the most common ways to run Prettier
+
+## Syntax Checker 
+
+### Lint
+- Linting is the automated checking of your source code for programmatic and syntax errors.
+- `npm run lint` to check the linter to check errors in code formatting in the code.
 
 ## Roadmap
  
  ![SimplyClip Project Pipeline](https://user-images.githubusercontent.com/11155124/135507724-86cb9b93-e0c5-4188-8688-7f12ff4c6d96.png)
 
+
+***Enjoy using SimplyClip. Make sure to follow the page for any new updates!*** 
 

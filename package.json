@@ -24,5 +24,9 @@
       "prettier --write",
       "eslint --fix"
     ]
+  },
+  "scripts": {
+    "lint":"./node_modules/.bin/eslint .",
+    "build": "npm build"   
   }
 }
