@@ -1,15 +1,15 @@
 
-![icon](https://github.com/lalit10/SimplyClip/blob/main/images/paper-clip_32.png)
+![icon](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/paper-clip_32.png)
 # SimplyClip
 
 ![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m789313708-ea25af592e8a7a84c009055e)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![GitHub issues](https://img.shields.io/github/issues/lalit10/SimplyClip)
+![GitHub issues](https://img.shields.io/github/issues/umagnanasundaram2128/SimplyClip)
 ![Test Cases](https://img.shields.io/badge/tests-passing-green)
-![GitHub contributors](https://img.shields.io/github/contributors/lalit10/SimplyClip)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/lalit10/SimplyClip)
-[![Build Status](https://app.travis-ci.com/lalit10/SimplyClip.svg?branch=main)](https://app.travis-ci.com/lalit10/SimplyClip)
-[![Coverage Status](https://coveralls.io/repos/github/lalit10/SimplyClip/badge.svg?branch=main)](https://coveralls.io/github/lalit10/SimplyClip?branch=main)
+![GitHub contributors](https://img.shields.io/github/contributors/umagnanasundaram2128/SimplyClip)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/umagnanasundaram2128/SimplyClip)
+[![Build Status](https://app.travis-ci.com/umagnanasundaram2128/SimplyClip.svg?branch=main)](https://app.travis-ci.com/umagnanasundaram2128/SimplyClip)
+[![Coverage Status](https://coveralls.io/repos/github/umagnanasundaram2128/SimplyClip/badge.svg?branch=main)](https://coveralls.io/github/umagnanasundaram2128/SimplyClip?branch=main)
 <!--[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5542732.svg)](https://doi.org/10.5281/zenodo.5542732)-->
 [![DOI](https://zenodo.org/badge/418303486.svg)](https://zenodo.org/badge/latestdoi/418303486)
 
