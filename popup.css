@@ -118,3 +118,7 @@ ul li:hover{
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
+
+.p-5 {
+    padding: 1rem!important;
+}
