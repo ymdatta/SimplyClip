@@ -46,7 +46,7 @@ function mockDeleteListEntry( text ){
         let list = clipboard.list;
         let textIndex = list.indexOf(text);
         if(textIndex!= -1){
-            list.splice(textIndex);
+            list.slice(textIndex);
         }
         chrome.storage.sync.set({ 'list': list } , ()=>{
             console.log("Chrome Storage updated");

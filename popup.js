@@ -187,4 +187,42 @@ function addClipboardListItem(text) {
     });
 }
 
+
+function downloadClipboardText(){
+
+    chrome.storage.sync.get(['list'], clipboard => {
+        let list = clipboard.list;
+        let emptyDiv = document.getElementById('empty-div');
+        if (list === undefined || list.length === 0) {
+            emptyDiv.classList.remove('hide-div');
+            console.log("Nothing to download")
+        }
+        else {
+            var list_of_items = ""
+            emptyDiv.classList.add('hide-div');
+            if (typeof list !== undefined){
+                list.forEach(item => {
+                    addClipboardListItem(item)
+                    list_of_items = list_of_items + item + "\n\n"
+                    console.log(item)   
+                });
+                var link, blob, url;
+                blob = new Blob(['\ufeff', list_of_items], {
+                    type: 'application/msword'
+                });
+                url = URL.createObjectURL(blob);
+                link = document.createElement('A');
+                link.href = url;
+                link.download = 'SimplyClip';  // default name without extension 
+                document.body.appendChild(link);
+                if (navigator.msSaveOrOpenBlob )
+                    navigator.msSaveOrOpenBlob( blob, 'SimplyClip.doc'); 
+                else link.click();  // other browsers
+                document.body.removeChild(link);
+            }
+
+        }
+    });
+        
+}
 getClipboardText();
