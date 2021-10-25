@@ -34,6 +34,9 @@ function getClipboardText() {
         else {
             emptyDiv.classList.add('hide-div');
             downloadDiv.style.display = 'block';
+            downloadDiv.addEventListener('click', (event) => {
+                downloadClipboardText()
+            })
             if (typeof list !== undefined)
                 list.forEach(item => {
                     console.log(item);
