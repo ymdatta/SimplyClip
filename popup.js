@@ -26,11 +26,14 @@ function getClipboardText() {
     chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
         let emptyDiv = document.getElementById('empty-div');
+        let downloadDiv = document.getElementById('download-btn');
         if (list === undefined || list.length === 0) {
             emptyDiv.classList.remove('hide-div');
+            downloadDiv.style.display = 'none';
         }
         else {
             emptyDiv.classList.add('hide-div');
+            downloadDiv.style.display = 'block';
             if (typeof list !== undefined)
                 list.forEach(item => {
                     console.log(item);

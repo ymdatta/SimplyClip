@@ -150,3 +150,9 @@ ul li:hover{
   from, to { border-color: transparent }
   50% { border-color: orange; }
 }
+#download-btn{
+    width: 22px;
+    float: right;
+    margin-top:20px;
+    cursor: pointer;
+}
