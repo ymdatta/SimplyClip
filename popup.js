@@ -22,6 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 let _clipboardList = document.querySelector("#clipboard_list");
+let addButton = document.getElementById('addrow');
+    addButton.addEventListener('click', (event) => {
+        let textitem=''
+       addClipboardListItem(textitem)
+})
 function getClipboardText() {
     chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
