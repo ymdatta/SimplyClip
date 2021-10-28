@@ -122,3 +122,40 @@ ul li:hover{
 .p-5 {
     padding: 1rem!important;
 }
+/*css --nivedita*/
+.clip-icon{
+    border: 1px solid black;
+    padding: 6px;
+    border-radius: 50%;
+    width: fit-content;
+}
+.clip-icon:hover{
+    transform: rotateZ(45deg);
+}
+
+.animated-text {
+    overflow: hidden;
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em;
+    animation-duration: 3s;
+    animation: typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+#download-btn{
+    width: 22px;
+    float: right;
+    margin-top:20px;
+    cursor: pointer;
+}

@@ -22,15 +22,26 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 let _clipboardList = document.querySelector("#clipboard_list");
+let addButton = document.getElementById('addrow');
+    addButton.addEventListener('click', (event) => {
+        let textitem=''
+       addClipboardListItem(textitem)
+})
 function getClipboardText() {
     chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
         let emptyDiv = document.getElementById('empty-div');
+        let downloadDiv = document.getElementById('download-btn');
         if (list === undefined || list.length === 0) {
             emptyDiv.classList.remove('hide-div');
+            downloadDiv.style.display = 'none';
         }
         else {
             emptyDiv.classList.add('hide-div');
+            downloadDiv.style.display = 'block';
+            downloadDiv.addEventListener('click', (event) => {
+                downloadClipboardText()
+            })
             if (typeof list !== undefined)
                 list.forEach(item => {
                     console.log(item);
@@ -187,4 +198,42 @@ function addClipboardListItem(text) {
     });
 }
 
+
+function downloadClipboardText(){
+
+    chrome.storage.sync.get(['list'], clipboard => {
+        let list = clipboard.list;
+        let emptyDiv = document.getElementById('empty-div');
+        if (list === undefined || list.length === 0) {
+            emptyDiv.classList.remove('hide-div');
+            console.log("Nothing to download")
+        }
+        else {
+            var list_of_items = ""
+            emptyDiv.classList.add('hide-div');
+            if (typeof list !== undefined){
+                list.forEach(item => {
+                    addClipboardListItem(item)
+                    list_of_items = list_of_items + item + "\n\n"
+                    console.log(item)   
+                });
+                var link, blob, url;
+                blob = new Blob(['\ufeff', list_of_items], {
+                    type: 'application/msword'
+                });
+                url = URL.createObjectURL(blob);
+                link = document.createElement('A');
+                link.href = url;
+                link.download = 'SimplyClip';  // default name without extension 
+                document.body.appendChild(link);
+                if (navigator.msSaveOrOpenBlob )
+                    navigator.msSaveOrOpenBlob( blob, 'SimplyClip.doc'); 
+                else link.click();  // other browsers
+                document.body.removeChild(link);
+            }
+
+        }
+    });
+        
+}
 getClipboardText();

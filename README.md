@@ -48,7 +48,7 @@ https://user-images.githubusercontent.com/11155124/135507262-f26999c1-83b6-4225-
 ## Setting up the Extension
 
 1.  Get the repsitory using any of the below two methords :
-    - ![Download](https://github.com/lalit10/SimplyClip/blob/main/Docs/images/download-2.png) the ***[repository](https://github.com/lalit10/SimplyClip)*** using Code > Download Zip on our project github page.
+    - ![Download](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/Docs/images/download-2.png) the ***[repository](https://github.com/umagnanasundaram2128/SimplyClip)*** using Code > Download Zip on our project github page.
     - Clone the reporitory using  ***[GIT](https://git-scm.com)*** 
     ```
     git clone https://github.com/lalit10/SimplyClip
@@ -57,7 +57,7 @@ https://user-images.githubusercontent.com/11155124/135507262-f26999c1-83b6-4225-
     - Enable the developer mode from Chrome > Settings > extension.
     - Click on ***load Unpacked*** button and select the root folder of this repository.
     - Enable the chrome extension. 
-![Extension](https://github.com/lalit10/SimplyClip/blob/main/Docs/images/Extensions.png)
+![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/Docs/images/Extensions.png)
 
 ## Languages
 

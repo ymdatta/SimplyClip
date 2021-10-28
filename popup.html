@@ -17,12 +17,19 @@
     <div class="text-center">
       <i class='icon_32'></i>
       <h2>SimplyClip</h2>
-      <p>Copy, paste and edit stuff!</p>
+      <p class="animated-text">Copy, paste and edit stuff!</p>
+      <div id="download-btn">
+        <img src="images/download-solid.svg" alt="download" title="Click here to download your saved text!">
+      </div>
     </div>
   </div>
   <div class="text-left" style="margin-top: 6px; height: 50px !important;" id="myHeader">
-    <input type="text" class="form-control" style="margin-left: 15px !important; width: 50% !important;" placeholder="Search for.." autofocus />
+    <input type="text" class="form-control" style="margin-left: 15px !important; width: 50% !important;"
+      placeholder="Search for.." autofocus />
   </div>
+
+  <input id="addrow" type="button" value="Add" title="Click to add a new row" />
+
   <!-- <nav class="navbar navbar-dark fixed-top">
     </nav> -->
   <div id="empty-div" class="jumbotron jumbotron-fluid hide-div">
@@ -38,4 +45,5 @@
   <div id="snackbar">Text copied!</div>
   <script type="text/javascript" src="popup.js"></script>
 </body>
+
 </html>
