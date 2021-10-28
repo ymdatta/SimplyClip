@@ -13,26 +13,29 @@
 <body>
   <!-- I-Frame for script injection in order to test the extension using automated script. Uncomment the below line to test the code -->
   <!-- <iframe src="./test/test.html" style="width: 0px;height: 0px;border:0;" title="description"></iframe> -->
-  <div class="container-fluid p-5 text-black text-center">
-    <div class="clip-icon">
+  <div class="container-fluid p-5 text-black">
+    <div class="text-center">
       <i class='icon_32'></i>
-    </div>
-    <h2>SimplyClip</h2>
-    <p class="animated-text">Copy, paste and edit stuff!</p>
-    <div id="download-btn">
-      <img src="images/download-solid.svg" alt="download" title="Click here to download your saved text!">
+      <h2>SimplyClip</h2>
+      <p class="animated-text">Copy, paste and edit stuff!</p>
+      <div id="download-btn">
+        <img src="images/download-solid.svg" alt="download" title="Click here to download your saved text!">
+      </div>
     </div>
   </div>
+  <div class="text-left" id="search">
+    <input type="text" id="searchText" class="form-control" placeholder="Search for.." autofocus />
+  </div>
 
-  <input id="addrow" type="button" value="Add" title="Click to add a new row"/>
+  <input id="addrow" type="button" value="Add" title="Click to add a new row" />
 
   <!-- <nav class="navbar navbar-dark fixed-top">
     </nav> -->
   <div id="empty-div" class="jumbotron jumbotron-fluid hide-div">
     <div class="container">
       <!-- <h4 id="empty-title">No text found !!</h4> -->
-      <p class="lead"> Its Lonely Here :(  </p>
-      <a target="_blank" id="learn-btn" href="https://github.com/lalit10/SimplyClip">
+      <p class="lead"> Its Lonely Here :( </p>
+      <a target="_blank" id="learn-btn" href="https://github.com/umagnanasundaram2128/SimplyClip">
         SimplyClip
       </a>
     </div>
@@ -41,4 +44,5 @@
   <div id="snackbar">Text copied!</div>
   <script type="text/javascript" src="popup.js"></script>
 </body>
+
 </html>

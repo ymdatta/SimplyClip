@@ -23,24 +23,30 @@ SOFTWARE.
 */
 let _clipboardList = document.querySelector("#clipboard_list");
 let addButton = document.getElementById('addrow');
-    addButton.addEventListener('click', (event) => {
-        let textitem=''
-       addClipboardListItem(textitem)
+addButton.addEventListener('click', (event) => {
+    let textitem = ''
+    addClipboardListItem(textitem)
 })
 function getClipboardText() {
     chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
         let emptyDiv = document.getElementById('empty-div');
         let downloadDiv = document.getElementById('download-btn');
+        let searchInput = document.getElementById('searchText');
         if (list === undefined || list.length === 0) {
             emptyDiv.classList.remove('hide-div');
             downloadDiv.style.display = 'none';
+            searchInput.style.display = 'none';
         }
         else {
             emptyDiv.classList.add('hide-div');
             downloadDiv.style.display = 'block';
             downloadDiv.addEventListener('click', (event) => {
                 downloadClipboardText()
+            })
+            searchInput.style.display = 'block';
+            searchInput.addEventListener('keyup', () => {
+                searchClipboardText();
             })
             if (typeof list !== undefined)
                 list.forEach(item => {
@@ -234,6 +240,24 @@ function downloadClipboardText(){
 
         }
     });
-        
+
+}
+
+function searchClipboardText() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("searchText");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("clipboard_list");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        divElement = li[i].getElementsByClassName("list-div")[0];
+        let elementText = divElement.getElementsByTagName('p')[0]
+        txtValue = elementText.textContent || elementText.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
 }
 getClipboardText();
