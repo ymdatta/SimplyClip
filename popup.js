@@ -23,24 +23,30 @@ SOFTWARE.
 */
 let _clipboardList = document.querySelector("#clipboard_list");
 let addButton = document.getElementById('addrow');
-    addButton.addEventListener('click', (event) => {
-        let textitem=''
-       addClipboardListItem(textitem)
+addButton.addEventListener('click', (event) => {
+    let textitem = ''
+    addClipboardListItem(textitem)
 })
 function getClipboardText() {
     chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
         let emptyDiv = document.getElementById('empty-div');
         let downloadDiv = document.getElementById('download-btn');
+        let searchInput = document.getElementById('searchText');
         if (list === undefined || list.length === 0) {
             emptyDiv.classList.remove('hide-div');
             downloadDiv.style.display = 'none';
+            searchInput.style.display = 'none';
         }
         else {
             emptyDiv.classList.add('hide-div');
             downloadDiv.style.display = 'block';
             downloadDiv.addEventListener('click', (event) => {
                 downloadClipboardText()
+            })
+            searchInput.style.display = 'block';
+            searchInput.addEventListener('keyup', () => {
+                searchClipboardText();
             })
             if (typeof list !== undefined)
                 list.forEach(item => {
@@ -199,41 +205,59 @@ function addClipboardListItem(text) {
 }
 
 
-function downloadClipboardText(){
+// function downloadClipboardText(){
 
-    chrome.storage.sync.get(['list'], clipboard => {
-        let list = clipboard.list;
-        let emptyDiv = document.getElementById('empty-div');
-        if (list === undefined || list.length === 0) {
-            emptyDiv.classList.remove('hide-div');
-            console.log("Nothing to download")
-        }
-        else {
-            var list_of_items = ""
-            emptyDiv.classList.add('hide-div');
-            if (typeof list !== undefined){
-                list.forEach(item => {
-                    addClipboardListItem(item)
-                    list_of_items = list_of_items + item + "\n\n"
-                    console.log(item)   
-                });
-                var link, blob, url;
-                blob = new Blob(['\ufeff', list_of_items], {
-                    type: 'application/msword'
-                });
-                url = URL.createObjectURL(blob);
-                link = document.createElement('A');
-                link.href = url;
-                link.download = 'SimplyClip';  // default name without extension 
-                document.body.appendChild(link);
-                if (navigator.msSaveOrOpenBlob )
-                    navigator.msSaveOrOpenBlob( blob, 'SimplyClip.doc'); 
-                else link.click();  // other browsers
-                document.body.removeChild(link);
-            }
+//     chrome.storage.sync.get(['list'], clipboard => {
+//         let list = clipboard.list;
+//         let emptyDiv = document.getElementById('empty-div');
+//         if (list === undefined || list.length === 0) {
+//             emptyDiv.classList.remove('hide-div');
+//             console.log("Nothing to download")
+//         }
+//         else {
+//             var list_of_items = ""
+//             emptyDiv.classList.add('hide-div');
+//             if (typeof list !== undefined){
+//                 list.forEach(item => {
+//                     addClipboardListItem(item)
+//                     list_of_items = list_of_items + item + "\n\n"
+//                     console.log(item)   
+//                 });
+//                 var link, blob, url;
+//                 blob = new Blob(['\ufeff', list_of_items], {
+//                     type: 'application/msword'
+//                 });
+//                 url = URL.createObjectURL(blob);
+//                 link = document.createElement('A');
+//                 link.href = url;
+//                 link.download = 'SimplyClip';  // default name without extension 
+//                 document.body.appendChild(link);
+//                 if (navigator.msSaveOrOpenBlob )
+//                     navigator.msSaveOrOpenBlob( blob, 'SimplyClip.doc'); 
+//                 else link.click();  // other browsers
+//                 document.body.removeChild(link);
+//             }
 
+//         }
+//     });
+
+// }
+
+function searchClipboardText() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("searchText");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("clipboard_list");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        divElement = li[i].getElementsByClassName("list-div")[0];
+        let elementText = divElement.getElementsByTagName('p')[0]
+        txtValue = elementText.textContent || elementText.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
         }
-    });
-        
+    }
 }
 getClipboardText();
