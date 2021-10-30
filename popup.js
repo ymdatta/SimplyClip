@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+
 let _clipboardList = document.querySelector("#clipboard_list");
 let addButton = document.getElementById('addrow');
 addButton.addEventListener('click', (event) => {
@@ -41,8 +42,11 @@ function getClipboardText() {
         else {
             emptyDiv.classList.add('hide-div');
             downloadDiv.style.display = 'block';
-            downloadDiv.addEventListener('click', (event) => {
-                downloadClipboardText()
+            document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
+                downloadClipboardTextAsDoc()
+            })
+            document.getElementsByClassName('csv')[0].addEventListener('click', (event) => {
+                downloadClipboardTextAsCsv()
             })
             searchInput.style.display = 'block';
             searchInput.addEventListener('keyup', () => {
@@ -204,8 +208,7 @@ function addClipboardListItem(text) {
 }
 
 
-function downloadClipboardText(){
-
+function downloadClipboardTextAsDoc(){
     chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
         let emptyDiv = document.getElementById('empty-div');
@@ -219,10 +222,8 @@ function downloadClipboardText(){
             if (typeof list !== undefined){
                 list.forEach(item => {
                     addClipboardListItem(item)
-                    // list_of_items.push(...[item])
                     list_of_items = list_of_items + item + "\n\n"
                 });
-                // exportToCsv('SimplyClip.csv',list_of_items)
                 var link, blob, url;
                 blob = new Blob(['\ufeff', list_of_items], {
                     type: 'application/msword'
@@ -230,7 +231,7 @@ function downloadClipboardText(){
                 url = URL.createObjectURL(blob);
                 link = document.createElement('A');
                 link.href = url;
-                link.download = 'SimplyClip';  // default name without extension 
+                link.download = 'SimplyClip';  
                 document.body.appendChild(link);
                 if (navigator.msSaveOrOpenBlob )
                     navigator.msSaveOrOpenBlob( blob, 'SimplyClip.doc'); 
@@ -243,47 +244,66 @@ function downloadClipboardText(){
 
 }
 
-function exportToCsv(filename, rows) {
-    var processRow = function (row) {
-        var finalVal = '';
-        for (var j = 0; j < row.length; j++) {
-            var innerValue = row[j] === null ? '' : row[j].toString();
-            if (row[j] instanceof Date) {
-                innerValue = row[j].toLocaleString();
-            };
-            console.log(innerValue)
-            var result = innerValue.replace(/"/g, '""');
-            result = result.replace(/,/g,'')
-            result = result.replace(/\n/g,'')
-            result = result.replace(/\r/g,'')
-            if (result.search(/("|,|\n)/g) >= 0)
-                result = '"' + result + '"';
-            finalVal += result;
+function downloadClipboardTextAsCsv() {
+    chrome.storage.sync.get(['list'], clipboard => {
+        let list = clipboard.list;
+        let emptyDiv = document.getElementById('empty-div');
+        if (list === undefined || list.length === 0) {
+            emptyDiv.classList.remove('hide-div');
+            console.log("Nothing to download")
         }
-        console.log(finalVal)
-        return finalVal + '\n';        
-    };
+        else {
+            var rows = []
+            emptyDiv.classList.add('hide-div');
+            if (typeof list !== undefined){
+                list.forEach(item => {
+                    addClipboardListItem(item)
+                    rows.push(...[item])
+                });
+                filename = 'SimplyClip.csv'
+                var processRow = function (row) {
+                    var finalVal = '';
+                    for (var j = 0; j < row.length; j++) {
+                        var innerValue = row[j] === null ? '' : row[j].toString();
+                        if (row[j] instanceof Date) {
+                            innerValue = row[j].toLocaleString();
+                        };
+                        console.log(innerValue)
+                        var result = innerValue.replace(/"/g, '""');
+                        result = result.replace(/,/g,'')
+                        result = result.replace(/\n/g,'')
+                        result = result.replace(/\r/g,'')
+                        if (result.search(/("|,|\n)/g) >= 0)
+                            result = '"' + result + '"';
+                        finalVal += result;
+                    }
+                    console.log(finalVal)
+                    return finalVal + '\n';        
+                };
 
-    var csvFile = 'SimplyClip Text!!\n\n';
-    for (var i = 0; i < rows.length; i++) {
-        csvFile += processRow(rows[i]);
-    }
-    console.log(csvFile)
-    var blob = new Blob([csvFile], { type: 'text/csv;charset=utf-8;' });
-    if (navigator.msSaveBlob) { // IE 10+
-        navigator.msSaveBlob(blob, filename);
-    } else {
-        var link = document.createElement("a");
-        if (link.download !== undefined) {
-            var url = URL.createObjectURL(blob);
-            link.setAttribute("href", url);
-            link.setAttribute("download", filename);
-            link.style.visibility = 'hidden';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+                var csvFile = 'SimplyClip Text!!\n\n';
+                for (var i = 0; i < rows.length; i++) {
+                    csvFile += processRow(rows[i]);
+                }
+                console.log(csvFile)
+                var blob = new Blob([csvFile], { type: 'text/csv;charset=utf-8;' });
+                if (navigator.msSaveBlob) { // IE 10+
+                    navigator.msSaveBlob(blob, filename);
+                } else {
+                    var link = document.createElement("a");
+                    if (link.download !== undefined) {
+                        var url = URL.createObjectURL(blob);
+                        link.setAttribute("href", url);
+                        link.setAttribute("download", filename);
+                        link.style.visibility = 'hidden';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    }
+                }
+            }
         }
-    }
+    });
 }
 
 function searchClipboardText() {
