@@ -25,6 +25,7 @@ let _clipboardList = document.querySelector("#clipboard_list");
 let addButton = document.getElementById('addrow');
 addButton.addEventListener('click', (event) => {
     let textitem = ''
+    download_csv()
     addClipboardListItem(textitem)
 })
 function getClipboardText() {
@@ -261,3 +262,40 @@ function searchClipboardText() {
     }
 }
 getClipboardText();
+
+  
+function download_csv() {
+    let data = [];
+    chrome.storage.sync.get(['list'], clipboard => {
+        clipboardData = clipboard.list
+        chrome.storage.sync.get(['listURL'], url => {
+            urlData = url.listURL
+            chrome.storage.sync.get(['originalList'], original => {
+                originalData = original.originalList
+                clipboardData.forEach((d, index) => {
+                    let rowData = [];
+                    rowData.push(d)
+                    rowData.push(originalData[index])
+                    rowData.push(urlData[index])
+                    data.push(rowData)
+                })
+
+                var csv = 'Editted Text,OriginalText,URL\n';
+                data.forEach(function (row) {
+                    csv += row.join(',');
+                    csv += "\n";
+                });
+
+                var hiddenElement = document.createElement('a');
+                hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+                hiddenElement.target = '_blank';
+                hiddenElement.download = 'simplyClip.csv';
+                hiddenElement.click();
+            })
+        })
+    })
+
+
+
+
+}

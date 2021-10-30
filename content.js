@@ -39,25 +39,29 @@ const readClipboardText = ()=>{
 const setClipboardText = async (clipText) => {
     chrome.storage.sync.get("list", function (clipboard) {
         chrome.storage.sync.get("listURL", function (clipboardURL) {
-            chrome.storage.sync.get("originalList", function (clipboardURL) {
+            chrome.storage.sync.get("originalList", function (clipboardOriginalList) {
                 let { list } = clipboard;
                 let { listURL } = clipboardURL;
+                let { originalList } = clipboardOriginalList;
                 console.log("List is:-", list);
-                if (typeof list === "undefined") {
+                if (typeof list === "undefined" || list.length == 0) {
                     list = [];
                     listURL = [];
+                    originalList = [];
                 }
                 if (list.length === _maxListSize) {
                     list.pop();
                     listURL.pop();
+                    originalList = [];
                 }
                 if (list.indexOf(clipText) == -1) {
                     list.unshift(clipText);
                     listURL.unshift(window.location.href);
+                    originalList.unshift(clipText);
                 }
                 chrome.storage.sync.set({ 'list': list }, status => console.log("Debug : Clipboard Text pushed to list"));
                 chrome.storage.sync.set({ 'listURL': listURL }, status => { console.log("Debug : URL pushed to list") })
-                chrome.storage.sync.set({ 'originalList': list }, status => console.log("Debug : Original Clipboard Text pushed to list"));
+                chrome.storage.sync.set({ 'originalList': originalList }, status => console.log("Debug : Original Clipboard Text pushed to list"));
             })
         })
     })
