@@ -179,6 +179,16 @@ function addClipboardListItem(text) {
             let index = list.indexOf(text);
             list.splice(index, 1);
             _clipboardList.innerHTML = "";
+            chrome.storage.sync.get(['listURL'], url => {
+                let urlList = url.listURL;
+                urlList.splice(index, 1);
+                chrome.storage.sync.set({ 'listURL': urlList })
+            })
+            chrome.storage.sync.get(['originalList'], original => {
+                let originalList = original.originalList;
+                originalList.splice(index, 1);
+                chrome.storage.sync.set({ 'originalList': originalList })
+            })
             chrome.storage.sync.set({ 'list': list }, () => getClipboardText());
         })
     })
