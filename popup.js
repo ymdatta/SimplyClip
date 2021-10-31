@@ -26,6 +26,21 @@ let _clipboardList = document.querySelector("#clipboard_list");
 let addButton = document.getElementById('addrow');
 addButton.addEventListener('click', (event) => {
     let textitem = ''
+    let emptyDiv = document.getElementById('empty-div');
+    let downloadDiv = document.getElementById('download-btn');
+    let searchInput = document.getElementById('searchText');
+    emptyDiv.classList.add('hide-div');
+    downloadDiv.style.display = 'block';
+    document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
+        downloadClipboardTextAsDoc()
+    })
+    document.getElementsByClassName('csv')[0].addEventListener('click', (event) => {
+        downloadClipboardTextAsCsv()
+    })
+    searchInput.style.display = 'block';
+    searchInput.addEventListener('keyup', () => {
+        searchClipboardText();
+    })
     addClipboardListItem(textitem)
 })
 function getClipboardText() {
