@@ -15,19 +15,31 @@
   <!-- <iframe src="./test/test.html" style="width: 0px;height: 0px;border:0;" title="description"></iframe> -->
   <div class="container-fluid p-5 text-black">
     <div class="text-center">
-      <i class='icon_32'></i>
-      <h2>SimplyClip</h2>
-      <p class="animated-text">Copy, paste and edit stuff!</p>
+      <div class="row">
+        <div class="column" >
+          <img src="images/simply-clip.png" class='icon_32' id = "column" ></img>
+        </div>
+          
+        <div class="column headertext" >
+          <h2 >SimplyClip</h2>
+        </div>
+        
+      </div>
+      <p id = "header" class="animated-text">Copy, Paste and Edit Stuff!</p>
       <div id="download-btn">
-        <img src="images/download-solid.svg" alt="download" title="Click here to download your saved text!">
+        <img src="images/download-note.png" width = "35px" height="35px" alt="download" title="Click here to download your saved text!">
+      </div>
+      <div id="add-btn">
+        <img src="images/add-note.png" width = "35px" height="35px" alt="add" title="Click here to add new row!">
       </div>
     </div>
   </div>
   <div class="text-left" id="search">
-    <input type="text" id="searchText" class="form-control" placeholder="Search for.." autofocus />
+    <input type="text" id="searchText" class="form-control" placeholder="search for text" autofocus />
   </div>
 
-  <input id="addrow" type="button" value="Add" title="Click to add a new row" />
+  <!--
+  <input id="addrow" type="button" value="Add" title="Click to add a new row" /> -->
 
   <!-- <nav class="navbar navbar-dark fixed-top">
     </nav> -->
