@@ -41,7 +41,7 @@ ul{
 ul li{
 	margin: 10px;
     font-size: 16px;
-    height: 4rem;
+    height: auto;
     border-bottom: 1px solid;
     border-bottom-color: #90e3ff;
     box-shadow: 0.3px 0 5px -2.1px rgba(0,0,0,0.5);
@@ -78,7 +78,8 @@ ul li:hover{
     font-size: 1.1em;
     max-width:17rem;
     overflow: hidden;
-    width: 17rem
+    width: 17rem;
+    height: 4em;
 
 
 }

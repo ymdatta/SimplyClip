@@ -158,8 +158,9 @@ function addClipboardListItem(text) {
     listDiv.appendChild(listPara);
     listPara.addEventListener('focusout', (event) => {
         event.target.setAttribute("contenteditable", "false");
+        listPara.style.height = '4em';
+        listPara.style.whiteSpace = 'inherit'
         newText = event.target.textContent;
-        console.log(newText);
         chrome.storage.sync.get(['list'], clipboard => {
             let list = clipboard.list;
             let index = list.indexOf(prevText);
@@ -187,6 +188,9 @@ function addClipboardListItem(text) {
         prevText = listPara.textContent;
         console.log(prevText);
         listPara.setAttribute("contenteditable", "true");
+        
+        listPara.style.height = 'auto';
+        listPara.style.whiteSpace = 'break-spaces';
         listPara.focus();
     })
     deleteImage.addEventListener('click', (event) => {
