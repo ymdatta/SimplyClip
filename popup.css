@@ -154,10 +154,10 @@ ul li:hover{
   50% { border-color: orange; }
 }
 #download-btn{
-    width: 22px;
     float: right;
     margin-top:20px;
     cursor: pointer;
+
 }
 
 #search {
@@ -168,4 +168,15 @@ ul li:hover{
 }
 #searchText {
     height: 30px !important
+}
+
+.csv{
+    float:left; 
+    width: 22px; 
+    margin-right: 1px;
+}
+.doc{
+    float:right; 
+    width: 22px; 
+    margin-left: 1px;
 }
