@@ -231,7 +231,6 @@ function downloadClipboardTextAsDoc(){
             emptyDiv.classList.add('hide-div');
             if (typeof list !== undefined){
                 list.forEach(item => {
-                    addClipboardListItem(item)
                     list_of_items = list_of_items + item + "\n\n"
                 });
                 var link, blob, url;
