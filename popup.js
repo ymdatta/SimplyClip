@@ -181,6 +181,16 @@ function addClipboardListItem(text) {
             let index = list.indexOf(text);
             list.splice(index, 1);
             _clipboardList.innerHTML = "";
+            chrome.storage.sync.get(['listURL'], url => {
+                let urlList = url.listURL;
+                urlList.splice(index, 1);
+                chrome.storage.sync.set({ 'listURL': urlList })
+            })
+            chrome.storage.sync.get(['originalList'], original => {
+                let originalList = original.originalList;
+                originalList.splice(index, 1);
+                chrome.storage.sync.set({ 'originalList': originalList })
+            })
             chrome.storage.sync.set({ 'list': list }, () => getClipboardText());
         })
     })
@@ -244,68 +254,6 @@ function downloadClipboardTextAsDoc(){
 
 }
 
-function downloadClipboardTextAsCsv() {
-    chrome.storage.sync.get(['list'], clipboard => {
-        let list = clipboard.list;
-        let emptyDiv = document.getElementById('empty-div');
-        if (list === undefined || list.length === 0) {
-            emptyDiv.classList.remove('hide-div');
-            console.log("Nothing to download")
-        }
-        else {
-            var rows = []
-            emptyDiv.classList.add('hide-div');
-            if (typeof list !== undefined){
-                list.forEach(item => {
-                    addClipboardListItem(item)
-                    rows.push(...[item])
-                });
-                filename = 'SimplyClip.csv'
-                var processRow = function (row) {
-                    var finalVal = '';
-                    for (var j = 0; j < row.length; j++) {
-                        var innerValue = row[j] === null ? '' : row[j].toString();
-                        if (row[j] instanceof Date) {
-                            innerValue = row[j].toLocaleString();
-                        };
-                        console.log(innerValue)
-                        var result = innerValue.replace(/"/g, '""');
-                        result = result.replace(/,/g,'')
-                        result = result.replace(/\n/g,'')
-                        result = result.replace(/\r/g,'')
-                        if (result.search(/("|,|\n)/g) >= 0)
-                            result = '"' + result + '"';
-                        finalVal += result;
-                    }
-                    console.log(finalVal)
-                    return finalVal + '\n';        
-                };
-
-                var csvFile = 'SimplyClip Text!!\n\n';
-                for (var i = 0; i < rows.length; i++) {
-                    csvFile += processRow(rows[i]);
-                }
-                console.log(csvFile)
-                var blob = new Blob([csvFile], { type: 'text/csv;charset=utf-8;' });
-                if (navigator.msSaveBlob) { // IE 10+
-                    navigator.msSaveBlob(blob, filename);
-                } else {
-                    var link = document.createElement("a");
-                    if (link.download !== undefined) {
-                        var url = URL.createObjectURL(blob);
-                        link.setAttribute("href", url);
-                        link.setAttribute("download", filename);
-                        link.style.visibility = 'hidden';
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                    }
-                }
-            }
-        }
-    });
-}
-
 function searchClipboardText() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("searchText");
@@ -324,3 +272,40 @@ function searchClipboardText() {
     }
 }
 getClipboardText();
+
+  
+function downloadClipboardTextAsCsv() {
+    let data = [];
+    chrome.storage.sync.get(['list'], clipboard => {
+        clipboardData = clipboard.list
+        chrome.storage.sync.get(['listURL'], url => {
+            urlData = url.listURL
+            chrome.storage.sync.get(['originalList'], original => {
+                originalData = original.originalList
+                clipboardData.forEach((d, index) => {
+                    let rowData = [];
+                    rowData.push(d)
+                    rowData.push(originalData[index])
+                    rowData.push(urlData[index])
+                    data.push(rowData)
+                })
+
+                var csv = 'Edited Text,OriginalText,URL\n';
+                data.forEach(function (row) {
+                    csv += row.join(',');
+                    csv += "\n";
+                });
+
+                var hiddenElement = document.createElement('a');
+                hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+                hiddenElement.target = '_blank';
+                hiddenElement.download = 'simplyClip.csv';
+                hiddenElement.click();
+            })
+        })
+    })
+
+
+
+
+}
