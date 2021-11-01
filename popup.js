@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 let _clipboardList = document.querySelector("#clipboard_list");
-let addButton = document.getElementById('addrow');
+let addButton = document.getElementById('add-btn');
 addButton.addEventListener('click', (event) => {
     let textitem = ''
     let emptyDiv = document.getElementById('empty-div');
@@ -170,9 +170,10 @@ function addClipboardListItem(text) {
     })
     listDiv.classList.add("list-div");
     contentDiv.appendChild(listDiv);
-    editImage.src = './images/edit.png';
-    editImage.classList.add("delete");
-    deleteImage.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-1432400-1211078.png'
+    editImage.src = './images/pencil.png';
+    editImage.classList.add("edit");
+    deleteImage.src = './images/delete-note.png';
+    // deleteImage.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-1432400-1211078.png'
     deleteImage.classList.add("delete")
 
     editDiv.appendChild(editImage);
@@ -192,6 +193,10 @@ function addClipboardListItem(text) {
         listPara.style.height = 'auto';
         listPara.style.whiteSpace = 'break-spaces';
         listPara.focus();
+        // listDiv.style.borderColor = "red";
+        // listPara.style.backgroundColor = "grey"
+        // listPara.style.height = "100px"
+        //listPara.focus();
     })
     deleteImage.addEventListener('click', (event) => {
         console.log("Delete clicked");

@@ -1,10 +1,12 @@
-
 body{
-    width: 10rem;
-    height: 10rem; 
+    /* width: 10rem;
+    height: 10rem;  */
+    width: 100%;
+    height: 100%;
     flex-direction: column;
     position: relative;
     width: 400px;
+    border: solid;
 }
 
 p{
@@ -40,10 +42,11 @@ ul{
 }
 ul li{
 	margin: 10px;
-    font-size: 16px;
-    height: auto;
+    font-size: 14px;
+    height: 3rem;
     border-bottom: 1px solid;
-    border-bottom-color: #90e3ff;
+    border-bottom-color: #ec9358;
+    border-right: 1px solid;
     box-shadow: 0.3px 0 5px -2.1px rgba(0,0,0,0.5);
     cursor: pointer;
     white-space: nowrap;
@@ -52,14 +55,14 @@ ul li{
     border-radius: 10px;
     
 }
-ul li:hover{
+/* ul li:hover{
     background: whitesmoke;
-    transform: translateX(10px);
-}
+    transform: translateX(1px);
+} */
 .content{
     overflow: hidden;
     display: flex;
-
+   
     justify-content: space-between;
     height: 100%;
 }
@@ -67,10 +70,11 @@ ul li:hover{
 .list-div{
     
     display: contents;
-
+    border-right: solid;
     width:20rem;
 }
 
+/* style for text box in each list item*/
 .list-div p{
     position: relative;
     padding-top:1em; 
@@ -79,22 +83,49 @@ ul li:hover{
     max-width:17rem;
     overflow: hidden;
     width: 17rem;
+    border-right: 1px solid;
+    border-radius: 3px;
     height: 4em;
-
-
 }
+
+.list-div p:hover{
+    background: whitesmoke;
+    transform: translateX(1px);
+}
+
 .delete{
-    width: 20px;
-    height: 20px;
-    margin-top: 1.4em;
+    width: 30px;
+    height: 30px;
+    /* margin-top: 1.4em; */
+    margin-top: 0.8em;
     margin-right:1em;
     border: none;
     outline: none;
 }
+
+.edit{
+    width: 25px;
+    height: 25px;
+    margin-top: 1em;
+    
+    border: none;
+    outline: none;
+}
+
+.edit:hover{
+    transform: translateY(1px);
+}
+
+.delete:hover{
+    transform: translateY(1px);
+}
+
 .icon_32{
-    background: url('images/paper-clip_32.png');
-    height: 32px;
-    width: 32px;
+    /*background: url('images/paper-clip_32.png'); */
+    /* background: url('images/paper-note-32.png'); */
+    height: 64px;
+    width: 100px;
+    padding-left: 50px;
     display:block;
     /* Other styles here */
 }
@@ -105,8 +136,8 @@ ul li:hover{
   width:94%;
   position:fixed;
   margin-left: 3%;
-  background-color: #90e3ff; /* Blue background color */
-  color: #fff; /* White text color */
+  background-color: #00f0f0; /* Blue background color */
+  color: rgb(0, 0, 0); /* White text color */
   text-align: center; 
   border-radius: 2px;
   position: fixed; 
@@ -142,6 +173,8 @@ ul li:hover{
     animation-duration: 3s;
     animation: typing 3.5s steps(40, end),
     blink-caret .75s step-end infinite;
+    /* border: #ec9358; */
+    /* blink-caret .75s step-end infinite; */
 }
 
 
@@ -157,17 +190,73 @@ ul li:hover{
 #download-btn{
     float: right;
     margin-top:20px;
+    padding-top: 7px;
     cursor: pointer;
 
 }
 
+#download-btn:hover{
+    transform: translateY(1px);
+}
+
+#add-btn{
+    width: 35px;
+    float: right;
+    margin-top:20px; 
+    margin-right: 10px;
+    padding-top: 7px; 
+    /* padding-bottom: 7px; */
+    cursor: pointer;
+}
+
+#add-btn:hover{
+    transform: translateY(1px);
+}
+
 #search {
     margin-left: 15px !important; 
-    width: 50% !important;
+    width: 68% !important;
     margin-top: 6px; 
     height: 50px !important;
 }
 #searchText {
+    height: 40px !important
+}
+
+#header {
+    border-style: solid;
+}
+
+#simply-header {
+    flex-direction: row;
+}
+
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    padding-top: 50px;
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+.headertext{
+    padding-top: 5%;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+/* Clear floats after image containers */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+.item-text{
+    border: solid;
     height: 30px !important
 }
 
