@@ -43,7 +43,7 @@ ul{
 ul li{
 	margin: 10px;
     font-size: 14px;
-    height: 3rem;
+    height: auto;
     border-bottom: 1px solid;
     border-bottom-color: #ec9358;
     border-right: 1px solid;
