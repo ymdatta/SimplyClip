@@ -85,6 +85,7 @@ ul li{
     width: 17rem;
     border-right: 1px solid;
     border-radius: 3px;
+    height: 4em;
 }
 
 .list-div p:hover{
@@ -187,11 +188,11 @@ ul li{
   50% { border-color: orange; }
 }
 #download-btn{
-    width: 30px;
     float: right;
     margin-top:20px;
     padding-top: 7px;
     cursor: pointer;
+
 }
 
 #download-btn:hover{
@@ -256,4 +257,16 @@ ul li{
 
 .item-text{
     border: solid;
+    height: 30px !important
+}
+
+.csv{
+    float:left; 
+    width: 22px; 
+    margin-right: 1px;
+}
+.doc{
+    float:right; 
+    width: 22px; 
+    margin-left: 1px;
 }

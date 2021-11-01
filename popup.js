@@ -21,10 +21,26 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+
 let _clipboardList = document.querySelector("#clipboard_list");
 let addButton = document.getElementById('add-btn');
 addButton.addEventListener('click', (event) => {
     let textitem = ''
+    let emptyDiv = document.getElementById('empty-div');
+    let downloadDiv = document.getElementById('download-btn');
+    let searchInput = document.getElementById('searchText');
+    emptyDiv.classList.add('hide-div');
+    downloadDiv.style.display = 'block';
+    document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
+        downloadClipboardTextAsDoc()
+    })
+    document.getElementsByClassName('csv')[0].addEventListener('click', (event) => {
+        downloadClipboardTextAsCsv()
+    })
+    searchInput.style.display = 'block';
+    searchInput.addEventListener('keyup', () => {
+        searchClipboardText();
+    })
     addClipboardListItem(textitem)
 })
 function getClipboardText() {
@@ -41,8 +57,11 @@ function getClipboardText() {
         else {
             emptyDiv.classList.add('hide-div');
             downloadDiv.style.display = 'block';
-            downloadDiv.addEventListener('click', (event) => {
-                downloadClipboardText()
+            document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
+                downloadClipboardTextAsDoc()
+            })
+            document.getElementsByClassName('csv')[0].addEventListener('click', (event) => {
+                downloadClipboardTextAsCsv()
             })
             searchInput.style.display = 'block';
             searchInput.addEventListener('keyup', () => {
@@ -139,8 +158,9 @@ function addClipboardListItem(text) {
     listDiv.appendChild(listPara);
     listPara.addEventListener('focusout', (event) => {
         event.target.setAttribute("contenteditable", "false");
+        listPara.style.height = '4em';
+        listPara.style.whiteSpace = 'inherit'
         newText = event.target.textContent;
-        console.log(newText);
         chrome.storage.sync.get(['list'], clipboard => {
             let list = clipboard.list;
             let index = list.indexOf(prevText);
@@ -169,6 +189,9 @@ function addClipboardListItem(text) {
         prevText = listPara.textContent;
         console.log(prevText);
         listPara.setAttribute("contenteditable", "true");
+        
+        listPara.style.height = 'auto';
+        listPara.style.whiteSpace = 'break-spaces';
         listPara.focus();
         // listDiv.style.borderColor = "red";
         // listPara.style.backgroundColor = "grey"
@@ -182,6 +205,16 @@ function addClipboardListItem(text) {
             let index = list.indexOf(text);
             list.splice(index, 1);
             _clipboardList.innerHTML = "";
+            chrome.storage.sync.get(['listURL'], url => {
+                let urlList = url.listURL;
+                urlList.splice(index, 1);
+                chrome.storage.sync.set({ 'listURL': urlList })
+            })
+            chrome.storage.sync.get(['originalList'], original => {
+                let originalList = original.originalList;
+                originalList.splice(index, 1);
+                chrome.storage.sync.set({ 'originalList': originalList })
+            })
             chrome.storage.sync.set({ 'list': list }, () => getClipboardText());
         })
     })
@@ -209,8 +242,7 @@ function addClipboardListItem(text) {
 }
 
 
-function downloadClipboardText(){
-
+function downloadClipboardTextAsDoc(){
     chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
         let emptyDiv = document.getElementById('empty-div');
@@ -223,11 +255,8 @@ function downloadClipboardText(){
             emptyDiv.classList.add('hide-div');
             if (typeof list !== undefined){
                 list.forEach(item => {
-                    addClipboardListItem(item)
-                    // list_of_items.push(...[item])
                     list_of_items = list_of_items + item + "\n\n"
                 });
-                // exportToCsv('SimplyClip.csv',list_of_items)
                 var link, blob, url;
                 blob = new Blob(['\ufeff', list_of_items], {
                     type: 'application/msword'
@@ -235,7 +264,7 @@ function downloadClipboardText(){
                 url = URL.createObjectURL(blob);
                 link = document.createElement('A');
                 link.href = url;
-                link.download = 'SimplyClip';  // default name without extension 
+                link.download = 'SimplyClip';  
                 document.body.appendChild(link);
                 if (navigator.msSaveOrOpenBlob )
                     navigator.msSaveOrOpenBlob( blob, 'SimplyClip.doc'); 
@@ -246,49 +275,6 @@ function downloadClipboardText(){
         }
     });
 
-}
-
-function exportToCsv(filename, rows) {
-    var processRow = function (row) {
-        var finalVal = '';
-        for (var j = 0; j < row.length; j++) {
-            var innerValue = row[j] === null ? '' : row[j].toString();
-            if (row[j] instanceof Date) {
-                innerValue = row[j].toLocaleString();
-            };
-            console.log(innerValue)
-            var result = innerValue.replace(/"/g, '""');
-            result = result.replace(/,/g,'')
-            result = result.replace(/\n/g,'')
-            result = result.replace(/\r/g,'')
-            if (result.search(/("|,|\n)/g) >= 0)
-                result = '"' + result + '"';
-            finalVal += result;
-        }
-        console.log(finalVal)
-        return finalVal + '\n';        
-    };
-
-    var csvFile = 'SimplyClip Text!!\n\n';
-    for (var i = 0; i < rows.length; i++) {
-        csvFile += processRow(rows[i]);
-    }
-    console.log(csvFile)
-    var blob = new Blob([csvFile], { type: 'text/csv;charset=utf-8;' });
-    if (navigator.msSaveBlob) { // IE 10+
-        navigator.msSaveBlob(blob, filename);
-    } else {
-        var link = document.createElement("a");
-        if (link.download !== undefined) {
-            var url = URL.createObjectURL(blob);
-            link.setAttribute("href", url);
-            link.setAttribute("download", filename);
-            link.style.visibility = 'hidden';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    }
 }
 
 function searchClipboardText() {
@@ -309,3 +295,40 @@ function searchClipboardText() {
     }
 }
 getClipboardText();
+
+  
+function downloadClipboardTextAsCsv() {
+    let data = [];
+    chrome.storage.sync.get(['list'], clipboard => {
+        clipboardData = clipboard.list
+        chrome.storage.sync.get(['listURL'], url => {
+            urlData = url.listURL
+            chrome.storage.sync.get(['originalList'], original => {
+                originalData = original.originalList
+                clipboardData.forEach((d, index) => {
+                    let rowData = [];
+                    rowData.push(d)
+                    rowData.push(originalData[index])
+                    rowData.push(urlData[index])
+                    data.push(rowData)
+                })
+
+                var csv = 'Edited Text,OriginalText,URL\n';
+                data.forEach(function (row) {
+                    csv += row.join(',');
+                    csv += "\n";
+                });
+
+                var hiddenElement = document.createElement('a');
+                hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+                hiddenElement.target = '_blank';
+                hiddenElement.download = 'simplyClip.csv';
+                hiddenElement.click();
+            })
+        })
+    })
+
+
+
+
+}
