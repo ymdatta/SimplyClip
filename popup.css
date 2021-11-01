@@ -1,8 +1,8 @@
 body{
     /* width: 10rem;
     height: 10rem;  */
-    width: 100%;
-    height: 100%;
+    width: 800px;
+    height: 600px;
     flex-direction: column;
     position: relative;
     width: 400px;
@@ -189,10 +189,23 @@ ul li{
 }
 #download-btn{
     float: right;
+   
     margin-top:20px;
     padding-top: 7px;
     cursor: pointer;
 
+}
+
+#download-btn-csv{
+    float: right;
+    margin-top:20px;
+    padding-top: 7px;
+    cursor: pointer;
+
+}
+
+#download-btn-csv:hover{
+    transform: translateY(1px);
 }
 
 #download-btn:hover{
@@ -203,7 +216,7 @@ ul li{
     width: 35px;
     float: right;
     margin-top:20px; 
-    margin-right: 10px;
+    /*margin-right: 10px;*/
     padding-top: 7px; 
     /* padding-bottom: 7px; */
     cursor: pointer;
@@ -215,7 +228,7 @@ ul li{
 
 #search {
     margin-left: 15px !important; 
-    width: 68% !important;
+    width: 60% !important;
     margin-top: 6px; 
     height: 50px !important;
 }
@@ -261,12 +274,12 @@ ul li{
 }
 
 .csv{
-    float:left; 
-    width: 22px; 
+    float:right; 
+    width: 35px; 
     margin-right: 1px;
 }
 .doc{
     float:right; 
-    width: 22px; 
+    width: 35px; 
     margin-left: 1px;
 }
