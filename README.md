@@ -19,33 +19,33 @@
 <placeholder doi>
 <placeholder tests>
  
- As T. S. Eliot once famously said
+ <!-- As T. S. Eliot once famously said
 
-> Distracted from distraction by distraction.
+> Distracted from distraction by distraction. -->
 
+# SimplyClip
+
+![](https://github.com/umagnanasundaram2128/SimplyClip/tree/main/images/SimplyClip.gif)
 
 SimplyClip is a google chrome extension which enables singular shared clipboard for research students and power users.
 
-- Ability to recognise multiple text selections
-- Cross tab selection
-- Works like a charm for research work.
-- Unlimited focus!
- 
 
+- Ability to recognise multiple text selections
+- Works across all tabs in the browser
+- Works like a charm for research work
+- Unlimited focus!
+- Lets you combine all the copied into a file
 
 https://user-images.githubusercontent.com/11155124/135507262-f26999c1-83b6-4225-9073-6b654ff6d7c0.mp4
 
-
- 
-
-## Features
+## What Simply Clip Can Do?
 
 - Select multiple text snippets from a single tab (or more!) and magically paste all off them!
 - Ability to manage what slection you want to keep or get rid of
 - Chrome Extension popup to manage all your snippets in one streamlined window
 - No more switching tabs, say no to all distractions!!
 
-## Setting up the Extension
+## Add SimplyClip to Google Chrome
 
 1.  Get the repsitory using any of the below two methords :
     - ![Download](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/Docs/images/download-2.png) the ***[repository](https://github.com/umagnanasundaram2128/SimplyClip)*** using Code > Download Zip on our project github page.
@@ -60,18 +60,15 @@ https://user-images.githubusercontent.com/11155124/135507262-f26999c1-83b6-4225-
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/Docs/images/Extensions.png)
 
 ## Languages
-
 - JavaScript
 - HTML
 - CSS
 
 ## Software Requirements
-
 - Node.js
 - NPM
 
 ## IDE 
-
 - IDE : [VSCode](https://code.visualstudio.com/)
 
 - Code Style Formatter Extension: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
