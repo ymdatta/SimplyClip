@@ -292,7 +292,11 @@ function downloadClipboardTextAsCsv() {
 
                 var csv = 'Edited Text,OriginalText,URL\n';
                 data.forEach(function (row) {
-                    csv += row.join(',');
+                    for (let i in row) {
+                        row[i] = row[i].replace(/"/g, '""');
+                    }
+                    
+                    csv += '"' + row.join('","') + '"';
                     csv += "\n";
                 });
 
