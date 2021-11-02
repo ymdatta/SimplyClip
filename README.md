@@ -13,7 +13,7 @@
 <!--[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5542732.svg)](https://doi.org/10.5281/zenodo.5542732)-->
 [![DOI](https://zenodo.org/badge/418303486.svg)](https://zenodo.org/badge/latestdoi/418303486)
 
-##  The clipboard made easy for research
+### &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Clipboard Made Easy For Research
 
 <placeholder builds>
 <placeholder doi>
@@ -23,9 +23,11 @@
 
 > Distracted from distraction by distraction. -->
 
-# SimplyClip
+ 
+![](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/SimplyClip.gif)
 
-![](https://github.com/umagnanasundaram2128/SimplyClip/tree/main/images/SimplyClip.gif)
+
+<!-- ![](https://github.com/umagnanasundaram2128/SimplyClip/tree/main/images/SimplyClip.gif) -->
 
 SimplyClip is a google chrome extension which enables singular shared clipboard for research students and power users.
 
