@@ -39,17 +39,20 @@ SimplyClip :paperclips: is a google chrome extension which enables singular shar
 - Works like a charm for research work
 - Unlimited focus!
 - Lets you combine all the copied into a file
- 
+- Powers search for any text you copied sometime back
+- It don't clip your content unless you want it to
+- many more... in Phase 🚀 🚀 🚀 <a href="#railway_track-roadmap">Road Map</a> 
+---
 <p align="center">
   <a href="#white_check_mark-what-simply-clip-can-do">Simply Clip</a>
   |
   <a href="#gear-add-simplyclip-to-google-chrome">Installation</a>
   |
-  <a href=#computer-languages-and-requirement">Languages/Requirements</a>
+  <a href="#computer-languages-and-requirements">Languages/Requirements</a>
   |
-  <a href="#ide-and-packages">IDE/Packages</a>
+  <a href="#-ide-and-packages">IDE/Packages</a>
   |
-  <a href="#use-case">UseCase</a>
+  <a href="#-use-case">UseCase</a>
   |
   <a href="#question-why">Why</a>
   |
@@ -57,14 +60,14 @@ SimplyClip :paperclips: is a google chrome extension which enables singular shar
   |
   <a href="#handshake-contributors">Contributors</a>
   
-</p>
-
-Watch this fun video about the extension:
+</p> 
+  
+--- 
+## 🥊 Punch Line 
  
  <!--https://github.com/umagnanasundaram2128/SimplyClip/blob/main/videos/Simply_clip.mp4-->
  
  <!--[![Watch the video](https://img.youtube.com/vi/MYr_7qhdeLo/hqdefault.jpg)](https://youtu.be/MYr_7qhdeLo)-->
-
 
 
 https://user-images.githubusercontent.com/66715000/139998327-13eff7db-3375-4a1b-b888-5ed63115e31b.mp4
@@ -76,6 +79,10 @@ https://user-images.githubusercontent.com/66715000/139998327-13eff7db-3375-4a1b-
 - Ability to manage what slection you want to keep or get rid of
 - Chrome Extension popup to manage all your snippets in one streamlined window
 - No more switching tabs, say no to all distractions!!
+- Download the copied content to file with a single click
+- Search for any text from the copied content.
+- Helps you to save website URLs from which the text is copied
+- Disable any time with a toggle, if you don't want the content to copy to extension.
 
 ## :gear: Add SimplyClip to Google Chrome
 All you need is Google Chrome! 🕺
