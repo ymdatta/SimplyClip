@@ -41,6 +41,16 @@ addButton.addEventListener('click', (event) => {
     searchInput.addEventListener('keyup', () => {
         searchClipboardText();
     })
+    chrome.storage.sync.get(['listURL'], url => {
+        let urlList = url.listURL;
+        urlList.unshift(" ");
+        chrome.storage.sync.set({ 'listURL': urlList })
+    })
+    chrome.storage.sync.get(['originalList'], original => {
+        let originalList = original.originalList;
+        originalList.unshift(" ");
+        chrome.storage.sync.set({ 'originalList': originalList })
+    })
     addClipboardListItem(textitem)
 })
 function getClipboardText() {
