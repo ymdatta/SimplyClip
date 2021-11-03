@@ -40,23 +40,25 @@ SimplyClip :paperclips: is a google chrome extension which enables singular shar
 - Unlimited focus!
 - Lets you combine all the copied into a file
  
-<!-- <p align="center">
-  <a href="#rocket-installation">Installation</a>
-  ::
-  <a href="#golf-flags-and-command-line-arguments">Flags & Args</a>
-  ::
-  <a href="#card_index_dividers-some-examples">Examples</a>
-  ::
-  <a href="#thought_balloon-use-case">Use Case</a>
-  ::
-  <a href="#page_facing_up-why">Why</a>
-  ::
-  <a href="#sparkles-contributors">Contributors</a>
-    ::
-  <a href="#email-support">Support</a>
+<p align="center">
+  <a href="#white_check_mark-what-simply-clip-can-do">Simply Clip</a>
+  |
+  <a href="#gear-add-simplyclip-to-google-chrome">Installation</a>
+  |
+  <a href=#computer-languages-and-requirement">Languages/Requirements</a>
+  |
+  <a href="#ide-and-packages">IDE/Packages</a>
+  |
+  <a href="#use-case">UseCase</a>
+  |
+  <a href="#question-why">Why</a>
+  |
+  <a href="#railway_track-roadmap">RoadMap</a>
+  |
+  <a href="#handshake-contributors">Contributors</a>
   
 </p>
- -->
+
 Watch this fun video about the extension:
  
  <!--https://github.com/umagnanasundaram2128/SimplyClip/blob/main/videos/Simply_clip.mp4-->
@@ -68,7 +70,7 @@ Watch this fun video about the extension:
 https://user-images.githubusercontent.com/66715000/139998327-13eff7db-3375-4a1b-b888-5ed63115e31b.mp4
 
 
-##  :white_check_mark: What Simply Clip Can Do?
+## :white_check_mark: What Simply Clip Can Do?
 
 - Select multiple text snippets from a single tab (or more!) and magically paste all off them!
 - Ability to manage what slection you want to keep or get rid of
@@ -76,12 +78,13 @@ https://user-images.githubusercontent.com/66715000/139998327-13eff7db-3375-4a1b-
 - No more switching tabs, say no to all distractions!!
 
 ## :gear: Add SimplyClip to Google Chrome
+All you need is Google Chrome! 🕺
 
 1.  Get the repsitory using any of the below two methords :
     - Download :arrow_down: the ***[repository](https://github.com/umagnanasundaram2128/SimplyClip)*** using Code > Download Zip on our project github page.
     - Clone the reporitory using  ***[GIT](https://git-scm.com)*** 
     ```
-    git clone https://github.com/lalit10/SimplyClip
+    https://github.com/umagnanasundaram2128/SimplyClip/
     ```
 1. Manually install Entension using below steps.
     - Enable the developer mode from Chrome > Settings > extension.
@@ -89,14 +92,14 @@ https://user-images.githubusercontent.com/66715000/139998327-13eff7db-3375-4a1b-
     - Enable the chrome extension. 
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/Docs/images/Extensions.png)
 
-## :computer: Languages and Requirement
+## :computer: Languages and Requirements
 - JavaScript
 - HTML
 - CSS
 - Node.js
 - NPM
 
-## IDE 
+## 📦 IDE and Packages
 - IDE : [VSCode](https://code.visualstudio.com/)
 
 - Code Style Formatter Extension: [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
@@ -105,27 +108,27 @@ https://user-images.githubusercontent.com/66715000/139998327-13eff7db-3375-4a1b-
 
 VS Code uses js-beautify internally, but it lacks the ability to modify the style you wish to use. This extension enables running js-beautify in VS Code, AND honouring any .jsbeautifyrc file in the open file's path tree to load your code styling. Run with F1 Beautify (to beautify a selection) or F1 Beautify file.
 
-## Style Checker and Analyzer 
+### Style Checker and Analyzer 
 
 - Javascript Standard Style is style guide, linter, and formatter for Javascript and styling means ranking the importance of code clarity.
 - `npx standard --fix ` is used to fix the the style 
 
-## Code Formatter 
+### Code Formatter 
 
-### Prettier 
+#### Prettier 
 - Prettier is an opinionated code formatter which will format your code in structured way.
 - `npx prettier --write .` to check the errors in code formating
 - `npx prettier --check .` to check the errors in code formatting but only checks that files are already formatted, rather than overwriting them.
 prettier --write and prettier --check are the most common ways to run Prettier
 
-## Syntax Checker 
+### Syntax Checker 
 
-### Lint
+#### Lint
 - Linting is the automated checking of your source code for programmatic and syntax errors.
 - `npm run lint` to check the linter to check errors in code formatting in the code.
 
 
-## Use Case 
+## 📖 Use Case 
 * ***Students***: Students and Research grads can take out snippets from text for easy reference later. We as grad students recently found ourselves in a position where we had to reference a lot of text snippets while recognizing reuses in research papers, SimplyClip does wonders for speeding up similar workflows.
 
 * ***Professionals/ Casual Users:***: It’s one issue to fill a repetitive and boring form. It’s an entirely another when we fill multiple of such forms with questions with repeating answers. SimplyClip fits really well in such a case where simple text clips can be saved and reused saving time and effort.
