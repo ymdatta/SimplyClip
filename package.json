@@ -29,7 +29,6 @@
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
-<<<<<<< HEAD
     "build": "npm build",
     "test": "npm run single",
     "single": "./node_modules/.bin/mocha seleniumTest.js"
@@ -37,9 +36,6 @@
   "dependencies": {
     "nyc": "^15.1.0",
     "save": "^2.4.0",
-    "selenium-webdriver": "^4.0.0"
-=======
-    "build": "npm build"
->>>>>>> main
+    "selenium-webdriver": "^4.0.0",
   }
 }
