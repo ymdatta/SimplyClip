@@ -36,6 +36,6 @@
   "dependencies": {
     "nyc": "^15.1.0",
     "save": "^2.4.0",
-    "selenium-webdriver": "^4.0.0",
+    "selenium-webdriver": "^4.0.0"
   }
 }
