@@ -312,6 +312,40 @@ function searchClipboardText() {
         }
     }
 }
+
+
+var enabled = false;
+var myButton = document.getElementById('toggle-button');
+
+chrome.storage.local.get('enabled', data => {
+    var myButton = document.getElementById('toggle-button');
+    enabled = !!data.enabled;
+    switchButton = document.getElementsByClassName('switch')[0]
+    if(enabled==true){
+        myButton.checked = enabled
+        switchButton.title="Click here to disable saving your copied text!!"
+    }
+    else{
+        myButton.checked = enabled
+        switchButton.title="Click here to save your copied text!!"
+    }
+});
+
+myButton.onchange = () => {
+    enabled = !enabled;
+    switchButton = document.getElementsByClassName('switch')[0]
+    if(enabled==true){
+        myButton.checked = enabled
+        switchButton.title="Click here to disable saving your copied text!!"
+    }
+    else{
+        myButton.checked = enabled
+        switchButton.title="Click here to save your copied text!!"
+    }
+    chrome.storage.local.set({enabled:enabled});
+};
+
+
 getClipboardText();
 
   
