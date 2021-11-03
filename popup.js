@@ -22,107 +22,25 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+/**
+ * Global Clipboard Object
+ * @type {object}
+ */
 let _clipboardList = document.querySelector("#clipboard_list");
-let addButton = document.getElementById('add-btn');
-addButton.addEventListener('click', (event) => {
-    let textitem = ''
-    let emptyDiv = document.getElementById('empty-div');
-    let downloadDiv = document.getElementById('download-btn');
-    let searchInput = document.getElementById('searchText');
-    emptyDiv.classList.add('hide-div');
-    downloadDiv.style.display = 'block';
-    document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
-        downloadClipboardTextAsDoc()
-    })
-    document.getElementsByClassName('csv')[0].addEventListener('click', (event) => {
-        downloadClipboardTextAsCsv()
-    })
-    searchInput.style.display = 'block';
-    searchInput.addEventListener('keyup', () => {
-        searchClipboardText();
-    })
-    addClipboardListItem(textitem)
-})
 
 /**
- * Solves equations of the form a * x = b
+ * This function adds the text copied to the global list of copied items
+ * Adds DOM elements to the HTML page to render the copied text in the extension 
+ * Has Event Listeners for Edit and Delete buttons
+ *
+ * @param {string} text - text that is copied to the clipboard
+ *
  * @example
- * // returns 2
- * globalNS.method1(5, 10);
- * @example
- * // returns 3
- * globalNS.method(5, 15);
- * @returns {Number} Returns the value of x for the equation.
+ *
+ *     addClipboardListItem('This is the text you copied')
  */
 
-function getClipboardText() {
-    chrome.storage.sync.get(['list'], clipboard => {
-        let list = clipboard.list;
-        let emptyDiv = document.getElementById('empty-div');
-        let downloadDiv = document.getElementById('download-btn');
-        let searchInput = document.getElementById('searchText');
-        if (list === undefined || list.length === 0) {
-            emptyDiv.classList.remove('hide-div');
-            downloadDiv.style.display = 'none';
-            searchInput.style.display = 'none';
-        }
-        else {
-            emptyDiv.classList.add('hide-div');
-            downloadDiv.style.display = 'block';
-            document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
-                downloadClipboardTextAsDoc()
-            })
-            document.getElementsByClassName('csv')[0].addEventListener('click', (event) => {
-                downloadClipboardTextAsCsv()
-            })
-            searchInput.style.display = 'block';
-            searchInput.addEventListener('keyup', () => {
-                searchClipboardText();
-            })
-            if (typeof list !== undefined)
-                list.forEach(item => {
-                    addClipboardListItem(item)
-                });
-        }
-    });
-}
-
-function getThumbnail(textContent) {
-    let ind = textContent.indexOf('https://www.youtube.com/');
-    if (ind === 0) {
-        let videoId = "";
-        let idIndex = textContent.indexOf('watch?v=');
-        let endIndex = textContent.indexOf('&');
-        if (endIndex !== -1)
-            videoId = textContent.substring(idIndex + 8, endIndex);
-        else
-            videoId = textContent.substring(idIndex + 8, textContent.length);
-        let url = `https://img.youtube.com/vi/${videoId}/1.jpg`;
-        return {
-            sourceUrl: textContent,
-            imageUrl: url,
-            isVideo: true,
-        };
-    }
-    else {
-        let ind = textContent.indexOf('http');
-        if (ind === 0) {
-            let url = new URL(textContent);
-            let ans = "https://favicons.githubusercontent.com/" + url.hostname;
-            return {
-                sourceUrl: textContent,
-                imageUrl: ans,
-                isVideo: false
-            }
-        }
-    }
-    return {
-        sourceUrl: "",
-        imageUrl: ""
-    }
-        ;
-}
-function addClipboardListItem(text) {
+ function addClipboardListItem(text) {
     let { sourceUrl, imageUrl, isVideo } = getThumbnail(text);
     let listItem = document.createElement("li"),
         listDiv = document.createElement("div"),
@@ -253,7 +171,144 @@ function addClipboardListItem(text) {
     });
 }
 
+/**
+ * This function gets the list of items copied to the clipboard
+ *
+ * @example
+ *
+ *     getClipboardText()
+ */
 
+function getClipboardText() {
+    chrome.storage.sync.get(['list'], clipboard => {
+        let list = clipboard.list;
+        let emptyDiv = document.getElementById('empty-div');
+        let downloadDiv = document.getElementById('download-btn');
+        let searchInput = document.getElementById('searchText');
+        if (list === undefined || list.length === 0) {
+            emptyDiv.classList.remove('hide-div');
+            downloadDiv.style.display = 'none';
+            searchInput.style.display = 'none';
+        }
+        else {
+            emptyDiv.classList.add('hide-div');
+            downloadDiv.style.display = 'block';
+            document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
+                downloadClipboardTextAsDoc()
+            })
+            document.getElementsByClassName('csv')[0].addEventListener('click', (event) => {
+                downloadClipboardTextAsCsv()
+            })
+            searchInput.style.display = 'block';
+            searchInput.addEventListener('keyup', () => {
+                searchClipboardText();
+            })
+            if (typeof list !== undefined)
+                list.forEach(item => {
+                    addClipboardListItem(item)
+                });
+        }
+    });
+}
+
+/**
+ * This function gets the list of items copied to the clipboard
+ *
+ * @param {string} textContent - URL of the website from which text is copied
+ * @return {string} SourceURL, ImageURL 
+ *
+ * @example
+ *
+ *     getThumbnail('https://www.youtube.com/watch?v=simplyclip')
+ */
+
+function getThumbnail(textContent) {
+    let ind = textContent.indexOf('https://www.youtube.com/');
+    if (ind === 0) {
+        let videoId = "";
+        let idIndex = textContent.indexOf('watch?v=');
+        let endIndex = textContent.indexOf('&');
+        if (endIndex !== -1)
+            videoId = textContent.substring(idIndex + 8, endIndex);
+        else
+            videoId = textContent.substring(idIndex + 8, textContent.length);
+        let url = `https://img.youtube.com/vi/${videoId}/1.jpg`;
+        return {
+            sourceUrl: textContent,
+            imageUrl: url,
+            isVideo: true,
+        };
+    }
+    else {
+        let ind = textContent.indexOf('http');
+        if (ind === 0) {
+            let url = new URL(textContent);
+            let ans = "https://favicons.githubusercontent.com/" + url.hostname;
+            return {
+                sourceUrl: textContent,
+                imageUrl: ans,
+                isVideo: false
+            }
+        }
+    }
+    return {
+        sourceUrl: "",
+        imageUrl: ""
+    }
+        ;
+}
+
+/**
+ * Global Add Button Object
+ * @type {object}
+ */
+ let addButton = document.getElementById('add-btn');
+
+ /**
+  * This function is a event listener for ADD button
+  * 
+  * @param {string} event - event context
+  * @example
+  *     addButton.addEventListener('click', (event)=>{})
+  */
+ addButton.addEventListener('click', (event) => {
+     let textitem = ''
+     let emptyDiv = document.getElementById('empty-div');
+     let downloadDiv = document.getElementById('download-btn');
+     let searchInput = document.getElementById('searchText');
+     emptyDiv.classList.add('hide-div');
+     downloadDiv.style.display = 'block';
+     document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
+         downloadClipboardTextAsDoc()
+     })
+     document.getElementsByClassName('csv')[0].addEventListener('click', (event) => {
+         downloadClipboardTextAsCsv()
+     })
+     searchInput.style.display = 'block';
+     searchInput.addEventListener('keyup', () => {
+         searchClipboardText();
+     })
+     chrome.storage.sync.get(['listURL'], url => {
+         let urlList = url.listURL;
+         urlList.unshift(" ");
+         chrome.storage.sync.set({ 'listURL': urlList })
+     })
+     chrome.storage.sync.get(['originalList'], original => {
+         let originalList = original.originalList;
+         originalList.unshift(" ");
+         chrome.storage.sync.set({ 'originalList': originalList })
+     })
+     addClipboardListItem(textitem)
+ })
+
+/**
+ * This function exports all the text copied to a DOC file
+ * retreives all items from the list and write them to a file
+ * 
+ * @example
+ *
+ *     downloadClipboardTextAsDoc()
+ */
 function downloadClipboardTextAsDoc(){
     chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
@@ -289,6 +344,15 @@ function downloadClipboardTextAsDoc(){
 
 }
 
+
+/**
+ * This function allows you to search for a text from the copied items
+ * Gets each items in the list and checks if the entered text is present in the list or not
+ * 
+ * @example
+ *
+ *     searchClipboardText()
+ */
 function searchClipboardText() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("searchText");
@@ -306,9 +370,15 @@ function searchClipboardText() {
         }
     }
 }
-getClipboardText();
 
-  
+/**
+ * This function exports all the text copied to a CSV file
+ * retreives all items from the list and write them to a file
+ * 
+ * @example
+ *
+ *     downloadClipboardTextAsCsv()
+ */
 function downloadClipboardTextAsCsv() {
     let data = [];
     chrome.storage.sync.get(['list'], clipboard => {
@@ -343,8 +413,6 @@ function downloadClipboardTextAsCsv() {
             })
         })
     })
-
-
-
-
 }
+
+getClipboardText();
