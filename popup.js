@@ -1,34 +1,24 @@
 /*
- *MIT License
- *
- *Copyright (c) 2021 lalit10
- *
- *Permission is hereby granted, free of charge, to any person obtaining a copy
- *of this software and associated documentation files (the "Software"), to deal
- *in the Software without restriction, including without limitation the rights
- *to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *copies of the Software, and to permit persons to whom the Software is
- *furnished to do so, subject to the following conditions:
- *
- *The above copyright notice and this permission notice shall be included in all
- *copies or substantial portions of the Software.
- *
- *THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *SOFTWARE.
- */
+MIT License
+Copyright (c) 2021 lalit10
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
 
-/**
- * Global Clipboard Object
- * @type {object}
- */
 let _clipboardList = document.querySelector("#clipboard_list");
-<<<<<<< HEAD
-=======
 let addButton = document.getElementById('add-btn');
 addButton.addEventListener('click', (event) => {
     let textitem = ''
@@ -47,6 +37,21 @@ addButton.addEventListener('click', (event) => {
     searchInput.addEventListener('keyup', () => {
         searchClipboardText();
     })
+    chrome.storage.sync.get(['list'], text => {
+        let list = text.list;
+        list.unshift("");
+        chrome.storage.sync.set({ 'list': list })
+    })
+    chrome.storage.sync.get(['listURL'], url => {
+        let urlList = url.listURL;
+        urlList.unshift("");
+        chrome.storage.sync.set({ 'listURL': urlList })
+    })
+    chrome.storage.sync.get(['originalList'], original => {
+        let originalList = original.originalList;
+        originalList.unshift("");
+        chrome.storage.sync.set({ 'originalList': originalList })
+    })
     addClipboardListItem(textitem)
 })
 function getClipboardText() {
@@ -55,6 +60,7 @@ function getClipboardText() {
         let emptyDiv = document.getElementById('empty-div');
         let downloadDiv = document.getElementById('download-btn');
         let searchInput = document.getElementById('searchText');
+        let deleteAll = document.getElementById('delete-btn');
         if (list === undefined || list.length === 0) {
             emptyDiv.classList.remove('hide-div');
             downloadDiv.style.display = 'none';
@@ -73,6 +79,9 @@ function getClipboardText() {
             searchInput.addEventListener('keyup', () => {
                 searchClipboardText();
             })
+            deleteAll.addEventListener('click',() => {
+                deleteAllText();
+            })
             if (typeof list !== undefined)
                 list.forEach(item => {
                     addClipboardListItem(item)
@@ -80,21 +89,43 @@ function getClipboardText() {
         }
     });
 }
->>>>>>> 1392cf917094c280c90f9f66a1da61c4182dafd4
 
-/**
- * This function adds the text copied to the global list of copied items
- * Adds DOM elements to the HTML page to render the copied text in the extension 
- * Has Event Listeners for Edit and Delete buttons
- *
- * @param {string} text - text that is copied to the clipboard
- *
- * @example
- *
- *     addClipboardListItem('This is the text you copied')
- */
-
- function addClipboardListItem(text) {
+function getThumbnail(textContent) {
+    let ind = textContent.indexOf('https://www.youtube.com/');
+    if (ind === 0) {
+        let videoId = "";
+        let idIndex = textContent.indexOf('watch?v=');
+        let endIndex = textContent.indexOf('&');
+        if (endIndex !== -1)
+            videoId = textContent.substring(idIndex + 8, endIndex);
+        else
+            videoId = textContent.substring(idIndex + 8, textContent.length);
+        let url = `https://img.youtube.com/vi/${videoId}/1.jpg`;
+        return {
+            sourceUrl: textContent,
+            imageUrl: url,
+            isVideo: true,
+        };
+    }
+    else {
+        let ind = textContent.indexOf('http');
+        if (ind === 0) {
+            let url = new URL(textContent);
+            let ans = "https://favicons.githubusercontent.com/" + url.hostname;
+            return {
+                sourceUrl: textContent,
+                imageUrl: ans,
+                isVideo: false
+            }
+        }
+    }
+    return {
+        sourceUrl: "",
+        imageUrl: ""
+    }
+        ;
+}
+function addClipboardListItem(text) {
     let { sourceUrl, imageUrl, isVideo } = getThumbnail(text);
     let listItem = document.createElement("li"),
         listDiv = document.createElement("div"),
@@ -157,7 +188,7 @@ function getClipboardText() {
     editImage.src = './images/pencil.png';
     editImage.classList.add("edit");
     deleteImage.src = './images/delete-note.png';
-    // DeleteImage.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-1432400-1211078.png'
+    // deleteImage.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-1432400-1211078.png'
     deleteImage.classList.add("delete")
 
     editDiv.appendChild(editImage);
@@ -173,17 +204,14 @@ function getClipboardText() {
         prevText = listPara.textContent;
         console.log(prevText);
         listPara.setAttribute("contenteditable", "true");
-
+        
         listPara.style.height = 'auto';
         listPara.style.whiteSpace = 'break-spaces';
         listPara.focus();
-
-        /*
-         *  ListDiv.style.borderColor = "red";
-         *  listPara.style.backgroundColor = "grey"
-         *  listPara.style.height = "100px"
-         * listPara.focus();
-         */
+        // listDiv.style.borderColor = "red";
+        // listPara.style.backgroundColor = "grey"
+        // listPara.style.height = "100px"
+        //listPara.focus();
     })
     deleteImage.addEventListener('click', (event) => {
         console.log("Delete clicked");
@@ -228,144 +256,7 @@ function getClipboardText() {
     });
 }
 
-/**
- * This function gets the list of items copied to the clipboard
- *
- * @example
- *
- *     getClipboardText()
- */
 
-function getClipboardText() {
-    chrome.storage.sync.get(['list'], clipboard => {
-        let list = clipboard.list;
-        let emptyDiv = document.getElementById('empty-div');
-        let downloadDiv = document.getElementById('download-btn');
-        let searchInput = document.getElementById('searchText');
-        if (list === undefined || list.length === 0) {
-            emptyDiv.classList.remove('hide-div');
-            downloadDiv.style.display = 'none';
-            searchInput.style.display = 'none';
-        }
-        else {
-            emptyDiv.classList.add('hide-div');
-            downloadDiv.style.display = 'block';
-            document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
-                downloadClipboardTextAsDoc()
-            })
-            document.getElementsByClassName('csv')[0].addEventListener('click', (event) => {
-                downloadClipboardTextAsCsv()
-            })
-            searchInput.style.display = 'block';
-            searchInput.addEventListener('keyup', () => {
-                searchClipboardText();
-            })
-            if (typeof list !== undefined)
-                list.forEach(item => {
-                    addClipboardListItem(item)
-                });
-        }
-    });
-}
-
-/**
- * This function gets the list of items copied to the clipboard
- *
- * @param {string} textContent - URL of the website from which text is copied
- * @return {string} SourceURL, ImageURL 
- *
- * @example
- *
- *     getThumbnail('https://www.youtube.com/watch?v=simplyclip')
- */
-
-function getThumbnail(textContent) {
-    let ind = textContent.indexOf('https://www.youtube.com/');
-    if (ind === 0) {
-        let videoId = "";
-        let idIndex = textContent.indexOf('watch?v=');
-        let endIndex = textContent.indexOf('&');
-        if (endIndex !== -1)
-            videoId = textContent.substring(idIndex + 8, endIndex);
-        else
-            videoId = textContent.substring(idIndex + 8, textContent.length);
-        let url = `https://img.youtube.com/vi/${videoId}/1.jpg`;
-        return {
-            sourceUrl: textContent,
-            imageUrl: url,
-            isVideo: true,
-        };
-    }
-    else {
-        let ind = textContent.indexOf('http');
-        if (ind === 0) {
-            let url = new URL(textContent);
-            let ans = "https://favicons.githubusercontent.com/" + url.hostname;
-            return {
-                sourceUrl: textContent,
-                imageUrl: ans,
-                isVideo: false
-            }
-        }
-    }
-    return {
-        sourceUrl: "",
-        imageUrl: ""
-    }
-        ;
-}
-
-/**
- * Global Add Button Object
- * @type {object}
- */
- let addButton = document.getElementById('add-btn');
-
- /**
-  * This function is a event listener for ADD button
-  * 
-  * @param {string} event - event context
-  * @example
-  *     addButton.addEventListener('click', (event)=>{})
-  */
- addButton.addEventListener('click', (event) => {
-     let textitem = ''
-     let emptyDiv = document.getElementById('empty-div');
-     let downloadDiv = document.getElementById('download-btn');
-     let searchInput = document.getElementById('searchText');
-     emptyDiv.classList.add('hide-div');
-     downloadDiv.style.display = 'block';
-     document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
-         downloadClipboardTextAsDoc()
-     })
-     document.getElementsByClassName('csv')[0].addEventListener('click', (event) => {
-         downloadClipboardTextAsCsv()
-     })
-     searchInput.style.display = 'block';
-     searchInput.addEventListener('keyup', () => {
-         searchClipboardText();
-     })
-     chrome.storage.sync.get(['listURL'], url => {
-         let urlList = url.listURL;
-         urlList.unshift(" ");
-         chrome.storage.sync.set({ 'listURL': urlList })
-     })
-     chrome.storage.sync.get(['originalList'], original => {
-         let originalList = original.originalList;
-         originalList.unshift(" ");
-         chrome.storage.sync.set({ 'originalList': originalList })
-     })
-     addClipboardListItem(textitem)
- })
-
-/**
- * This function exports all the text copied to a DOC file
- * retreives all items from the list and write them to a file
- * 
- * @example
- *
- *     downloadClipboardTextAsDoc()
- */
 function downloadClipboardTextAsDoc(){
     chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
@@ -375,27 +266,24 @@ function downloadClipboardTextAsDoc(){
             console.log("Nothing to download")
         }
         else {
-            let list_of_items = []
+            var list_of_items = []
             emptyDiv.classList.add('hide-div');
             if (typeof list !== undefined){
                 list.forEach(item => {
                     list_of_items = list_of_items + item + "\n\n"
                 });
-                let link, blob, url;
-                blob = new Blob([
-                    '\ufeff',
-                    list_of_items
-                ], {
+                var link, blob, url;
+                blob = new Blob(['\ufeff', list_of_items], {
                     type: 'application/msword'
                 });
                 url = URL.createObjectURL(blob);
                 link = document.createElement('A');
                 link.href = url;
-                link.download = 'SimplyClip';
+                link.download = 'SimplyClip';  
                 document.body.appendChild(link);
-                if (navigator.msSaveOrOpenBlob)
-                    navigator.msSaveOrOpenBlob(blob, 'SimplyClip.doc');
-                else link.click(); // Other browsers
+                if (navigator.msSaveOrOpenBlob )
+                    navigator.msSaveOrOpenBlob( blob, 'SimplyClip.doc'); 
+                else link.click();  // other browsers
                 document.body.removeChild(link);
             }
 
@@ -404,17 +292,8 @@ function downloadClipboardTextAsDoc(){
 
 }
 
-
-/**
- * This function allows you to search for a text from the copied items
- * Gets each items in the list and checks if the entered text is present in the list or not
- * 
- * @example
- *
- *     searchClipboardText()
- */
 function searchClipboardText() {
-    let input, filter, ul, li, a, i, txtValue;
+    var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("searchText");
     filter = input.value.toUpperCase();
     ul = document.getElementById("clipboard_list");
@@ -430,19 +309,9 @@ function searchClipboardText() {
         }
     }
 }
+getClipboardText();
 
-<<<<<<< HEAD
-/**
- * This function exports all the text copied to a CSV file
- * retreives all items from the list and write them to a file
- * 
- * @example
- *
- *     downloadClipboardTextAsCsv()
- */
-=======
-
->>>>>>> 1392cf917094c280c90f9f66a1da61c4182dafd4
+  
 function downloadClipboardTextAsCsv() {
     let data = [];
     chrome.storage.sync.get(['list'], clipboard => {
@@ -459,13 +328,17 @@ function downloadClipboardTextAsCsv() {
                     data.push(rowData)
                 })
 
-                let csv = 'Edited Text,OriginalText,URL\n';
+                var csv = 'Edited Text,OriginalText,URL\n';
                 data.forEach(function (row) {
-                    csv += row.join(',');
+                    for (let i in row) {
+                        row[i] = row[i].replace(/"/g, '""');
+                    }
+                    
+                    csv += '"' + row.join('","') + '"';
                     csv += "\n";
                 });
 
-                let hiddenElement = document.createElement('a');
+                var hiddenElement = document.createElement('a');
                 hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
                 hiddenElement.target = '_blank';
                 hiddenElement.download = 'simplyClip.csv';
@@ -473,11 +346,17 @@ function downloadClipboardTextAsCsv() {
             })
         })
     })
-}
 
-<<<<<<< HEAD
-getClipboardText();
-=======
+
+
 
 }
->>>>>>> 1392cf917094c280c90f9f66a1da61c4182dafd4
+
+function deleteAllText() {
+    chrome.storage.sync.set({ 'list': [] }, () => {});
+    chrome.storage.sync.set({ 'originalList': [] }, () => {});
+    chrome.storage.sync.set({ 'listURL': [] }, () => {});
+    getClipboardText();
+    var ul = document.getElementById("clipboard_list");
+    ul.innerHTML = "";
+}
