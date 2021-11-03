@@ -13,7 +13,7 @@
 <!--[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5542732.svg)](https://doi.org/10.5281/zenodo.5542732)-->
 [![DOI](https://zenodo.org/badge/418303486.svg)](https://zenodo.org/badge/latestdoi/418303486)
 
-### &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  :paperclips: &emsp;  Clipboard Made Easy For Research &emsp; :paperclips:
+### &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;:paperclips: &emsp;  Clipboard Made Easy For Research &emsp; :paperclips:
 
 <placeholder builds>
 <placeholder doi>
@@ -40,7 +40,7 @@ SimplyClip :paperclips: is a google chrome extension which enables singular shar
 - Unlimited focus!
 - Lets you combine all the copied into a file
  
-<p align="center">
+<!-- <p align="center">
   <a href="#rocket-installation">Installation</a>
   ::
   <a href="#golf-flags-and-command-line-arguments">Flags & Args</a>
@@ -56,10 +56,16 @@ SimplyClip :paperclips: is a google chrome extension which enables singular shar
   <a href="#email-support">Support</a>
   
 </p>
-
+ -->
 Watch this fun video about the extension:
  
-[![Watch the video](https://img.youtube.com/vi/MYr_7qhdeLo/hqdefault.jpg)](https://youtu.be/MYr_7qhdeLo)
+ <!--https://github.com/umagnanasundaram2128/SimplyClip/blob/main/videos/Simply_clip.mp4-->
+ 
+ <!--[![Watch the video](https://img.youtube.com/vi/MYr_7qhdeLo/hqdefault.jpg)](https://youtu.be/MYr_7qhdeLo)-->
+
+
+
+https://user-images.githubusercontent.com/66715000/139998327-13eff7db-3375-4a1b-b888-5ed63115e31b.mp4
 
 
 ##  :white_check_mark: What Simply Clip Can Do?
