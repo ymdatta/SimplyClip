@@ -1,6 +1,6 @@
 
-![icon](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/paper-clip_32.png)
-# SimplyClip
+<!-- ![icon](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/paper-clip_32.png)
+# SimplyClip -->
 
 ![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m789313708-ea25af592e8a7a84c009055e)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -13,7 +13,7 @@
 <!--[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5542732.svg)](https://doi.org/10.5281/zenodo.5542732)-->
 [![DOI](https://zenodo.org/badge/418303486.svg)](https://zenodo.org/badge/latestdoi/418303486)
 
-### &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Clipboard Made Easy For Research
+### &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  :paperclips: &emsp;  Clipboard Made Easy For Research &emsp; :paperclips:
 
 <placeholder builds>
 <placeholder doi>
@@ -22,14 +22,16 @@
  <!-- As T. S. Eliot once famously said
 
 > Distracted from distraction by distraction. -->
+ 
+---
 
  
-![](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/SimplyClip.gif)
+&emsp; &emsp; &emsp; &emsp; &emsp;  ![](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/SimplyClip.gif)
 
-
+---
 <!-- ![](https://github.com/umagnanasundaram2128/SimplyClip/tree/main/images/SimplyClip.gif) -->
 
-SimplyClip is a google chrome extension which enables singular shared clipboard for research students and power users.
+SimplyClip :paperclips: is a google chrome extension which enables singular shared clipboard for research students and power users.
 
 
 - Ability to recognise multiple text selections
@@ -37,20 +39,40 @@ SimplyClip is a google chrome extension which enables singular shared clipboard 
 - Works like a charm for research work
 - Unlimited focus!
 - Lets you combine all the copied into a file
+ 
+<p align="center">
+  <a href="#rocket-installation">Installation</a>
+  ::
+  <a href="#golf-flags-and-command-line-arguments">Flags & Args</a>
+  ::
+  <a href="#card_index_dividers-some-examples">Examples</a>
+  ::
+  <a href="#thought_balloon-use-case">Use Case</a>
+  ::
+  <a href="#page_facing_up-why">Why</a>
+  ::
+  <a href="#sparkles-contributors">Contributors</a>
+    ::
+  <a href="#email-support">Support</a>
+  
+</p>
+
+
+
 
 https://user-images.githubusercontent.com/11155124/135507262-f26999c1-83b6-4225-9073-6b654ff6d7c0.mp4
 
-## What Simply Clip Can Do?
+##  :white_check_mark: What Simply Clip Can Do?
 
 - Select multiple text snippets from a single tab (or more!) and magically paste all off them!
 - Ability to manage what slection you want to keep or get rid of
 - Chrome Extension popup to manage all your snippets in one streamlined window
 - No more switching tabs, say no to all distractions!!
 
-## Add SimplyClip to Google Chrome
+## :gear: Add SimplyClip to Google Chrome
 
 1.  Get the repsitory using any of the below two methords :
-    - ![Download](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/Docs/images/download-2.png) the ***[repository](https://github.com/umagnanasundaram2128/SimplyClip)*** using Code > Download Zip on our project github page.
+    - Download :arrow_down: the ***[repository](https://github.com/umagnanasundaram2128/SimplyClip)*** using Code > Download Zip on our project github page.
     - Clone the reporitory using  ***[GIT](https://git-scm.com)*** 
     ```
     git clone https://github.com/lalit10/SimplyClip
@@ -61,12 +83,10 @@ https://user-images.githubusercontent.com/11155124/135507262-f26999c1-83b6-4225-
     - Enable the chrome extension. 
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/Docs/images/Extensions.png)
 
-## Languages
+## :computer: Languages and Requirement
 - JavaScript
 - HTML
 - CSS
-
-## Software Requirements
 - Node.js
 - NPM
 
@@ -104,10 +124,10 @@ prettier --write and prettier --check are the most common ways to run Prettier
 
 * ***Professionals/ Casual Users:***: It’s one issue to fill a repetitive and boring form. It’s an entirely another when we fill multiple of such forms with questions with repeating answers. SimplyClip fits really well in such a case where simple text clips can be saved and reused saving time and effort.
 
-## Why
+## :question: Why
 While working on finding reuse we spent significant amount of time searching and saving text snippets for further evaluation.Such a repetitive workflow sparked an idea of a clipboard workspace to manage all the recent snippets we have collected while researching.This in turn lead to the development of SimplyClip, in which not only clipboard text is saved, but can also be edited and deleted.Future development pipeline includes cross browser compatibility, exporting and cloud functionalities.
 
-## Functions Descriptions
+## :desktop_computer: Functional Descriptions
 #### 1. Copying to the extension clipboard :
 Any text copied from the browser page automatically gets copied to the extension's clipboard (given the URL has access to the system clipboard).
 #### 2. Copying to the system clipboard :
@@ -115,25 +135,27 @@ User can select the text chunk to copy from the extension clipboard by simply cl
 #### 3. Editing the extension clipboard :
 User is even allowed to edit the text entry copied to the extension clipboard. The user can edit the entry by clicking on the pencil icon and edit the text entry. Once edited, the entry gets saved automatically on clicking anywhere outside the focus of the text entry.
 
-## Troubleshooting
+## :interrobang: Troubleshooting
 1) If the text doesn't get copied, please make sure that the page has the permission to access and modify the system clipboard.
 2) When loading the extension for the first time, reload the pages in order to allow the URLs to prompt for permissions to access the system clipboard.
 3) If none of the above steps work, consider reloading the extension and all the browser pages.
 4) If the issue still persists, please consider writing us at simplyclipcedev@gmail.com and we will get back to you as soon as possible.
 5) You're also free to report a bug in our repository and clearly stating the issue that you're facing. Please make sure to follow the guidelines mentioned in CONTRIBUTING.md
 
-## Roadmap
+## :railway_track: Roadmap
  
  ![SimplyClip Project Pipeline](https://user-images.githubusercontent.com/11155124/135507724-86cb9b93-e0c5-4188-8688-7f12ff4c6d96.png)
 
 
-## Contributors
----
+## :handshake: Contributors
+
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/Pratyush1184"><img src="https://avatars.githubusercontent.com/u/20305094?v=4" width="75px;" alt=""/><br /><sub><b>Pratyush Vaidya</b></sub></a></td>
-    <td align="center"><a href="https://github.com/apande95"><img src="https://avatars.githubusercontent.com/u/11155124?v=4" width="75px;" alt=""/><br /><sub><b>Anirudh Pande</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/lalit10"><img src="https://avatars.githubusercontent.com/u/25183992?v=4" width="75px;" alt=""/><br /><sub><b>Lalit Bangad</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/niveditalodha"><img src="https://avatars.githubusercontent.com/u/40229663?v=4" width="75px;" alt=""/><br /><sub><b>Nivedita Lodha</b></sub></a></td>
+    <td align="center"><a href="https://github.com/akhilkumarmengani"><img src="https://avatars.githubusercontent.com/u/70975566?v=4" width="75px;" alt=""/><br /><sub><b>Akhil Kumar Mengani</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/umagnanasundaram2128"><img src="https://avatars.githubusercontent.com/u/8946692?v=4" width="75px;" alt=""/><br /><sub><b>Uma Gnanasundaram</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/vamshi-chidara"><img src="https://avatars.githubusercontent.com/u/66715000?v=4" width="75px;" alt=""/><br /><sub><b>Vamshi Chidara</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/nehajaideep"><img src="https://avatars.githubusercontent.com/u/46373273?v=4" width="75px;" alt=""/><br /><sub><b>Neha</b></sub></a><br /></td>
   </tr>
 </table>
 
