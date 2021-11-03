@@ -234,7 +234,8 @@ ul li{
     height: 50px !important;
 }
 #searchText {
-    height: 40px !important
+    height: 40px !important;
+    width: 90% !important;
 }
 
 #header {
@@ -283,4 +284,11 @@ ul li{
     float:right; 
     width: 35px; 
     margin-left: 1px;
+}
+#delete-btn {
+    width: 35px;
+    float: right;
+    margin-top:20px; 
+    padding-top: 7px; 
+    cursor: pointer;
 }

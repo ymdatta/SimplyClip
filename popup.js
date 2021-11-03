@@ -64,6 +64,7 @@ function getClipboardText() {
         let emptyDiv = document.getElementById('empty-div');
         let downloadDiv = document.getElementById('download-btn');
         let searchInput = document.getElementById('searchText');
+        let deleteAll = document.getElementById('delete-btn');
         if (list === undefined || list.length === 0) {
             emptyDiv.classList.remove('hide-div');
             downloadDiv.style.display = 'none';
@@ -81,6 +82,9 @@ function getClipboardText() {
             searchInput.style.display = 'block';
             searchInput.addEventListener('keyup', () => {
                 searchClipboardText();
+            })
+            deleteAll.addEventListener('click',() => {
+                deleteAllText();
             })
             if (typeof list !== undefined)
                 list.forEach(item => {
@@ -350,4 +354,13 @@ function downloadClipboardTextAsCsv() {
 
 
 
+}
+
+function deleteAllText() {
+    chrome.storage.sync.set({ 'list': [] }, () => {});
+    chrome.storage.sync.set({ 'originalList': [] }, () => {});
+    chrome.storage.sync.set({ 'listURL': [] }, () => {});
+    getClipboardText();
+    var ul = document.getElementById("clipboard_list");
+    ul.innerHTML = "";
 }
