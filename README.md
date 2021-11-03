@@ -48,7 +48,9 @@ SimplyClip :paperclips: is a google chrome extension which enables singular shar
   |
   <a href="#gear-add-simplyclip-to-google-chrome">Installation</a>
   |
-  <a href="#computer-languages-and-requirements">Languages/Requirements</a>
+  <a href="#computer-languages-and-requirements">Languages/Requirements/Packages</a>
+  |
+  <a href="#-developers-note">Developers Note</a>
   |
   <a href="#-ide-and-packages">IDE/Packages</a>
   |
@@ -84,6 +86,9 @@ https://user-images.githubusercontent.com/66715000/139998327-13eff7db-3375-4a1b-
 - Helps you to save website URLs from which the text is copied
 - Disable any time with a toggle, if you don't want the content to copy to extension.
 
+## :shipit: Developers Note
+Basic knowledge of **JavaScript**, **HTML** ,**CSS** should be good enough to contribute to the project
+ 
 ## :gear: Add SimplyClip to Google Chrome
 All you need is Google Chrome! 🕺
 
