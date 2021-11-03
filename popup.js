@@ -39,16 +39,19 @@ addButton.addEventListener('click', (event) => {
     })
     chrome.storage.sync.get(['list'], text => {
         let list = text.list;
+        list == undefined && (list = []);
         list.unshift("");
         chrome.storage.sync.set({ 'list': list })
     })
     chrome.storage.sync.get(['listURL'], url => {
         let urlList = url.listURL;
+        urlList == undefined && (urlList = []);
         urlList.unshift("");
         chrome.storage.sync.set({ 'listURL': urlList })
     })
     chrome.storage.sync.get(['originalList'], original => {
         let originalList = original.originalList;
+        originalList == undefined && (originalList = []);
         originalList.unshift("");
         chrome.storage.sync.set({ 'originalList': originalList })
     })
