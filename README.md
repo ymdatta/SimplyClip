@@ -60,7 +60,7 @@ SimplyClip :paperclips: is a google chrome extension which enables singular shar
 
 
 
-https://user-images.githubusercontent.com/11155124/135507262-f26999c1-83b6-4225-9073-6b654ff6d7c0.mp4
+https://youtu.be/MYr_7qhdeLo
 
 ##  :white_check_mark: What Simply Clip Can Do?
 
