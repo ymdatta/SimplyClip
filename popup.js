@@ -18,11 +18,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-/**
- * Global Clipboard Object
- * @type {object}
- */
-
 let _clipboardList = document.querySelector("#clipboard_list");
 let addButton = document.getElementById('add-btn');
 addButton.addEventListener('click', (event) => {
@@ -316,12 +311,6 @@ function searchClipboardText() {
 }
 getClipboardText();
 
-/**
- * This function exports all the text copied to a CSV file
- * retreives all items from the list and write them to a file
- * @example
- *     downloadClipboardTextAsCsv()
- */
   
 function downloadClipboardTextAsCsv() {
     let data = [];
