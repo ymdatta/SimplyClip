@@ -48,9 +48,9 @@ SimplyClip :paperclips: is a google chrome extension which enables singular shar
   |
   <a href="#gear-add-simplyclip-to-google-chrome">Installation</a>
   |
-  <a href="#computer-languages-and-requirements">Languages/Requirements/Packages</a>
+  <a href="#shipit-developers-note">Developers Note</a>
   |
-  <a href="#-developers-note">Developers Note</a>
+ <a href="#computer-languages-and-requirements">Languages/Packages</a>
   |
   <a href="#-ide-and-packages">IDE/Packages</a>
   |
