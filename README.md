@@ -8,7 +8,7 @@
 ![Test Cases](https://img.shields.io/badge/tests-passing-green)
 ![GitHub contributors](https://img.shields.io/github/contributors/umagnanasundaram2128/SimplyClip)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/umagnanasundaram2128/SimplyClip)
-[![Build Status](https://app.travis-ci.com/umagnanasundaram2128/SimplyClip.svg?branch=main)](https://app.travis-ci.com/umagnanasundaram2128/SimplyClip)
+[![basic badge](https://github.com/umagnanasundaram2128/SimplyClip/actions/workflows/coverage.yml/badge.svg)](https://github.com/umagnanasundaram2128/SimplyClip/actions/workflows/coverage.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/umagnanasundaram2128/SimplyClip/badge.svg?branch=main)](https://coveralls.io/github/umagnanasundaram2128/SimplyClip?branch=main)
 <!--[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5542732.svg)](https://doi.org/10.5281/zenodo.5542732)-->
 [![DOI](https://zenodo.org/badge/418303486.svg)](https://zenodo.org/badge/latestdoi/418303486)
