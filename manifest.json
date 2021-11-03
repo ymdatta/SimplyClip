@@ -8,11 +8,11 @@
         "js": ["content.js","./test/test.js"]
       } ],
     "icons":{
-      "32":"./images/paper-clip_32.png"
+      "32":"./images/paper-note-32.png"
     },
     "options_page":"./test/test.html",
     "browser_action":{
-        "default_icon":"./images/paper-clip_32.png",
+        "default_icon":"./images/paper-note-32.png",
         "default_title":"SimplyClip",
         "default_popup":"popup.html"
     },
