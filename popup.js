@@ -1,32 +1,86 @@
 /*
-MIT License
-
-Copyright (c) 2021 lalit10
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-*/
+ *MIT License
+ *
+ *Copyright (c) 2021 lalit10
+ *
+ *Permission is hereby granted, free of charge, to any person obtaining a copy
+ *of this software and associated documentation files (the "Software"), to deal
+ *in the Software without restriction, including without limitation the rights
+ *to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *copies of the Software, and to permit persons to whom the Software is
+ *furnished to do so, subject to the following conditions:
+ *
+ *The above copyright notice and this permission notice shall be included in all
+ *copies or substantial portions of the Software.
+ *
+ *THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *SOFTWARE.
+ */
 
 /**
  * Global Clipboard Object
  * @type {object}
  */
 let _clipboardList = document.querySelector("#clipboard_list");
+<<<<<<< HEAD
+=======
+let addButton = document.getElementById('add-btn');
+addButton.addEventListener('click', (event) => {
+    let textitem = ''
+    let emptyDiv = document.getElementById('empty-div');
+    let downloadDiv = document.getElementById('download-btn');
+    let searchInput = document.getElementById('searchText');
+    emptyDiv.classList.add('hide-div');
+    downloadDiv.style.display = 'block';
+    document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
+        downloadClipboardTextAsDoc()
+    })
+    document.getElementsByClassName('csv')[0].addEventListener('click', (event) => {
+        downloadClipboardTextAsCsv()
+    })
+    searchInput.style.display = 'block';
+    searchInput.addEventListener('keyup', () => {
+        searchClipboardText();
+    })
+    addClipboardListItem(textitem)
+})
+function getClipboardText() {
+    chrome.storage.sync.get(['list'], clipboard => {
+        let list = clipboard.list;
+        let emptyDiv = document.getElementById('empty-div');
+        let downloadDiv = document.getElementById('download-btn');
+        let searchInput = document.getElementById('searchText');
+        if (list === undefined || list.length === 0) {
+            emptyDiv.classList.remove('hide-div');
+            downloadDiv.style.display = 'none';
+            searchInput.style.display = 'none';
+        }
+        else {
+            emptyDiv.classList.add('hide-div');
+            downloadDiv.style.display = 'block';
+            document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
+                downloadClipboardTextAsDoc()
+            })
+            document.getElementsByClassName('csv')[0].addEventListener('click', (event) => {
+                downloadClipboardTextAsCsv()
+            })
+            searchInput.style.display = 'block';
+            searchInput.addEventListener('keyup', () => {
+                searchClipboardText();
+            })
+            if (typeof list !== undefined)
+                list.forEach(item => {
+                    addClipboardListItem(item)
+                });
+        }
+    });
+}
+>>>>>>> 1392cf917094c280c90f9f66a1da61c4182dafd4
 
 /**
  * This function adds the text copied to the global list of copied items
@@ -103,7 +157,7 @@ let _clipboardList = document.querySelector("#clipboard_list");
     editImage.src = './images/pencil.png';
     editImage.classList.add("edit");
     deleteImage.src = './images/delete-note.png';
-    // deleteImage.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-1432400-1211078.png'
+    // DeleteImage.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-1432400-1211078.png'
     deleteImage.classList.add("delete")
 
     editDiv.appendChild(editImage);
@@ -119,14 +173,17 @@ let _clipboardList = document.querySelector("#clipboard_list");
         prevText = listPara.textContent;
         console.log(prevText);
         listPara.setAttribute("contenteditable", "true");
-        
+
         listPara.style.height = 'auto';
         listPara.style.whiteSpace = 'break-spaces';
         listPara.focus();
-        // listDiv.style.borderColor = "red";
-        // listPara.style.backgroundColor = "grey"
-        // listPara.style.height = "100px"
-        //listPara.focus();
+
+        /*
+         *  ListDiv.style.borderColor = "red";
+         *  listPara.style.backgroundColor = "grey"
+         *  listPara.style.height = "100px"
+         * listPara.focus();
+         */
     })
     deleteImage.addEventListener('click', (event) => {
         console.log("Delete clicked");
@@ -318,24 +375,27 @@ function downloadClipboardTextAsDoc(){
             console.log("Nothing to download")
         }
         else {
-            var list_of_items = []
+            let list_of_items = []
             emptyDiv.classList.add('hide-div');
             if (typeof list !== undefined){
                 list.forEach(item => {
                     list_of_items = list_of_items + item + "\n\n"
                 });
-                var link, blob, url;
-                blob = new Blob(['\ufeff', list_of_items], {
+                let link, blob, url;
+                blob = new Blob([
+                    '\ufeff',
+                    list_of_items
+                ], {
                     type: 'application/msword'
                 });
                 url = URL.createObjectURL(blob);
                 link = document.createElement('A');
                 link.href = url;
-                link.download = 'SimplyClip';  
+                link.download = 'SimplyClip';
                 document.body.appendChild(link);
-                if (navigator.msSaveOrOpenBlob )
-                    navigator.msSaveOrOpenBlob( blob, 'SimplyClip.doc'); 
-                else link.click();  // other browsers
+                if (navigator.msSaveOrOpenBlob)
+                    navigator.msSaveOrOpenBlob(blob, 'SimplyClip.doc');
+                else link.click(); // Other browsers
                 document.body.removeChild(link);
             }
 
@@ -354,7 +414,7 @@ function downloadClipboardTextAsDoc(){
  *     searchClipboardText()
  */
 function searchClipboardText() {
-    var input, filter, ul, li, a, i, txtValue;
+    let input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("searchText");
     filter = input.value.toUpperCase();
     ul = document.getElementById("clipboard_list");
@@ -371,6 +431,7 @@ function searchClipboardText() {
     }
 }
 
+<<<<<<< HEAD
 /**
  * This function exports all the text copied to a CSV file
  * retreives all items from the list and write them to a file
@@ -379,6 +440,9 @@ function searchClipboardText() {
  *
  *     downloadClipboardTextAsCsv()
  */
+=======
+
+>>>>>>> 1392cf917094c280c90f9f66a1da61c4182dafd4
 function downloadClipboardTextAsCsv() {
     let data = [];
     chrome.storage.sync.get(['list'], clipboard => {
@@ -395,17 +459,13 @@ function downloadClipboardTextAsCsv() {
                     data.push(rowData)
                 })
 
-                var csv = 'Edited Text,OriginalText,URL\n';
+                let csv = 'Edited Text,OriginalText,URL\n';
                 data.forEach(function (row) {
-                    for (let i in row) {
-                        row[i] = row[i].replace(/"/g, '""');
-                    }
-                    
-                    csv += '"' + row.join('","') + '"';
+                    csv += row.join(',');
                     csv += "\n";
                 });
 
-                var hiddenElement = document.createElement('a');
+                let hiddenElement = document.createElement('a');
                 hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
                 hiddenElement.target = '_blank';
                 hiddenElement.download = 'simplyClip.csv';
@@ -415,4 +475,9 @@ function downloadClipboardTextAsCsv() {
     })
 }
 
+<<<<<<< HEAD
 getClipboardText();
+=======
+
+}
+>>>>>>> 1392cf917094c280c90f9f66a1da61c4182dafd4
