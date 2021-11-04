@@ -38,7 +38,7 @@ describe('Verify setup with Google Search',function() {
 });
 
 // eslint-disable-next-line no-undef
-describe('Check simply clip functionality',function() {
+describe('Check browser copy functionality',function() {
     // eslint-disable-next-line no-undef,no-empty-function
     it('text should be copied', async function () {
         const options = new chrome.Options()
@@ -55,7 +55,6 @@ describe('Check simply clip functionality',function() {
         searchBox.sendKeys('hello', Key.RETURN);
         let results = driver.findElement(By.xpath("html/body/div[1]/div[5]/div[4]/div[5]/div[1]/div[1]/div/div/div"));
         results.getAttribute('value').then(function(value) {
-            console.log(value);
             assert.equal(value, results.getText());
         });
 
@@ -67,7 +66,7 @@ describe('Check simply clip functionality',function() {
 // eslint-disable-next-line no-undef,no-empty-function
 describe('Check simply clip functionality',function() {
     // eslint-disable-next-line no-undef,no-empty-function
-    it('copied text should exist in SimplyClip', async function () {
+    it('copied text should exist in SimplyClip clipboard', async function () {
         const options = new chrome.Options()
             .addArguments('--user-data-dir=/Users/nehakotcherlakota/Desktop');
 
@@ -80,9 +79,11 @@ describe('Check simply clip functionality',function() {
         driver.get('http://google.com');
         const searchBox = driver.findElement(webdriver.By.name('q'));
         searchBox.sendKeys('hello', Key.RETURN);
-        let results = driver.findElement(By.className("clipboard_list"));
+        let results = driver.findElement(By.xpath("html/body/div[1]/div[5]/div[4]/div[5]/div[1]/div[1]/div/div/div"));
         results.getAttribute('value').then(function(value) {
-            console.log(value);
+        });
+        let clipboard_result = driver.findElement(By.className("clipboard_list"));
+        clipboard_result.getAttribute('value').then(function(value) {
             assert.equal(value, results.getText());
         });
 
