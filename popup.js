@@ -27,60 +27,6 @@
  * @type {object}
  */
 let _clipboardList = document.querySelector("#clipboard_list");
-<<<<<<< HEAD
-=======
-let addButton = document.getElementById('add-btn');
-addButton.addEventListener('click', (event) => {
-    let textitem = ''
-    let emptyDiv = document.getElementById('empty-div');
-    let downloadDiv = document.getElementById('download-btn');
-    let searchInput = document.getElementById('searchText');
-    emptyDiv.classList.add('hide-div');
-    downloadDiv.style.display = 'block';
-    document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
-        downloadClipboardTextAsDoc()
-    })
-    document.getElementsByClassName('csv')[0].addEventListener('click', (event) => {
-        downloadClipboardTextAsCsv()
-    })
-    searchInput.style.display = 'block';
-    searchInput.addEventListener('keyup', () => {
-        searchClipboardText();
-    })
-    addClipboardListItem(textitem)
-})
-function getClipboardText() {
-    chrome.storage.sync.get(['list'], clipboard => {
-        let list = clipboard.list;
-        let emptyDiv = document.getElementById('empty-div');
-        let downloadDiv = document.getElementById('download-btn');
-        let searchInput = document.getElementById('searchText');
-        if (list === undefined || list.length === 0) {
-            emptyDiv.classList.remove('hide-div');
-            downloadDiv.style.display = 'none';
-            searchInput.style.display = 'none';
-        }
-        else {
-            emptyDiv.classList.add('hide-div');
-            downloadDiv.style.display = 'block';
-            document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
-                downloadClipboardTextAsDoc()
-            })
-            document.getElementsByClassName('csv')[0].addEventListener('click', (event) => {
-                downloadClipboardTextAsCsv()
-            })
-            searchInput.style.display = 'block';
-            searchInput.addEventListener('keyup', () => {
-                searchClipboardText();
-            })
-            if (typeof list !== undefined)
-                list.forEach(item => {
-                    addClipboardListItem(item)
-                });
-        }
-    });
-}
->>>>>>> 1392cf917094c280c90f9f66a1da61c4182dafd4
 
 /**
  * This function adds the text copied to the global list of copied items
@@ -431,7 +377,6 @@ function searchClipboardText() {
     }
 }
 
-<<<<<<< HEAD
 /**
  * This function exports all the text copied to a CSV file
  * retreives all items from the list and write them to a file
@@ -440,9 +385,6 @@ function searchClipboardText() {
  *
  *     downloadClipboardTextAsCsv()
  */
-=======
-
->>>>>>> 1392cf917094c280c90f9f66a1da61c4182dafd4
 function downloadClipboardTextAsCsv() {
     let data = [];
     chrome.storage.sync.get(['list'], clipboard => {
@@ -475,9 +417,4 @@ function downloadClipboardTextAsCsv() {
     })
 }
 
-<<<<<<< HEAD
 getClipboardText();
-=======
-
-}
->>>>>>> 1392cf917094c280c90f9f66a1da61c4182dafd4

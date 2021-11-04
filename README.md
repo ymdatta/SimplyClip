@@ -163,7 +163,7 @@ User is even allowed to edit the text entry copied to the extension clipboard. T
 
 ## :railway_track: Roadmap
  
- ![SimplyClip Project Pipeline](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/RoadMap2.png)
+ ![SimplyClip Project Pipeline](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/RoadMap3.png)
 
 
 ## :handshake: Contributors
