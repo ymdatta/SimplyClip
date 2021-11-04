@@ -159,6 +159,8 @@ Any text copied from the browser page automatically gets copied to the extension
 User can select the text chunk to copy from the extension clipboard by simply clicking on the text entry. The entry automatically gets copied into the system clipboard.
 #### 3. Editing the extension clipboard :
 User is even allowed to edit the text entry copied to the extension clipboard. The user can edit the entry by clicking on the pencil icon and edit the text entry. Once edited, the entry gets saved automatically on clicking anywhere outside the focus of the text entry.
+#### 4. Downloading your copied text :
+Users can download the list of  copied items as a document file or CSV file. The CSV file has many more columns, such as updated text, original copied text, URL of  copied text, and so on.
 
 ## :interrobang: Troubleshooting
 1) If the text doesn't get copied, please make sure that the page has the permission to access and modify the system clipboard.
