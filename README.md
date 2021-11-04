@@ -100,7 +100,7 @@ All you need is Google Chrome! 🕺
     - Click on ***load Unpacked*** button and select the root folder of this repository.
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/Docs/images/Extensions.png)
     - Enable the chrome extension. 
-![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/Docs/images/enableSimplyClip.png)
+![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/enableSimplyClip.png)
 
 ## :computer: Languages and Requirements
 - JavaScript
