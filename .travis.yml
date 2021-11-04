@@ -9,4 +9,4 @@ script:
   - echo "Add script to pack chrome extension"
   - npm test
   - codecov
-after_success: npm run coverage
+after_success: npm run istanbul-coverage
