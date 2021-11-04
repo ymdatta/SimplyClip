@@ -188,7 +188,15 @@ ul li{
   from, to { border-color: transparent }
   50% { border-color: orange; }
 }
-#download-btn{
+#download-btn1{
+    float: right;
+   
+    margin-top:20px;
+    padding-top: 7px;
+    cursor: pointer;
+
+}
+#download-btn2{
     float: right;
    
     margin-top:20px;
@@ -197,19 +205,12 @@ ul li{
 
 }
 
-#download-btn-csv{
-    float: right;
-    margin-top:20px;
-    padding-top: 7px;
-    cursor: pointer;
 
-}
-
-#download-btn-csv:hover{
+#download-btn2:hover{
     transform: translateY(1px);
 }
 
-#download-btn:hover{
+#download-btn1:hover{
     transform: translateY(1px);
 }
 

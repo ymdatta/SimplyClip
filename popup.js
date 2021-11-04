@@ -23,10 +23,12 @@ let addButton = document.getElementById('add-btn');
 addButton.addEventListener('click', (event) => {
         let textitem = ''
         let emptyDiv = document.getElementById('empty-div');
-        let downloadDiv = document.getElementById('download-btn');
+        let downloadDiv1 = document.getElementById('download-btn1');
+        let downloadDiv2 = document.getElementById('download-btn2');
         let searchInput = document.getElementById('searchText');
         emptyDiv.classList.add('hide-div');
-        downloadDiv.style.display = 'block';
+        downloadDiv1.style.display = 'block';
+        downloadDiv2.style.display = 'block';
         document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
             downloadClipboardTextAsDoc()
         })
@@ -67,17 +69,20 @@ function getClipboardText() {
     chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
         let emptyDiv = document.getElementById('empty-div');
-        let downloadDiv = document.getElementById('download-btn');
+        let downloadDiv1 = document.getElementById('download-btn1');
+        let downloadDiv2 = document.getElementById('download-btn2');
         let searchInput = document.getElementById('searchText');
         let deleteAll = document.getElementById('delete-btn');
         if (list === undefined || list.length === 0) {
             emptyDiv.classList.remove('hide-div');
-            downloadDiv.style.display = 'none';
+            downloadDiv1.style.display = 'none';
+            downloadDiv2.style.display = 'none';
             searchInput.style.display = 'none';
         }
         else {
             emptyDiv.classList.add('hide-div');
-            downloadDiv.style.display = 'block';
+            downloadDiv1.style.display = 'block';
+            downloadDiv2.style.display = 'block';
             document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
                 downloadClipboardTextAsDoc()
             })
