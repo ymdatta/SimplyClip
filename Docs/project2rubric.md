@@ -17,12 +17,12 @@
 |1|Issues reports: there are many  | [Issues](https://github.com/umagnanasundaram2128/SimplyClip/issues)|
 |.5|Use of code formatters. | config files in GH showing your this formatter's config|
 |.5|Use of style checkers | config files in GH showing your config|
-|.5|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code. | |
+|.5|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code. | https://github.com/umagnanasundaram2128/SimplyClip/blob/main/README.md|
 |.5|test cases exist  | dozens of tests and those test cases are more than 30% of the code base|
 |.5|Use of code coverage  | config files in GH|
 |.5|other automated analysis tools  | config files in GH|
 |.5|test cases:.a large proportion of the issues related to handling failing cases. | if a test case fails, open an issue and fix it|
 |.5|test cases are routinely executed | e.g. travis-com.com or github actions or something|
-|1|Documentation describing how this version improves on the older version| 
+|1|Documentation describing how this version improves on the older version| https://github.com/umagnanasundaram2128/SimplyClip/blob/main/Docs/Simply_clip_Version2.md|
 |3|This version is a little(1), some(2), much(3) improved on the last version.|Tutor's assessment.| 
 |16| Total|
