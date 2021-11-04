@@ -113,7 +113,7 @@ User is even allowed to edit the text entry copied to the extension clipboard. T
 
 ## Road Map
 
-<img src="./images/RoadMap2.png"> </img>
+<img src="./images/RoadMap3.png"> </img>
 
 ## Contributors
 
