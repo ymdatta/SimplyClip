@@ -32,7 +32,6 @@
 
 SimplyClip :paperclips: is a google chrome extension which enables singular shared clipboard for research students and power users.
 
-
 - Ability to recognise multiple text selections
 - Works across all tabs in the browser
 - Works like a charm for research work
@@ -75,16 +74,23 @@ https://user-images.githubusercontent.com/66715000/139998327-13eff7db-3375-4a1b-
 ## :white_check_mark: What Simply Clip Can Do?
 
 - Select multiple text snippets from a single tab (or more!) and magically paste all off them!
-- Ability to manage what slection you want to keep or get rid of
-- Chrome Extension popup to manage all your snippets in one streamlined window
+- Ability to manage what slection you want to keep or get rid of.
+- Chrome Extension popup to manage all your snippets in one streamlined window.
 - No more switching tabs, say no to all distractions!!
-- Download the copied content to file with a single click
+- Download the copied content to CSV or DOC file with a single click.
 - Search for any text from the copied content.
-- Helps you to save website URLs from which the text is copied
+- Helps you to save website URLs from which the text is copied.
 - Disable any time with a toggle, if you don't want the content to copy to extension.
+- Delete all copied items at once.
+
 
 ## :shipit: Developers Note
 Basic knowledge of **JavaScript**, **HTML** ,**CSS** should be good enough to contribute to the project
+- popup.js
+- popup.html
+- popup.css
+- content.js
+These are the only files you will be working and rest all are just configuration and documentation files. 
  
 ## :gear: Add SimplyClip to Google Chrome
 All you need is Google Chrome! 🕺

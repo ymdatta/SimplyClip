@@ -148,7 +148,7 @@ Terms
 Privacy
 Security
 Status
-Docs
+
 Contact GitHub
 Pricing
 API
@@ -158,3 +158,6 @@ About
 
 #js doc documentation
 out/
+
+
+.DS_Store
