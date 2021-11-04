@@ -56,7 +56,13 @@ addButton.addEventListener('click', (event) => {
         chrome.storage.sync.set({ 'originalList': originalList })
     })
     addClipboardListItem(textitem)
-})
+}
+)
+/**
+ * Gets the copied text from storage and calls addClipboardListItem function to populate list in the pop-up
+ * @example
+ *  getClipboardText()
+ */
 function getClipboardText() {
     chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
@@ -92,7 +98,11 @@ function getClipboardText() {
         }
     });
 }
-
+/**
+ * Gets the source URL and the image url for the copied image/text
+ * @param {*} textContent 
+ * @returns 
+ */
 function getThumbnail(textContent) {
     let ind = textContent.indexOf('https://www.youtube.com/');
     if (ind === 0) {
@@ -128,6 +138,13 @@ function getThumbnail(textContent) {
     }
         ;
 }
+/**
+ * Creates an HTML li element and adds the input text, icon to edit, icon to delete
+ * Contains click event listeners for edit and delete icon 
+ * @param {*} text 
+ * @example
+ * addClipboardListItem("123")
+ */
 function addClipboardListItem(text) {
     let { sourceUrl, imageUrl, isVideo } = getThumbnail(text);
     let listItem = document.createElement("li"),
@@ -260,6 +277,13 @@ function addClipboardListItem(text) {
 }
 
 
+/**
+ * Retrives the copied text from the storage ,
+ * generates a doc file and
+ * downloads the file
+ * @example
+ * downloadClipboardTextAsDoc()
+ */  
 function downloadClipboardTextAsDoc(){
     chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
@@ -295,6 +319,12 @@ function downloadClipboardTextAsDoc(){
 
 }
 
+/**
+ * Filters the
+ * displayed copied text list that matches search text in the search box
+ * @example
+ * searchClipboardText()
+ */
 function searchClipboardText() {
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("searchText");
@@ -348,7 +378,13 @@ myButton.onchange = () => {
 
 getClipboardText();
 
-  
+/**
+ * Retrives the copied text, original copied text and URL of copied text from the storage ,
+ * generates a CSV file and
+ * downloads the file
+ * @example
+ * downloadClipboardTextAsCsv()
+ */  
 function downloadClipboardTextAsCsv() {
     let data = [];
     chrome.storage.sync.get(['list'], clipboard => {
@@ -388,7 +424,11 @@ function downloadClipboardTextAsCsv() {
 
 
 }
-
+/**
+ * Deletes all the text copied in the simplyclip clipboard
+ * @example
+ * deleteAllText()
+ */
 function deleteAllText() {
     chrome.storage.sync.set({ 'list': [] }, () => {});
     chrome.storage.sync.set({ 'originalList': [] }, () => {});
