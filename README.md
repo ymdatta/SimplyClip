@@ -8,9 +8,8 @@
 ![Test Cases](https://img.shields.io/badge/tests-passing-green)
 ![GitHub contributors](https://img.shields.io/github/contributors/umagnanasundaram2128/SimplyClip)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/umagnanasundaram2128/SimplyClip)
-[![Build Status](https://app.travis-ci.com/umagnanasundaram2128/SimplyClip.svg?branch=main)](https://app.travis-ci.com/umagnanasundaram2128/SimplyClip)
+[![basic badge](https://github.com/umagnanasundaram2128/SimplyClip/actions/workflows/coverage.yml/badge.svg)](https://github.com/umagnanasundaram2128/SimplyClip/actions/workflows/coverage.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/umagnanasundaram2128/SimplyClip/badge.svg?branch=main)](https://coveralls.io/github/umagnanasundaram2128/SimplyClip?branch=main)
-<!--[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5542732.svg)](https://doi.org/10.5281/zenodo.5542732)-->
 [![DOI](https://zenodo.org/badge/418303486.svg)](https://zenodo.org/badge/latestdoi/418303486)
 
 ### &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;:paperclips: &emsp;  Clipboard Made Easy For Research &emsp; :paperclips:
@@ -99,8 +98,9 @@ All you need is Google Chrome! 🕺
 1. Manually install Entension using below steps.
     - Enable the developer mode from Chrome > Settings > extension.
     - Click on ***load Unpacked*** button and select the root folder of this repository.
-    - Enable the chrome extension. 
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/Docs/images/Extensions.png)
+    - Enable the chrome extension. <br/>
+![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/enableSimplyClip.png)
 
 ## :computer: Languages and Requirements
 - JavaScript
@@ -159,7 +159,7 @@ User is even allowed to edit the text entry copied to the extension clipboard. T
 2) When loading the extension for the first time, reload the pages in order to allow the URLs to prompt for permissions to access the system clipboard.
 3) If none of the above steps work, consider reloading the extension and all the browser pages.
 4) If the issue still persists, please consider writing us at simplyclipcedev@gmail.com and we will get back to you as soon as possible.
-5) You're also free to report a bug in our repository and clearly stating the issue that you're facing. Please make sure to follow the guidelines mentioned in CONTRIBUTING.md
+5) You're also free to report a bug in our repository and clearly stating the issue that you're facing. Please make sure to follow the guidelines mentioned in [CONTRIBUTING.md](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/CONTRIBUTING.md)
 
 ## :railway_track: Roadmap
  
