@@ -99,7 +99,7 @@ All you need is Google Chrome! 🕺
     - Enable the developer mode from Chrome > Settings > extension.
     - Click on ***load Unpacked*** button and select the root folder of this repository.
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/Docs/images/Extensions.png)
-    - Enable the chrome extension. 
+    - Enable the chrome extension. <br/>
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/enableSimplyClip.png)
 
 ## :computer: Languages and Requirements
