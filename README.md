@@ -98,8 +98,9 @@ All you need is Google Chrome! 🕺
 1. Manually install Entension using below steps.
     - Enable the developer mode from Chrome > Settings > extension.
     - Click on ***load Unpacked*** button and select the root folder of this repository.
-    - Enable the chrome extension. 
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/Docs/images/Extensions.png)
+    - Enable the chrome extension. 
+![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/Docs/images/enableSimplyClip.png)
 
 ## :computer: Languages and Requirements
 - JavaScript
