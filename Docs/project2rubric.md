@@ -21,7 +21,7 @@
 |.5|test cases exist  |.5| There are number of unit test cases and automated test cases using selenium which covers 88% of the code |
 |.5|Use of code coverage  |.5| Used Selenium to test the code, and acheived code coverage of 88% |
 |.5|other automated analysis tools  |.5| Used automated tools like Selenium for testing, and Github Workflow/Actions for CI/CD pipeline |
-|.5|test cases:.a large proportion of the issues related to handling failing cases. |.5| We ensured that every part of the code works correctly by using selenium test suite.|
+|.5|test cases:.a large proportion of the issues related to handling failing cases. |.5| We ensured that every part of the code works correctly by using selenium test suite. But Whenever a test case is failed an issue is added in the issues section [Issues](https://github.com/umagnanasundaram2128/SimplyClip/issues)|
 |.5|test cases are routinely executed |.5| Github actions are used. After every commit to main branch, automated scripts are run for test cases and a badge is shown in the main project folder and README to indicate if build is successful|
 |1|Documentation describing how this version improves on the older version|1| https://github.com/umagnanasundaram2128/SimplyClip/blob/main/Docs/simplyclip_version2.md|
 |3|This version is a little(1), some(2), much(3) improved on the last version.|Tutor's assessment.|Tutor's assessment.| 
