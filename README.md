@@ -86,11 +86,13 @@ https://user-images.githubusercontent.com/66715000/139998327-13eff7db-3375-4a1b-
 
 ## :shipit: Developers Note
 Basic knowledge of **JavaScript**, **HTML** ,**CSS** should be good enough to contribute to the project
-- popup.js
-- popup.html
-- popup.css
-- content.js
-These are the only files you will be working and rest all are just configuration and documentation files. 
+- [**popup.js**](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/popup.js)
+- [**popup.html**](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/popup.html)
+- [**popup.css**](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/popup.css)
+- [**content.js**](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/content.js)   <br>
+These are the only 4 files you will be working on and rest all are just configuration and documentation files. <br> 
+We will be more than happy to help you extend the functionality of this extension. <br>
+**Happy Coding!!!!**
  
 ## :gear: Add SimplyClip to Google Chrome
 All you need is Google Chrome! 🕺
@@ -166,7 +168,7 @@ Users can download the list of  copied items as a document file or CSV file. The
 1) If the text doesn't get copied, please make sure that the page has the permission to access and modify the system clipboard.
 2) When loading the extension for the first time, reload the pages in order to allow the URLs to prompt for permissions to access the system clipboard.
 3) If none of the above steps work, consider reloading the extension and all the browser pages.
-4) If the issue still persists, please consider writing us at simplyclipcedev@gmail.com and we will get back to you as soon as possible.
+4) If the issue still persists, please consider writing us at csc510project21@gmail.com and we will get back to you as soon as possible.
 5) You're also free to report a bug in our repository and clearly stating the issue that you're facing. Please make sure to follow the guidelines mentioned in [CONTRIBUTING.md](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/CONTRIBUTING.md)
 
 ## :railway_track: Roadmap
