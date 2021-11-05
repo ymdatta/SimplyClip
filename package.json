@@ -31,6 +31,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
     "build": "npm build",
+    "test": "npm run single",
     "istanbul-coverage": "nyc --reporter=html mocha seleniumTest.js",
     "single": "./node_modules/.bin/mocha seleniumTest.js"
   },

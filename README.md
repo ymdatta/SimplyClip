@@ -145,6 +145,18 @@ prettier --write and prettier --check are the most common ways to run Prettier
 - Linting is the automated checking of your source code for programmatic and syntax errors.
 - `npm run lint` to check the linter to check errors in code formatting in the code.
 
+#### Tests
+- Functional tests for the extension could not thoroughly test the entire functionality of the application. 
+- Hence, selenium automated test cases are added.
+- The following test cases are automated
+- 1. The test launches a Chrome Browser with a user profile with the extension added.
+- 2. It then browses to 'google.com' and searches for a specific keyword.
+- 3. The first link is clicked and the text on the results page is copied.
+- 4. Then there is a check to make sure that the copied text exists in the SimplyClip extension.
+- Run `npm run test` to run the selenium automated tests.
+- Run `npm run instanbul-coverage` to check the code coverage.
+
+
 
 ## 📖 Use Case 
 * ***Students***: Students and Research grads can take out snippets from text for easy reference later. We as grad students recently found ourselves in a position where we had to reference a lot of text snippets while recognizing reuses in research papers, SimplyClip does wonders for speeding up similar workflows.
