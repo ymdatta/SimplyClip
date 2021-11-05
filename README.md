@@ -9,7 +9,7 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/umagnanasundaram2128/SimplyClip)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/umagnanasundaram2128/SimplyClip)
 [![basic badge](https://github.com/umagnanasundaram2128/SimplyClip/actions/workflows/coverage.yml/badge.svg)](https://github.com/umagnanasundaram2128/SimplyClip/actions/workflows/coverage.yml/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/umagnanasundaram2128/SimplyClip/badge.svg?branch=main)](https://coveralls.io/github/umagnanasundaram2128/SimplyClip?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/umagnanasundaram2128/SimplyClip/badge.svg?branch=main)](https://github.com/umagnanasundaram2128/SimplyClip#testcase-coverage)
 [![DOI](https://zenodo.org/badge/418303486.svg)](https://zenodo.org/badge/latestdoi/418303486)
 
 ### &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;:paperclips: &emsp;  Clipboard Made Easy For Research &emsp; :paperclips:
@@ -169,6 +169,11 @@ Users can download the list of  copied items as a document file or CSV file. The
 4) If the issue still persists, please consider writing us at simplyclipcedev@gmail.com and we will get back to you as soon as possible.
 5) You're also free to report a bug in our repository and clearly stating the issue that you're facing. Please make sure to follow the guidelines mentioned in [CONTRIBUTING.md](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/CONTRIBUTING.md)
 
+## Testcase coverage:
+ We have acheived test case coverage of 88 percent using selenium
+ 
+ ![](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/testcase_coverage.jpeg)
+ 
 ## :railway_track: Roadmap
  
  ![SimplyClip Project Pipeline](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/RoadMap3.png)
