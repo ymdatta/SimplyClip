@@ -156,7 +156,7 @@ prettier --write and prettier --check are the most common ways to run Prettier
 - Run `npm run test` to run the selenium automated tests.
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/test_cases.png)
 - Run `npm run instanbul-coverage` to check the code coverage.
-
+![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/testcase_coverage.jpeg)
 
 
 ## 📖 Use Case 
