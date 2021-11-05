@@ -194,7 +194,7 @@ Users can download the list of  copied items as a document file or CSV file. The
     <td align="center"><a href="https://github.com/akhilkumarmengani"><img src="https://avatars.githubusercontent.com/u/70975566?v=4" width="75px;" alt=""/><br /><sub><b>Akhil Kumar Mengani</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/umagnanasundaram2128"><img src="https://avatars.githubusercontent.com/u/8946692?v=4" width="75px;" alt=""/><br /><sub><b>Uma Gnanasundaram</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/vamshi-chidara"><img src="https://avatars.githubusercontent.com/u/66715000?v=4" width="75px;" alt=""/><br /><sub><b>Vamshi Chidara</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/nehajaideep"><img src="https://avatars.githubusercontent.com/u/46373273?v=4" width="75px;" alt=""/><br /><sub><b>Neha</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/nehajaideep"><img src="https://avatars.githubusercontent.com/u/46373273?v=4" width="75px;" alt=""/><br /><sub><b>Neha Kotcherlakota</b></sub></a><br /></td>
   </tr>
 </table>
 
