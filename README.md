@@ -71,6 +71,10 @@ SimplyClip :paperclips: is a google chrome extension which enables singular shar
 https://user-images.githubusercontent.com/66715000/139998327-13eff7db-3375-4a1b-b888-5ed63115e31b.mp4
 
 
+## Demo
+
+https://user-images.githubusercontent.com/8946692/140457081-37a5dfd3-9a30-4737-a7f8-0c893cbcf928.mp4
+
 ## :white_check_mark: What Simply Clip Can Do?
 
 - Select multiple text snippets from a single tab (or more!) and magically paste all off them!
@@ -190,12 +194,6 @@ Users can download the list of  copied items as a document file or CSV file. The
 ## :railway_track: Roadmap
  
  ![SimplyClip Project Pipeline](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/RoadMap3.png)
-
-## Demo
-
-https://user-images.githubusercontent.com/8946692/140457081-37a5dfd3-9a30-4737-a7f8-0c893cbcf928.mp4
-
-
 
 ## :handshake: Contributors
 
