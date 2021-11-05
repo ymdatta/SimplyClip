@@ -174,7 +174,11 @@ Users can download the list of  copied items as a document file or CSV file. The
  ![SimplyClip Project Pipeline](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/RoadMap3.png)
 
 ## Demo
-![Phase 2 Demo](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/videos/Phase2Demo.mp4)
+![Phase 2 Demo](https://github.com/umagnanasundaram2128/SimplyClip/blob/download-text/videos/Phase2Demo.mp4)
+
+
+https://user-images.githubusercontent.com/8946692/140456766-edb2b44d-54a5-4c5f-9e95-f1800eb88e02.mp4
+
 
 ## :handshake: Contributors
 
