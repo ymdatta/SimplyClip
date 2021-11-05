@@ -78,11 +78,13 @@ function getClipboardText() {
             downloadDiv1.style.display = 'none';
             downloadDiv2.style.display = 'none';
             searchInput.style.display = 'none';
+            deleteAll.style.display = 'none';
         }
         else {
             emptyDiv.classList.add('hide-div');
             downloadDiv1.style.display = 'block';
             downloadDiv2.style.display = 'block';
+            deleteAll.style.display = 'block';
             document.getElementsByClassName('doc')[0].addEventListener('click', (event) => {
                 downloadClipboardTextAsDoc()
             })
