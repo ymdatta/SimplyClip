@@ -9,7 +9,7 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/umagnanasundaram2128/SimplyClip)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/umagnanasundaram2128/SimplyClip)
 [![basic badge](https://github.com/umagnanasundaram2128/SimplyClip/actions/workflows/coverage.yml/badge.svg)](https://github.com/umagnanasundaram2128/SimplyClip/actions/workflows/coverage.yml/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/umagnanasundaram2128/SimplyClip/badge.svg?branch=main)](https://coveralls.io/github/umagnanasundaram2128/SimplyClip?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/umagnanasundaram2128/SimplyClip/badge.svg?branch=main)](https://github.com/umagnanasundaram2128/SimplyClip#testcase-coverage)
 [![DOI](https://zenodo.org/badge/418303486.svg)](https://zenodo.org/badge/latestdoi/418303486)
 
 ### &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;:paperclips: &emsp;  Clipboard Made Easy For Research &emsp; :paperclips:
@@ -89,10 +89,11 @@ Basic knowledge of **JavaScript**, **HTML** ,**CSS** should be good enough to co
 - [**popup.js**](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/popup.js)
 - [**popup.html**](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/popup.html)
 - [**popup.css**](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/popup.css)
-- [**content.js**](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/content.js)   <br>
-These are the only 4 files you will be working on and rest all are just configuration and documentation files. <br> 
+- [**content.js**](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/content.js)
+
+These are the only 4 files you will be working on and rest all are just configuration and documentation files. <br><br>
 We will be more than happy to help you extend the functionality of this extension. <br>
-**Happy Coding!!!!**
+**Happy Coding!!!!** 😄😄
  
 ## :gear: Add SimplyClip to Google Chrome
 All you need is Google Chrome! 🕺
@@ -111,11 +112,11 @@ All you need is Google Chrome! 🕺
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/enableSimplyClip.png)
 
 ## :computer: Languages and Requirements
-- JavaScript
-- HTML
-- CSS
-- Node.js
-- NPM
+- **JavaScript**
+- **HTML**
+- **CSS**
+- **Node.js**
+- **NPM**
 
 ## 📦 IDE and Packages
 - IDE : [VSCode](https://code.visualstudio.com/)
@@ -145,17 +146,19 @@ prettier --write and prettier --check are the most common ways to run Prettier
 - Linting is the automated checking of your source code for programmatic and syntax errors.
 - `npm run lint` to check the linter to check errors in code formatting in the code.
 
-#### Tests
+## 🧪 Testcase Coverage
 - Functional tests for the extension could not thoroughly test the entire functionality of the application. 
 - Hence, selenium automated test cases are added.
 - The following test cases are automated
-- 1. The test launches a Chrome Browser with a user profile with the extension added.
-- 2. It then browses to 'google.com' and searches for a specific keyword.
-- 3. The first link is clicked and the text on the results page is copied.
-- 4. Then there is a check to make sure that the copied text exists in the SimplyClip extension.
-- Run `npm run test` to run the selenium automated tests.
+  1. The test launches a Chrome Browser with a user profile with the extension added.
+  2. It then browses to 'google.com' and searches for a specific keyword.
+  3. The first link is clicked and the text on the results page is copied.
+  4. Then there is a check to make sure that the copied text exists in the SimplyClip extension.
+- Run `npm run test` to run the selenium automated tests.<br>
+
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/test_cases.png)
-- Run `npm run instanbul-coverage` to check the code coverage.
+- Run `npm run instanbul-coverage` to check the code coverage.<br>
+
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/testcase_coverage.jpeg)
 
 
