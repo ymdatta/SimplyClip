@@ -154,7 +154,7 @@ prettier --write and prettier --check are the most common ways to run Prettier
 - 3. The first link is clicked and the text on the results page is copied.
 - 4. Then there is a check to make sure that the copied text exists in the SimplyClip extension.
 - Run `npm run test` to run the selenium automated tests.
-![Extension](https://github.com/umagnanasundaram2128/SimplyClip/images/test_cases.png)
+![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/test_cases.png)
 - Run `npm run instanbul-coverage` to check the code coverage.
 
 
