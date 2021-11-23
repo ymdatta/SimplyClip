@@ -265,7 +265,11 @@ function addClipboardListItem(text) {
     editImage.src = './images/pencil.png';
     editImage.classList.add("edit");
     deleteImage.src = './images/delete-note.png';
-    deleteImage.classList.add("delete")
+    deleteImage.classList.add("delete");
+    upArrowImage.src = './images/upArrow.png';
+    upArrowImage.classList.add("upArrow");
+    downArrowImage.src = '/images/downArrow.png';
+    downArrowImage.classList.add("downArrow");
 
     editDiv.appendChild(editImage);
     contentDiv.appendChild(editDiv);
@@ -276,7 +280,7 @@ function addClipboardListItem(text) {
     contentDiv.appendChild(upArrowDiv);
     downArrowDiv.appendChild(downArrowImage);
     contentDiv.appendChild(downArrowDiv);
-    
+
     contentDiv.classList.add("content");
     listItem.appendChild(contentDiv);
 
