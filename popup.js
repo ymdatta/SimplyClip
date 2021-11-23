@@ -193,15 +193,29 @@ function addClipboardListItem(text) {
         deleteDiv = document.createElement("div"),
         editDiv = document.createElement("div"),
         contentDiv = document.createElement("div"),
-        editImage = document.createElement("img");
-        // listDiv.className = 'Textfile';
+        editImage = document.createElement("img"),
+        upArrowImage = document.createElement("img"),
+        downArrowImage = document.createElement("img"),
+        upArrowDiv = document.createElement("div"),
+        downArrowDiv = document.createElement("div");
+
     editImage.setAttribute("data-toggle", "tooltip");
     editImage.setAttribute("data-placement", "bottom");
     editImage.setAttribute("title", "Click to edit the text entry!");
+
     let deleteImage = document.createElement("img");
     deleteImage.setAttribute("data-toggle", "tooltip");
     deleteImage.setAttribute("data-placement", "bottom");
     deleteImage.setAttribute("title", "Click to delete the text entry!");
+
+    upArrowImage.setAttribute("data-toggle", "tooltip");
+    upArrowImage.setAttribute("data-placement", "bottom");
+    upArrowImage.setAttribute("title", "Click to move up the text entry!");
+
+    downArrowImage.setAttribute("data-toggle", "tooltip");
+    downArrowImage.setAttribute("data-placement", "bottom");
+    downArrowImage.setAttribute("title", "Click to move down the text entry!");
+
     let listPara = document.createElement("p");
     listPara.classList.add('paraColorLight');
     let listText = document.createTextNode(text);
@@ -251,13 +265,18 @@ function addClipboardListItem(text) {
     editImage.src = './images/pencil.png';
     editImage.classList.add("edit");
     deleteImage.src = './images/delete-note.png';
-    // deleteImage.src = 'https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-1432400-1211078.png'
     deleteImage.classList.add("delete")
 
     editDiv.appendChild(editImage);
     contentDiv.appendChild(editDiv);
     deleteDiv.appendChild(deleteImage);
     contentDiv.appendChild(deleteDiv);
+
+    upArrowDiv.appendChild(upArrowImage);
+    contentDiv.appendChild(upArrowDiv);
+    downArrowDiv.appendChild(downArrowImage);
+    contentDiv.appendChild(downArrowDiv);
+    
     contentDiv.classList.add("content");
     listItem.appendChild(contentDiv);
 
