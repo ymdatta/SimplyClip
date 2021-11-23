@@ -320,7 +320,7 @@ function addClipboardListItem(text) {
         })
     })
 
-    upArrowImage.addEventListener('click', (event) => {
+        upArrowImage.addEventListener('click', (event) => {
         console.log("Up arrow clicked");
         chrome.storage.sync.get(['list'], clipboard => {
             let list = clipboard.list;
@@ -352,8 +352,8 @@ function addClipboardListItem(text) {
                 }
             })
 
-            
-            chrome.storage.sync.set({ 'list': list }, () => getClipboardText());
+            if(index!=0)
+                chrome.storage.sync.set({ 'list': list }, () => getClipboardText());
         })
     })
 
