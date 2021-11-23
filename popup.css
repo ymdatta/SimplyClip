@@ -156,6 +156,14 @@ ul li{
     transform: translateY(1px);
 }
 
+.upArrow:hover{
+    transform: translateY(1px);
+}
+
+.downArrow:hover{
+    transform: translateY(1px);
+}
+
 .icon_32{
     /*background: url('images/paper-clip_32.png'); */
     /* background: url('images/paper-note-32.png'); */
