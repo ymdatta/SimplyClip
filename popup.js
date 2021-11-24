@@ -17,41 +17,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+const checkbox = document.getElementById('dark_mode')
+checkbox.addEventListener('click',checkMode)
+
 
 let _clipboardList = document.querySelector("#clipboard_list");
 let addButton = document.getElementById('add-btn');
-
-let darkButton = document.getElementById('dark_button');
-darkButton.addEventListener('click',(event)=> {
-
-
-    let BodyDiv = document.getElementById('Body');
-    let headertext = document.getElementById('headertext1');
-    let search = document.getElementById('searchText');
-    let header = document.getElementById('header');
-    let togging = document.getElementById('toggler');
-    // let _clipboardList1 = document.querySelector(".listdiv.p"); 
-    if(darkButton.value=="Dark Mode"){
-        darkButton.value="Light Mode";
-        BodyDiv.style.backgroundColor = 'black';
-        headertext.style.color = 'white';
-        search.style.backgroundColor = '#091d56';
-        header.style.backgroundColor = 'yellow';
-        togging.style.backgroundColor = '#22a195';
-        // _clipboardList1.style.backgroundColor = 'aliceblue';
-
-    }
-    else{
-        darkButton.value="Dark Mode";
-        BodyDiv.style.backgroundColor = 'white';
-        headertext.style.color = 'black';
-        search.style.backgroundColor = 'white';
-        header.style.backgroundColor = 'white';
-        togging.style.backgroundColor = 'black';
-    }  
-        
-});
-
 
 addButton.addEventListener('click', (event) => {
         let textitem = ''
@@ -217,7 +188,6 @@ function addClipboardListItem(text) {
     downArrowImage.setAttribute("title", "Click to move down the text entry!");
 
     let listPara = document.createElement("p");
-    listPara.classList.add('paraColorLight');
     let listText = document.createTextNode(text);
     listPara.setAttribute("data-toggle", "tooltip");
     listPara.setAttribute("data-placement", "bottom");
@@ -450,7 +420,7 @@ function searchClipboardText() {
 var enabled = false;
 var myButton = document.getElementById('toggle-button');
 
-chrome.storage.local.get('enabled', (data) => {
+chrome.storage.local.get('enabled', data => {
     var myButton = document.getElementById('toggle-button');
     enabled = !!data.enabled;
     switchButton = document.getElementsByClassName('switch')[0]
@@ -541,9 +511,65 @@ function deleteAllText() {
     ul.innerHTML = "";
 }
 
-/**
- * Changes the mode of the simply clip to Dark Mode
- * @example
- * colorChange()
+/*
+ * Switching to Dark Mode or ligth mode
  */
 
+function checkMode(){
+    if (checkbox.checked){
+        darkmodeOn()
+    }
+    else{
+        darkmodeOFF()
+    }
+}
+
+function darkmodeOn(){
+    document.body.classList.add('dark_mode')
+}
+
+function darkmodeOFF(){
+    document.body.classList.remove('dark_mode')
+}
+
+var darkmode = false;
+var myButton2 = document.getElementById('dark_mode');
+
+chrome.storage.local.get('darkmode', data => {
+    var myButton2 = document.getElementById('dark_mode');
+    darkmode = !!data.darkmode;
+    switchButton = document.getElementsByClassName('switch')[1]
+    if(darkmode==true){
+        myButton2.checked = darkmode
+        darkmodeOn()
+        switchButton.title="Click here to close dark mode!!"
+    }
+    else{
+        myButton2.checked = darkmode
+        switchButton.title="Click here to enable dark mode!!"
+    }
+});
+
+myButton2.onchange = () => {
+    darkmode = !darkmode;
+    switchButton = document.getElementsByClassName('switch')[1]
+    if(darkmode==true){
+        myButton2.checked = darkmode
+        darkmodeOn()
+        switchButton.title="Click here to close dark mode!!"
+    }
+    else{
+        myButton2.checked = darkmode
+        switchButton.title="Click here to enable dark mode!!"
+    }
+    chrome.storage.local.set({darkmode:darkmode});
+};
+
+/**
+ * Text Area height chnage based on input size
+ */
+
+let textArea = document.querySelector("#searchText");
+textArea.oninput = () => {
+    textArea.style.height = (textArea.scrollHeight)+"px";
+} 
