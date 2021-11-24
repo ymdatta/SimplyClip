@@ -7,13 +7,8 @@ body{
     position: relative;
     width: 400px;
     border-right: solid;
-    background-color: white;
 }
 
-
-#headertext{
-    color:black;
-}
 p{
     margin-bottom: 0;
 }
@@ -38,9 +33,6 @@ p{
     padding: 0;
 }
 
-.dark{
-    background-color: black;
-}
 ul{
     list-style: none;
     padding: 0;
@@ -76,13 +68,6 @@ ul li{
     height: 100%;
 }
 
-.paraColorLight{
-    background-color: white;
-}
-
-.paraColorDark{
-    background-color: royalblue;
-}
 
 .list-div{
     
@@ -275,13 +260,12 @@ ul li{
     margin-left: 15px !important; 
     width: 60% !important;
     margin-top: 6px; 
-    height: 50px !important;
-}
-#searchText {
-    height: 40px !important;
-    width: 90% !important;
 }
 
+#searchText {
+    width: 79% !important;
+    max-height: 200px;
+}
 #header {
     border-style: solid;
 }
@@ -395,4 +379,10 @@ ul li{
   
   .slider.round:before {
     border-radius: 50%;
+  }
+
+
+  .dark_mode {
+    background-color: black;
+    color: white;
   }

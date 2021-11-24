@@ -10,18 +10,17 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 
-<body id = "Body"> 
+<body> 
 <!--   I-Frame for script injection in order to test the extension using automated script. Uncomment the below line to test the code-->
 <!--   <iframe src="./test/test.html" style="width: 0px;height: 0px;border:0;" title="description"></iframe>-->
- 
-<input type="button" id="dark_button" style = " margin-top: 10%; margin-left: 35%; border-radius: 20px; padding: 2%;" value="Dark Mode" />
-
-
-<div>
   <div class="container-fluid p-5 text-black">
     <label class="switch" title="Click here to save your copied text!!">
       <input type="checkbox" id="toggle-button" >
-      <span id = "toggler" class="slider round"></span>
+      <span class="slider round"></span>
+    </label>
+    <label class="switch" title="Click here to swith to dark mode">
+      <input type="checkbox" id="dark_mode" >
+      <span class="slider round"></span>
     </label>
     <div class="text-center">
       <div class="row">
@@ -29,7 +28,7 @@
           <img src="images/paper-note-32.png" class='icon_32' id = "column" ></img>
         </div>
 
-        <div id = "headertext1"class="column headertext" >
+        <div class="column headertext" >
           <h2 >SimplyClip</h2>
         </div>
 
@@ -54,7 +53,7 @@
     </div>
   </div>
   <div class="text-left" id="search">
-    <input type="text" id="searchText" class="form-control" placeholder="search for text" autofocus />
+    <textarea id="searchText" placeholder="search for text" autofocus></textarea>
   </div>
 
   <!--
@@ -71,7 +70,6 @@
       </a>
     </div>
   </div>
-</div>
 
   <ul id="clipboard_list"></ul>
   <div id="snackbar">Text copied!</div>
