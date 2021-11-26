@@ -407,36 +407,57 @@ merging.addEventListener('click', () => {
     const data = document.getElementsByClassName('data');
     const list1 = document.getElementsByClassName('listitem');
     const del = document.getElementsByClassName('delete');
-    const listTest = []
+    const indexes = []
     for (var i=0; i<checkboxes.length; i++){
         if (checkboxes[i].checked){
             merged_data += " " + (data[i].innerText);
-            listTest.push(i)
+            indexes.push(i)
         }
     }
     
-    for(var i = listTest.length-1; i>=0; i--){
-        list1[i].remove()
+    for(var i = indexes.length-1; i>=0; i--){
+        chrome.storage.sync.get(['list'], clipboard => {
+            let list = clipboard.list;
+            list.splice(indexes[i], 1);
+            console.log(list)
+            chrome.storage.sync.get(['listURL'], url => {
+                let urlList = url.listURL;
+                urlList.splice(indexes[i],1);
+                chrome.storage.sync.set({ 'listURL': urlList })
+            })
+            chrome.storage.sync.get(['originalList'], original => {
+                let originalList = original.originalList;
+                originalList == undefined && (originalList = []);
+                originalList.splice(indexes[i], 1);
+                chrome.storage.sync.set({ 'originalList': originalList })
+            })
+            chrome.storage.sync.set({ 'list': list });
+        })
+        list1[indexes[i]].remove();
         
     }
     console.log(merged_data)
     addClipboardListItem(merged_data)
     chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
-        list.push(merged_data);
-        chrome.storage.sync.set({ 'list': list }, () => { console.log("Text updated"); });
+        list == undefined && (list = []);
+        list.unshift(merged_data);
+        _clipboardList.innerHTML = "";
+        chrome.storage.sync.get(['listURL'], url => {
+            let urlList = url.listURL;
+            urlList == undefined && (urlList = []);
+            urlList.unshift("Merged");
+            chrome.storage.sync.set({ 'listURL': urlList })
+        })
+        chrome.storage.sync.get(['originalList'], original => {
+            let originalList = original.originalList;
+            originalList == undefined && (originalList = []);
+            originalList.unshift(merged_data);
+            chrome.storage.sync.set({ 'originalList': originalList })
+        })
+        chrome.storage.sync.set({ 'list': list }, () => getClipboardText());
     })
-    chrome.storage.sync.get(['listURL'], url => {
-        let urlList = url.listURL;
-        urlList.push("Merged");
-        chrome.storage.sync.set({ 'listURL': urlList })
-    })
-    chrome.storage.sync.get(['originalList'], original => {
-        let originalList = original.originalList;
-        originalList == undefined && (originalList = []);
-        originalList.push(merged_data);
-        chrome.storage.sync.set({ 'originalList': originalList })
-    })
+    // getClipboardText(list)
 })
 
 /**
