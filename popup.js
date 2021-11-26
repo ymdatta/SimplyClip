@@ -192,6 +192,8 @@ function addClipboardListItem(text) {
     listPara.setAttribute("data-toggle", "tooltip");
     listPara.setAttribute("data-placement", "bottom");
     listPara.setAttribute("title", "Click to copy the below text:\n" + text);
+    listPara.classList.add("data");
+    listItem.classList.add("listitem");
     let popupLink = document.createElement('a');
     let imagePopup = document.createElement('img');
     prevText = text;
@@ -245,6 +247,11 @@ function addClipboardListItem(text) {
     downArrowImage.src = '/images/downArrow.png';
     downArrowImage.classList.add("downArrow");
 
+    var checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.classList.add('checkbox');
+    contentDiv.appendChild(checkbox);
+
     editDiv.appendChild(editImage);
     contentDiv.appendChild(editDiv);
     deleteDiv.appendChild(deleteImage);
@@ -276,23 +283,7 @@ function addClipboardListItem(text) {
 
     deleteImage.addEventListener('click', (event) => {
         console.log("Delete clicked");
-        chrome.storage.sync.get(['list'], clipboard => {
-            let list = clipboard.list;
-            let index = list.indexOf(text);
-            list.splice(index, 1);
-            _clipboardList.innerHTML = "";
-            chrome.storage.sync.get(['listURL'], url => {
-                let urlList = url.listURL;
-                urlList.splice(index, 1);
-                chrome.storage.sync.set({ 'listURL': urlList })
-            })
-            chrome.storage.sync.get(['originalList'], original => {
-                let originalList = original.originalList;
-                originalList.splice(index, 1);
-                chrome.storage.sync.set({ 'originalList': originalList })
-            })
-            chrome.storage.sync.set({ 'list': list }, () => getClipboardText());
-        })
+        deleteElem(text);
     })
 
     upArrowImage.addEventListener('click', (event) => {
@@ -389,6 +380,64 @@ function addClipboardListItem(text) {
     });
 }
 
+
+function deleteElem(text){
+    chrome.storage.sync.get(['list'], clipboard => {
+        let list = clipboard.list;
+        let index = list.indexOf(text);
+        list.splice(index, 1);
+        _clipboardList.innerHTML = "";
+        chrome.storage.sync.get(['listURL'], url => {
+            let urlList = url.listURL;
+            urlList.splice(index, 1);
+            chrome.storage.sync.set({ 'listURL': urlList })
+        })
+        chrome.storage.sync.get(['originalList'], original => {
+            let originalList = original.originalList;
+            originalList.splice(index, 1);
+            chrome.storage.sync.set({ 'originalList': originalList })
+        })
+        chrome.storage.sync.set({ 'list': list }, () => getClipboardText());
+    })
+}
+let merging = document.getElementById("merge-btn");
+merging.addEventListener('click', () => {
+    merged_data = "";
+    const checkboxes = document.getElementsByClassName('checkbox');
+    const data = document.getElementsByClassName('data');
+    const list1 = document.getElementsByClassName('listitem');
+    const del = document.getElementsByClassName('delete');
+    const listTest = []
+    for (var i=0; i<checkboxes.length; i++){
+        if (checkboxes[i].checked){
+            merged_data += " " + (data[i].innerText);
+            listTest.push(i)
+        }
+    }
+    
+    for(var i = listTest.length-1; i>=0; i--){
+        list1[i].remove()
+        
+    }
+    console.log(merged_data)
+    addClipboardListItem(merged_data)
+    chrome.storage.sync.get(['list'], clipboard => {
+        let list = clipboard.list;
+        list.push(merged_data);
+        chrome.storage.sync.set({ 'list': list }, () => { console.log("Text updated"); });
+    })
+    chrome.storage.sync.get(['listURL'], url => {
+        let urlList = url.listURL;
+        urlList.push("Merged");
+        chrome.storage.sync.set({ 'listURL': urlList })
+    })
+    chrome.storage.sync.get(['originalList'], original => {
+        let originalList = original.originalList;
+        originalList == undefined && (originalList = []);
+        originalList.push(merged_data);
+        chrome.storage.sync.set({ 'originalList': originalList })
+    })
+})
 
 /**
  * Retrives the copied text from the storage ,
