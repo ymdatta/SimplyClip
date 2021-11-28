@@ -70,7 +70,12 @@ addButton.addEventListener('click', (event) => {
  * @example
  *  getClipboardText()
  */
+
+
+ 
+  
 function getClipboardText() {
+
     chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
         let emptyDiv = document.getElementById('empty-div');
@@ -169,6 +174,7 @@ function addClipboardListItem(text) {
         downArrowImage = document.createElement("img"),
         upArrowDiv = document.createElement("div"),
         downArrowDiv = document.createElement("div");
+        summDiv = document.createElement("div")
 
     editImage.setAttribute("data-toggle", "tooltip");
     editImage.setAttribute("data-placement", "bottom");
@@ -186,6 +192,11 @@ function addClipboardListItem(text) {
     downArrowImage.setAttribute("data-toggle", "tooltip");
     downArrowImage.setAttribute("data-placement", "bottom");
     downArrowImage.setAttribute("title", "Click to move down the text entry!");
+
+    summImage = document.createElement("img");
+    summImage.setAttribute("data-toggle", "tooltip");
+    summImage.setAttribute("data-placement", "bottom");
+    summImage.setAttribute("title", "Click to summarize the text entry!");
 
     let listPara = document.createElement("p");
     let listText = document.createTextNode(text);
@@ -246,6 +257,8 @@ function addClipboardListItem(text) {
     upArrowImage.classList.add("upArrow");
     downArrowImage.src = '/images/downArrow.png';
     downArrowImage.classList.add("downArrow");
+    summImage.src = './images/summarize.png';
+    summImage.classList.add("summarize");
 
     var checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
@@ -261,6 +274,8 @@ function addClipboardListItem(text) {
     contentDiv.appendChild(upArrowDiv);
     downArrowDiv.appendChild(downArrowImage);
     contentDiv.appendChild(downArrowDiv);
+    summDiv.appendChild(summImage);
+    contentDiv.appendChild(summDiv);
 
     contentDiv.classList.add("content");
     listItem.appendChild(contentDiv);
@@ -284,6 +299,50 @@ function addClipboardListItem(text) {
     deleteImage.addEventListener('click', (event) => {
         console.log("Delete clicked");
         deleteElem(text);
+    })
+
+
+    function doDjangoCall(type, url, callback) {
+        var xmlhttp = new XMLHttpRequest();
+      
+        xmlhttp.onreadystatechange = function () {
+          if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 200) {
+            var data = xmlhttp.responseText;
+            if (callback) callback(data);
+          }
+        };
+      
+        xmlhttp.open(type, url, true);
+        xmlhttp.send();
+      }
+
+
+
+    summImage.addEventListener('click', (event) => {
+        console.log("Summarize button clicked");
+        let finalText = "";
+     //   chrome.storage.sync.get(['list'], clipboard => {
+            let inputText = listPara.textContent;
+            doDjangoCall(
+                "GET",
+                "http://127.0.0.1:8000/text/summarize/"+inputText+"",
+                function (data) {
+                  var value = JSON.parse(data);
+                  summarizedText = value[0].summary_text;
+                  finalText = " Summarized Text :- " + summarizedText;
+                  console.log(finalText);
+                  //list.push(finalText);
+                }
+              );
+        let summTextList = [];
+
+        chrome.storage.sync.get(['summarizedList'], clipboard => {
+            summTextList = clipboard.list;
+            console.log(summTextList);
+            summTextList.push(finalText);
+          });  
+          chrome.storage.sync.set({ 'summarizedList': summTextList}, () => getClipboardText());
+       // });
     })
 
     upArrowImage.addEventListener('click', (event) => {
@@ -468,8 +527,13 @@ merging.addEventListener('click', () => {
  * downloadClipboardTextAsDoc()
  */
 function downloadClipboardTextAsDoc(){
+   /* let summTextList = [];
+    chrome.storage.sync.get(['summarizedList'], clipboard => {
+        summTextList = clipboard.list;
+    });*/
     chrome.storage.sync.get(['list'], clipboard => {
         let list = clipboard.list;
+       // list = list.concat(summTextList);
         let emptyDiv = document.getElementById('empty-div');
         if (list === undefined || list.length === 0) {
             emptyDiv.classList.remove('hide-div');
