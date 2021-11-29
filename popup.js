@@ -321,7 +321,6 @@ function addClipboardListItem(text) {
     summImage.addEventListener('click', (event) => {
         console.log("Summarize button clicked");
         let finalText = "";
-     //   chrome.storage.sync.get(['list'], clipboard => {
             let inputText = listPara.textContent;
             doDjangoCall(
                 "GET",
@@ -331,19 +330,21 @@ function addClipboardListItem(text) {
                   summarizedText = value[0].summary_text;
                   finalText = " Summarized Text :- " + summarizedText;
                   console.log(finalText);
-                  //list.push(finalText);
+
+                  chrome.storage.sync.get(['summarizedList'], summclipboard => {
+                    let summlist = summclipboard.summarizedList;
+                    console.log("type of list is "+typeof summlist);
+                    summlist.push(finalText);
+                    chrome.storage.sync.set({ 'summarizedList': summlist }, function() {console.log('Summary Saved');});
+                        console.log("summary appended"); 
+                    });
+
                 }
               );
-        let summTextList = [];
+        
 
-        chrome.storage.sync.get(['summarizedList'], clipboard => {
-            summTextList = clipboard.list;
-            console.log(summTextList);
-            summTextList.push(finalText);
-          });  
-          chrome.storage.sync.set({ 'summarizedList': summTextList}, () => getClipboardText());
-       // });
-    })
+            })
+
 
     upArrowImage.addEventListener('click', (event) => {
     console.log("Up arrow clicked");
@@ -490,6 +491,12 @@ merging.addEventListener('click', () => {
                 originalList.splice(indexes[i], 1);
                 chrome.storage.sync.set({ 'originalList': originalList })
             })
+            chrome.storage.sync.get(['summarizedList'], summList => {
+                let summarizedList = summList.summarizedList;
+                summarizedList == undefined && (summarizedList = []);
+                summarizedList.splice(indexes[i], 1);
+                chrome.storage.sync.set({ 'summarizedList': summarizedList })
+            })
             chrome.storage.sync.set({ 'list': list });
         })
         list1[indexes[i]].remove();
@@ -527,13 +534,10 @@ merging.addEventListener('click', () => {
  * downloadClipboardTextAsDoc()
  */
 function downloadClipboardTextAsDoc(){
-   /* let summTextList = [];
-    chrome.storage.sync.get(['summarizedList'], clipboard => {
-        summTextList = clipboard.list;
-    });*/
     chrome.storage.sync.get(['list'], clipboard => {
+        chrome.storage.sync.get(['summarizedList'], summclipboard => {
         let list = clipboard.list;
-       // list = list.concat(summTextList);
+        let summList = summclipboard.summarizedList;
         let emptyDiv = document.getElementById('empty-div');
         if (list === undefined || list.length === 0) {
             emptyDiv.classList.remove('hide-div');
@@ -541,15 +545,22 @@ function downloadClipboardTextAsDoc(){
         }
         else {
             var list_of_items = []
+            //var list_of_summ_items = []
             emptyDiv.classList.add('hide-div');
             if (typeof list !== undefined){
                 list.forEach(item => {
                     list_of_items = list_of_items + item + "\n\n"
                 });
-                var link, blob, url;
-                blob = new Blob(['\ufeff', list_of_items], {
-                    type: 'application/msword'
+            if (typeof summList !== undefined){
+                summList.forEach(item => {
+                    console.log(item);
+                    list_of_items = list_of_items + item + "\n\n"
                 });
+            var link, blob, url;
+            blob = new Blob(['\ufeff', list_of_items], {
+                type: 'application/msword'
+            });
+
                 url = URL.createObjectURL(blob);
                 link = document.createElement('A');
                 link.href = url;
@@ -562,9 +573,12 @@ function downloadClipboardTextAsDoc(){
             }
 
         }
+    }
     });
-
+   });
 }
+
+
 
 /**
  * Filters the
