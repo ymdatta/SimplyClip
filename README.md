@@ -17,7 +17,7 @@
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/aditya4196/SimplyClip)
 [![GitHub-size](https://img.shields.io/github/languages/code-size/aditya4196/SimplyClip)](https://github.com/aditya4196/SimplyClip)
 [![basic badge](https://github.com/umagnanasundaram2128/SimplyClip/actions/workflows/coverage.yml/badge.svg)](https://github.com/umagnanasundaram2128/SimplyClip/actions/workflows/coverage.yml/badge.svg)
-[![Coverage Status](https://img.shields.io/badge/code%20coverage-88%25-brightgreen)](https://github.com/umagnanasundaram2128/SimplyClip#-testcase-coverage)
+[![Coverage Status](https://img.shields.io/badge/code%20coverage-88%25-brightgreen)](https://github.com/aditya4196/SimplyClip#-testcase-coverage)
 
 ### &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;:paperclips: &emsp;  Clipboard Made Easy For Research &emsp; :paperclips:
 
