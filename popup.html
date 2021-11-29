@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.5">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>SimplyClip</title>
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="popup.css">
 </head>
 
-<body> 
+<body>
 <!--   I-Frame for script injection in order to test the extension using automated script. Uncomment the below line to test the code-->
 <!--   <iframe src="./test/test.html" style="width: 0px;height: 0px;border:0;" title="description"></iframe>-->
   <div class="container-fluid p-5 text-black">
@@ -55,9 +56,13 @@
       <img src="images/merge-img.jpeg" id="merge" width = "35px" height="35px" alt="add" title="Click here to merge the selected clips!">
     </div>
 
+    <div class="text-right" id="send-btn">
+      <img src="images/send.png" id="send" width = "35px" height="35px" alt="add" title="Click here to send the selected clips!">
+    </div>
+
   </div>
   <div class="text-left" id="search">
-    <textarea id="searchText" placeholder="search for text" autofocus></textarea>
+    <textarea id="searchText" placeholder="search for text" width = 80% autofocus></textarea>
   </div>
 
   <!--
@@ -78,7 +83,7 @@
   <ul id="clipboard_list"></ul>
   <div id="snackbar">Text copied!</div>
   <script type="text/javascript" src="popup.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script> 
 </body>
 
 </html>
-

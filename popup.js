@@ -30,7 +30,8 @@ addButton.addEventListener('click', (event) => {
         let downloadDiv1 = document.getElementById('download-btn1');
         let downloadDiv2 = document.getElementById('download-btn2');
         let searchInput = document.getElementById('searchText');
-        
+
+
         emptyDiv.classList.add('hide-div');
         downloadDiv1.style.display = 'block';
         downloadDiv2.style.display = 'block';
@@ -72,8 +73,6 @@ addButton.addEventListener('click', (event) => {
  */
 
 
- 
-  
 function getClipboardText() {
 
     chrome.storage.sync.get(['list'], clipboard => {
@@ -243,7 +242,7 @@ function addClipboardListItem(text) {
             _clipboardList.innerHTML = "";
             chrome.storage.sync.set({ 'list': list }, (parameter) => {
                 getClipboardText();
-                console.log("hello"); 
+                console.log("hello");
             });
         })
     })
@@ -304,14 +303,14 @@ function addClipboardListItem(text) {
 
     function doDjangoCall(type, url, callback) {
         var xmlhttp = new XMLHttpRequest();
-      
+
         xmlhttp.onreadystatechange = function () {
           if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 200) {
             var data = xmlhttp.responseText;
             if (callback) callback(data);
           }
         };
-      
+
         xmlhttp.open(type, url, true);
         xmlhttp.send();
       }
@@ -336,12 +335,12 @@ function addClipboardListItem(text) {
                     console.log("type of list is "+typeof summlist);
                     summlist.push(finalText);
                     chrome.storage.sync.set({ 'summarizedList': summlist }, function() {console.log('Summary Saved');});
-                        console.log("summary appended"); 
+                        console.log("summary appended");
                     });
 
                 }
               );
-        
+
 
             })
 
@@ -403,7 +402,7 @@ function addClipboardListItem(text) {
                     chrome.storage.sync.set({ 'listURL': urlList });
                 }
             })
-            
+
             chrome.storage.sync.get(['originalList'], original => {
                 let originalList = original.originalList;
                 if(index != originalList.length-1){
@@ -474,7 +473,7 @@ merging.addEventListener('click', () => {
             indexes.push(i)
         }
     }
-    
+
     for(var i = indexes.length-1; i>=0; i--){
         chrome.storage.sync.get(['list'], clipboard => {
             let list = clipboard.list;
@@ -500,7 +499,7 @@ merging.addEventListener('click', () => {
             chrome.storage.sync.set({ 'list': list });
         })
         list1[indexes[i]].remove();
-        
+
     }
     console.log(merged_data)
     addClipboardListItem(merged_data)
@@ -760,4 +759,4 @@ myButton2.onchange = () => {
 let textArea = document.querySelector("#searchText");
 textArea.oninput = () => {
     textArea.style.height = (textArea.scrollHeight)+"px";
-} 
+}
