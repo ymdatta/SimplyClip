@@ -35,35 +35,47 @@
 &emsp; &emsp; &emsp; &emsp; &emsp;  ![](https://github.com/aditya4196/SimplyClip/blob/main/images/SimplyClip.gif)
 
 ---
-<!-- ![](https://github.com/umagnanasundaram2128/SimplyClip/tree/main/images/SimplyClip.gif) -->
+# Description
 
-SimplyClip3.0 :paperclips: is a google chrome extension which enables singular shared clipboard for research students and power users.
+SimplyClip3.0 :paperclips: is a google chrome extension which enables singular shared clipboard for research students and power users. Unlimited focus!!!
+ 
+ ## :white_check_mark: What Simply Clip Can Do?
 
-- Ability to recognise multiple text selections
+- Select multiple text snippets from a single tab (or more!) and magically paste all off them!
 - Summarize content from different text selections
 - Merge different text selections
 - Sort text selections based on priority
 - Set Reminders for your research
-- Lets you combine all the copied into a file
+- Ability to manage what selection you want to keep or get rid of.
+- No more switching tabs, say no to all distractions!!
+- Download the copied content to CSV or DOC file with a single click.
+- Work in Dark Mode!
+- Search for any text from the copied content.
+- Helps you to save website URLs from which the text is copied.
+- Disable any time with a toggle, if you don't want the content to copy to extension.
+- Delete all copied items at once.
 - Works across all tabs in the browser
 - Works like a charm for research work
-- Unlimited focus!
-- Powers search for any text you copied sometime back
-- It don't clip your content unless you want it to
-- many more... in Phase 🚀 🚀 🚀 <a href="#railway_track-roadmap">Road Map</a> 
+- many more... 
+ 
+ ## 📖 Use Case 
+* ***Students***: Students and Research grads can take out snippets from text for easy reference later. We as grad students recently found ourselves in a position where we had to reference a lot of text snippets while recognizing reuses in research papers, SimplyClip does wonders for speeding up similar workflows.
+
+* ***Professionals/ Casual Users:***: It’s one issue to fill a repetitive and boring form. It’s an entirely another when we fill multiple of such forms with questions with repeating answers. SimplyClip fits really well in such a case where simple text clips can be saved and reused saving time and effort.
+
+## :question: Why
+While working on finding reuse we spent significant amount of time searching and saving text snippets for further evaluation.Such a repetitive workflow sparked an idea of a clipboard workspace to manage all the recent snippets we have collected while researching.This in turn lead to the development of SimplyClip, in which not only clipboard text is saved, but can also be edited and deleted.Future development pipeline includes cross browser compatibility, exporting and cloud functionalities.
+ 
+ 
 ---
 <p align="center">
   <a href="#white_check_mark-what-simply-clip-can-do">Simply Clip</a>
   |
-  <a href="#gear-add-simplyclip-to-google-chrome">Installation</a>
+  <a href="#gear-getting-started-add-simplyclip-to-google-chrome">Installation</a>
   |
   <a href="#shipit-developers-note">Developers Note</a>
   |
- <a href="#computer-languages-and-requirements">Languages/Packages</a>
-  |
-  <a href="#-use-case">UseCase</a>
-  |
-  <a href="#question-why">Why</a>
+  <a href="#techstack-techstack">TechStack</a>
   |
   <a href="#railway_track-roadmap">RoadMap</a>
   |
@@ -86,19 +98,28 @@ https://user-images.githubusercontent.com/66715000/139998327-13eff7db-3375-4a1b-
 
 https://user-images.githubusercontent.com/8946692/140457081-37a5dfd3-9a30-4737-a7f8-0c893cbcf928.mp4
 
-## :white_check_mark: What Simply Clip Can Do?
+---
 
-- Select multiple text snippets from a single tab (or more!) and magically paste all off them!
-- Ability to manage what slection you want to keep or get rid of.
-- Chrome Extension popup to manage all your snippets in one streamlined window.
-- No more switching tabs, say no to all distractions!!
-- Download the copied content to CSV or DOC file with a single click.
-- Search for any text from the copied content.
-- Helps you to save website URLs from which the text is copied.
-- Disable any time with a toggle, if you don't want the content to copy to extension.
-- Delete all copied items at once.
+## :techstack: TechStack
+ <code><a href="https://www.javascript.com/" target="_blank"><img height="50" src="https://cdn.freelogovectors.net/wp-content/uploads/2020/11/javascript_logo-768x873.png"></a></code>
+ <code><a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank"><img src = "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" width="50"/></a></code>
+ <code><a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank"><img height="50" src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png"></a></code>
+<code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"><img height="50" src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png"></a></code>
 
+- **JavaScript**
+- **Python**
+- **HTML**
+- **CSS**
+- **Node.js**
+- **NPM**
+ 
+ ## Version Control Tools
+<p>
+<img src="https://i.giphy.com/media/KzJkzjggfGN5Py6nkT/200.webp" width="150"><img src="https://i.giphy.com/media/IdyAQJVN2kVPNUrojM/200.webp" width="150"> <img src="https://media.giphy.com/media/UWt0rhp21JgLwoeFQP/giphy.gif" width ="150"/> <img src="https://media.giphy.com/media/kH6CqYiquZawmU1HI6/giphy.gif" width ="150"/> 
+</p>
 
+---
+ 
 ## :shipit: Developers Note
 Basic knowledge of **JavaScript**, **HTML** ,**CSS** should be good enough to contribute to the project
 - [**popup.js**](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/popup.js)
@@ -110,7 +131,7 @@ These are the only 4 files you will be working on and rest all are just configur
 We will be more than happy to help you extend the functionality of this extension. <br>
 **Happy Coding!!!!** 😄😄
  
-## :gear: Add SimplyClip to Google Chrome
+## :gear: Getting started Add SimplyClip to Google Chrome
 All you need is Google Chrome! 🕺
 
 1.  Get the repsitory using any of the below two methords :
@@ -126,13 +147,7 @@ All you need is Google Chrome! 🕺
     - Enable the chrome extension. <br/>
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/enableSimplyClip.png)
 
-## :computer: Languages and Requirements
-- **JavaScript**
-- **HTML**
-- **CSS**
-- **Node.js**
-- **NPM**
-
+---
 ## 📦 IDE and Packages
 - IDE : [VSCode](https://code.visualstudio.com/)
 
@@ -176,14 +191,6 @@ prettier --write and prettier --check are the most common ways to run Prettier
 
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/testcase_coverage.jpeg)
 
-
-## 📖 Use Case 
-* ***Students***: Students and Research grads can take out snippets from text for easy reference later. We as grad students recently found ourselves in a position where we had to reference a lot of text snippets while recognizing reuses in research papers, SimplyClip does wonders for speeding up similar workflows.
-
-* ***Professionals/ Casual Users:***: It’s one issue to fill a repetitive and boring form. It’s an entirely another when we fill multiple of such forms with questions with repeating answers. SimplyClip fits really well in such a case where simple text clips can be saved and reused saving time and effort.
-
-## :question: Why
-While working on finding reuse we spent significant amount of time searching and saving text snippets for further evaluation.Such a repetitive workflow sparked an idea of a clipboard workspace to manage all the recent snippets we have collected while researching.This in turn lead to the development of SimplyClip, in which not only clipboard text is saved, but can also be edited and deleted.Future development pipeline includes cross browser compatibility, exporting and cloud functionalities.
 
 ## :desktop_computer: Functional Descriptions
 #### 1. Copying to the extension clipboard :
