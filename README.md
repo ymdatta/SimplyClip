@@ -2,16 +2,22 @@
 <!-- ![icon](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/paper-clip_32.png)
 # SimplyClip -->
 
+
+[![DOI](https://zenodo.org/badge/429889373.svg)](https://zenodo.org/badge/latestdoi/429889373)
+
+
 ![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m789313708-ea25af592e8a7a84c009055e)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![GitHub issues](https://img.shields.io/github/issues/umagnanasundaram2128/SimplyClip)
+[![GitHub Release](https://img.shields.io/github/release/aditya4196/SimplyClip)](https://github.com/aditya4196/SimplyClip)
+![GitHub language count](https://img.shields.io/github/languages/count/aditya4196/SimplyClip)
+[![GitHub issues](https://img.shields.io/github/issues/aditya4196/SimplyClip)](https://github.com/aditya4196/SimplyClip)
+[![GitHub-closed-issues](https://img.shields.io/github/issues-closed-raw/aditya4196/SimplyClip)](https://github.com/aditya4196/SimplyClip)
 ![Test Cases](https://img.shields.io/badge/tests-passing-green)
-![GitHub contributors](https://img.shields.io/github/contributors/umagnanasundaram2128/SimplyClip)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/umagnanasundaram2128/SimplyClip)
+![GitHub contributors](https://img.shields.io/github/contributors/aditya4196/SimplyClip)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/aditya4196/SimplyClip)
+[![GitHub-size](https://img.shields.io/github/languages/code-size/aditya4196/SimplyClip)](https://github.com/aditya4196/SimplyClip)
 [![basic badge](https://github.com/umagnanasundaram2128/SimplyClip/actions/workflows/coverage.yml/badge.svg)](https://github.com/umagnanasundaram2128/SimplyClip/actions/workflows/coverage.yml/badge.svg)
 [![Coverage Status](https://img.shields.io/badge/code%20coverage-88%25-brightgreen)](https://github.com/umagnanasundaram2128/SimplyClip#-testcase-coverage)
-
-[![DOI](https://zenodo.org/badge/418303486.svg)](https://zenodo.org/badge/latestdoi/418303486)
 
 ### &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;:paperclips: &emsp;  Clipboard Made Easy For Research &emsp; :paperclips:
 
@@ -26,18 +32,22 @@
 ---
 
  
-&emsp; &emsp; &emsp; &emsp; &emsp;  ![](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/SimplyClip.gif)
+&emsp; &emsp; &emsp; &emsp; &emsp;  ![](https://github.com/aditya4196/SimplyClip/blob/main/images/SimplyClip.gif)
 
 ---
 <!-- ![](https://github.com/umagnanasundaram2128/SimplyClip/tree/main/images/SimplyClip.gif) -->
 
-SimplyClip2.0 :paperclips: is a google chrome extension which enables singular shared clipboard for research students and power users.
+SimplyClip3.0 :paperclips: is a google chrome extension which enables singular shared clipboard for research students and power users.
 
 - Ability to recognise multiple text selections
+- Summarize content from different text selections
+- Merge different text selections
+- Sort text selections based on priority
+- Set Reminders for your research
+- Lets you combine all the copied into a file
 - Works across all tabs in the browser
 - Works like a charm for research work
 - Unlimited focus!
-- Lets you combine all the copied into a file
 - Powers search for any text you copied sometime back
 - It don't clip your content unless you want it to
 - many more... in Phase 🚀 🚀 🚀 <a href="#railway_track-roadmap">Road Map</a> 
@@ -198,15 +208,12 @@ Users can download the list of  copied items as a document file or CSV file. The
 
 ## :handshake: Contributors
 
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/niveditalodha"><img src="https://avatars.githubusercontent.com/u/40229663?v=4" width="75px;" alt=""/><br /><sub><b>Nivedita Lodha</b></sub></a></td>
-    <td align="center"><a href="https://github.com/akhilkumarmengani"><img src="https://avatars.githubusercontent.com/u/70975566?v=4" width="75px;" alt=""/><br /><sub><b>Akhil Kumar Mengani</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/umagnanasundaram2128"><img src="https://avatars.githubusercontent.com/u/8946692?v=4" width="75px;" alt=""/><br /><sub><b>Uma Gnanasundaram</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/vamshi-chidara"><img src="https://avatars.githubusercontent.com/u/66715000?v=4" width="75px;" alt=""/><br /><sub><b>Vamshi Chidara</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/nehajaideep"><img src="https://avatars.githubusercontent.com/u/46373273?v=4" width="75px;" alt=""/><br /><sub><b>Neha Kotcherlakota</b></sub></a><br /></td>
-  </tr>
-</table>
+
+1. Aditya Ravikant Jadhav (ajadhav3@ncsu.edu)
+2. Harsh Vijay Bathija (hbathij@ncsu.edu)
+3. Ashritha Bommagani (abommag@ncsu.edu)
+4. Abhishek Arvindkumar Upadhyay (aaupadhy@ncsu.edu)
+5. Akash Mukesh Sanghani (amsangha@ncsu.edu)
 
 ***Enjoy using SimplyClip. Make sure to follow the page for any new updates!*** 
 
