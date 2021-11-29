@@ -115,3 +115,93 @@ describe('Check simply clip functionality',function() {
         driver.quit();
     }).timeout(10000);
 });
+
+
+describe('Check dark mode functionality',function() {
+    it('copied text should exist in SimplyClip clipboard', async function () {
+        // Open the Chrome Browser with a custom profile
+        const options = new chrome.Options()
+            .addArguments('--user-data-dir=/Users/nehakotcherlakota/Desktop');
+
+        // Initialise driver to launch Chrome
+        const driver = new webdriver.Builder()
+            .forBrowser('chrome')
+            .setChromeOptions(options)
+            .build();
+
+        // Launch Google.com
+        driver.get('http://google.com');
+
+        // Search for dark mode button and click on it
+        const dark_mode = driver.findElement(By.xpath("/html/body/div[1]/label[2]/span"));
+        dark_mode.sendKeys(Key.RETURN);
+        dark_mode.click();
+
+        // Close the browser
+        driver.close();
+
+        // Quit the browser
+        driver.quit();
+    }).timeout(10000);
+});
+
+
+describe('Check sorting functionality',function() {
+    it('copied text should exist in SimplyClip clipboard', async function () {
+        // Open the Chrome Browser with a custom profile
+        const options = new chrome.Options()
+            .addArguments('--user-data-dir=/Users/nehakotcherlakota/Desktop');
+
+        // Initialise driver to launch Chrome
+        const driver = new webdriver.Builder()
+            .forBrowser('chrome')
+            .setChromeOptions(options)
+            .build();
+
+        // Launch Google.com
+        driver.get('http://google.com');
+
+        // Search for prioty down button
+        const priority_down = driver.findElement(By.xpath("/html/body/ul/li[1]/div/div[5]/img"));
+        priority_down.click();
+
+        // Close the browser
+        driver.close();
+
+        // Quit the browser
+        driver.quit();
+    }).timeout(10000);
+});
+
+describe('Check Merge functionality',function() {
+    it('copied text should exist in SimplyClip clipboard', async function () {
+        // Open the Chrome Browser with a custom profile
+        const options = new chrome.Options()
+            .addArguments('--user-data-dir=/Users/nehakotcherlakota/Desktop');
+
+        // Initialise driver to launch Chrome
+        const driver = new webdriver.Builder()
+            .forBrowser('chrome')
+            .setChromeOptions(options)
+            .build();
+
+        // Launch Google.com
+        driver.get('http://google.com');
+
+        const checkbx1 = driver.findElement(By.xpath("/html/body/ul/li[1]/div/input"));
+        checkbx1.click();
+
+        const checkbx2 = driver.findElement(By.xpath("/html/body/ul/li[2]/div/input"));
+        checkbx2.click();
+
+        // Search for merge button
+        const merge = driver.findElement(By.xpath("/html/body/div[1]/div[2]/img"));
+        merge.click();
+
+        // Close the browser
+        driver.close();
+
+        // Quit the browser
+        driver.quit();
+    }).timeout(10000);
+});
