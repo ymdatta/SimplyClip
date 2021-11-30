@@ -32,7 +32,7 @@ jobs:
     - name: Test with coverage
       working-directory: ./simplyclip_backend
       run: |
-        python3 -m coverage run /textanalysis/tests/test_url.py
+        python3 -m coverage run textanalysis/tests/test_url.py
         python3 -m coverage report
     - name: Upload Coverage to Codecov
       uses: codecov/codecov-action@v1
