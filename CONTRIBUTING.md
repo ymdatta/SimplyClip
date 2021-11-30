@@ -11,17 +11,9 @@ Have you identified a reproducible problem in our sample code? Have a feature re
 
 ### Where to Report
 
-You can report the issues by contacting us on our email ids.
+You can report the issues by contacting us on adityajadhav537@gmail.com.
 
--amengan@ncsu.edu
 
--nkotche@ncsu.edu
-
--nnlodha@ncsu.edu
-
--schidar@ncsu.edu
-
--ugnanas@ncsu.edu 
 
 ### Look For an Existing Issue
 
