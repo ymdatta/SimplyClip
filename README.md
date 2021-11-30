@@ -147,6 +147,20 @@ All you need is Google Chrome! 🕺
     - Enable the chrome extension. <br/>
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/enableSimplyClip.png)
 
+## Backend Instructions to Run
+1.  ```
+    cd simplyclip_backend
+    ```
+2.  ```
+    python3 -m pip install -r requirements.txt
+    ```
+3.  ```
+    python3 manage.py migrate
+    ```
+4.  ```
+    python3 manage.py runserver
+    ```
+    Your backend Django application will run on http://127.0.0.1:8000/
 ---
 ## 📦 IDE and Packages
 - IDE : [VSCode](https://code.visualstudio.com/)
