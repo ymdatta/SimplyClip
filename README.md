@@ -221,11 +221,51 @@ Users can download the list of  copied items as a document file or CSV file. The
 2) When loading the extension for the first time, reload the pages in order to allow the URLs to prompt for permissions to access the system clipboard.
 3) If none of the above steps work, consider reloading the extension and all the browser pages.
 4) If the issue still persists, please consider writing us at csc510project21@gmail.com and we will get back to you as soon as possible.
-5) You're also free to report a bug in our repository and clearly stating the issue that you're facing. Please make sure to follow the guidelines mentioned in [CONTRIBUTING.md](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/CONTRIBUTING.md)
+5) You're also free to report a bug in our repository and clearly stating the issue that you're facing. Please make sure to follow the guidelines mentioned in [CONTRIBUTING.md](https://github.com/aditya4196/SimplyClip/blob/Group10DeveloperBranch/CONTRIBUTING.md)
 
+ ---
+ 
 ## :railway_track: Roadmap
  
- ![SimplyClip Project Pipeline](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/RoadMap3.png)
+### Phase 1:
+
+- [x] Implemented the UI for chrome
+- [x] Integrate the chrome storage API to store and process copied text
+- [x] Tooltip implementation for the text copied to the clipboard
+- [x] Implementing copying functionality from clipboard to anywhere on the PC
+- [x] Editing the item on the Clipboard
+
+
+### Phase 2
+
+- [x] Brand new interactive UI
+- [x] Search across the copied text items
+- [x] Disable the extension with a toggle
+- [x] Website from which the text is copied is maintained and stored
+- [x] Old and new version of text is stored when text Is edited
+- [x] Export the copied content to DOC file
+- [x] Delete all copied items
+- [x] Add new item to the list
+- [x] Expand text area in edit mode
+
+### Phase 3 : Successful Functional Improvements in SimplyClip3.0:
+
+- [x] Summarise text items from the list 
+- [x] Sorting text items based on priority
+- [x] Merging similar text items from the list
+- [x] Dark Mode
+- [x] Expanding text area while searching
+- [x] Export the copied content to CSV and DOC file
+- [x] Export the summarised content to DOC file
+
+
+### Future Enhancements:
+
+- [ ] Domain Entity for similar content
+- [ ] Citation fetching
+- [ ] Better training  data for Summariser 
+- [ ] Copy image to clipboard
+ 
 
 ## :handshake: Contributors
 
