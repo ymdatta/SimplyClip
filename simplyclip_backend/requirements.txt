@@ -9,8 +9,8 @@ catalogue==2.0.6
 certifi==2021.10.8
 charset-normalizer==2.0.6
 click==7.1.2
-coverage==5.1
-coverage-badge==1.0.2
+coverage
+coverage-badge
 cycler==0.11.0
 cymem==2.0.5
 Django==3.2.4
