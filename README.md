@@ -96,7 +96,7 @@ https://user-images.githubusercontent.com/66715000/139998327-13eff7db-3375-4a1b-
 
 ## Demo
 
-https://user-images.githubusercontent.com/8946692/140457081-37a5dfd3-9a30-4737-a7f8-0c893cbcf928.mp4
+https://www.youtube.com/watch?v=ETtvNNvfhzU
 
 ---
 
@@ -190,6 +190,7 @@ prettier --write and prettier --check are the most common ways to run Prettier
 - Linting is the automated checking of your source code for programmatic and syntax errors.
 - `npm run lint` to check the linter to check errors in code formatting in the code.
 
+---
 ## 🧪 Testcase Coverage
 - Functional tests for the extension could not thoroughly test the entire functionality of the application. 
 - Hence, selenium automated test cases are added.
@@ -223,7 +224,7 @@ Users can download the list of  copied items as a document file or CSV file. The
 4) If the issue still persists, please consider writing us at csc510project21@gmail.com and we will get back to you as soon as possible.
 5) You're also free to report a bug in our repository and clearly stating the issue that you're facing. Please make sure to follow the guidelines mentioned in [CONTRIBUTING.md](https://github.com/aditya4196/SimplyClip/blob/Group10DeveloperBranch/CONTRIBUTING.md)
 
- ---
+---
  
 ## :railway_track: Roadmap
  
