@@ -267,7 +267,7 @@ Users can download the list of  copied items as a document file or CSV file. The
 - [ ] Better training  data for Summariser 
 - [ ] Copy image to clipboard
  
-
+---
 ## :handshake: Contributors
 
 
