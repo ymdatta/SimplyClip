@@ -17,7 +17,7 @@
 |.5|Use of style checkers | [Github Django YAML Config](https://github.com/aditya4196/SimplyClip/blob/Group10DeveloperBranch/.github/workflows/django.yml), [Github Coverage YAML](https://github.com/aditya4196/SimplyClip/blob/Group10DeveloperBranch/.github/workflows/coverage.yml)|.5|
 |.5|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code. |[Animated Video](https://github.com/aditya4196/SimplyClip#-punch-line), [Demo](https://github.com/aditya4196/SimplyClip#demo)|.5|
 |.5|test cases exist  | [Test Cases](https://github.com/aditya4196/SimplyClip/blob/Group10DeveloperBranch/seleniumTest.js), [Django TestCase]()|.5|
-|.5|Use of code coverage  |[Github YAML Config](https://github.com/aditya4196/SimplyClip#-testcase-coverage)|.5|
+|.5|Use of code coverage  |[UI Coverage](https://github.com/aditya4196/SimplyClip#-testcase-coverage), [Django Coverage](https://github.com/aditya4196/SimplyClip/runs/4419102402?check_suite_focus=true)|.5|
 |.5|other automated analysis tools  | [Github YAML Config](https://github.com/aditya4196/SimplyClip/blob/Group10DeveloperBranch/.github/workflows/django.yml), [Github Coverage YAML](https://github.com/aditya4196/SimplyClip/blob/Group10DeveloperBranch/.github/workflows/coverage.yml)|.5|
 |.5|test cases:.a large proportion of the issues related to handling failing cases. |[Failed Tests Resolution Milestone issues](https://github.com/aditya4196/SimplyClip/milestone/5?closed=1)|.5|
 |.5|test cases are routinely executed |[Github Action Flow](https://github.com/aditya4196/SimplyClip/actions/runs/1519341351)|.5|
