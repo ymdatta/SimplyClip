@@ -166,6 +166,7 @@ function addClipboardListItem(text) {
     let listItem = document.createElement("li"),
         listDiv = document.createElement("div"),
         deleteDiv = document.createElement("div"),
+        highlightDiv = document.createElement("div"),
         editDiv = document.createElement("div"),
         contentDiv = document.createElement("div"),
         editImage = document.createElement("img"),
@@ -269,6 +270,41 @@ function addClipboardListItem(text) {
     deleteDiv.appendChild(deleteImage);
     contentDiv.appendChild(deleteDiv);
 
+    var dropdown = document.createElement('select');
+    dropdown.classList.add('dropdown');
+    dropdown.setAttribute("name", "color");
+    dropdown.setAttribute("id", "color");
+    dropdown.classList.add("color");
+    dropdown.classList.add("dropdown");
+    dropdown.style.width = "100px";
+    dropdown.style.height = "32px";
+    highlightDiv.appendChild(dropdown);
+    contentDiv.appendChild(highlightDiv);
+
+    // Create options
+    var option1 = document.createElement("option");
+    option1.value = "black";
+    option1.text = "Black(default)";
+
+    var option2 = document.createElement("option");
+    option2.value = "blue";
+    option2.text = "Blue";
+
+    var option3 = document.createElement("option");
+    option3.value = "red";
+    option3.text = "Red";
+
+    var option4 = document.createElement("option");
+    option4.value = "green";    
+    option4.text = "Green";
+
+    // Append options to dropdown
+    dropdown.appendChild(option1);
+    dropdown.appendChild(option2);
+    dropdown.appendChild(option3);
+    dropdown.appendChild(option4);
+
+   
     upArrowDiv.appendChild(upArrowImage);
     contentDiv.appendChild(upArrowDiv);
     downArrowDiv.appendChild(downArrowImage);
