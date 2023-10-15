@@ -385,9 +385,6 @@ function addClipboardListItem(text) {
         xmlhttp.send();
       }
 
-
-
-    /*
     summImage.addEventListener('click', (event) => {
         console.log("Summarize button clicked");
         let finalText = "";
@@ -416,10 +413,8 @@ function addClipboardListItem(text) {
 
             })
 
-    */
-
-    summImage.addEventListener('click', (event) => {
-        console.log("Summarize button clicked");
+    citImage.addEventListener('click', (event) => {
+        console.log("Citation button clicked");
         let finalText = "";
             let inputText = listPara.textContent;
             doDjangoCall(
@@ -433,18 +428,15 @@ function addClipboardListItem(text) {
                   finalText = " Citations: \n" + citationText;
                   console.log(finalText);
 
-                  chrome.storage.sync.get(['summarizedList'], summclipboard => {
-                    let summlist = summclipboard.summarizedList;
-                    console.log("type of list is "+typeof summlist);
-                    summlist.push(finalText);
-                    chrome.storage.sync.set({ 'summarizedList': summlist }, function() {console.log('Summary Saved');});
-                        console.log("summary appended");
+                  chrome.storage.sync.get(['citationList'], citclipboard => {
+                    let citationList = citclipboard.citationList;
+                    console.log("type of list is "+typeof citationList);
+                    citationList.push(finalText);
+                    chrome.storage.sync.set({ 'citationList': citationList}, function() {console.log('Citation Saved');});
+                        console.log("Citation appended");
                     });
-
                 }
               );
-
-
             })
 
 
@@ -599,6 +591,12 @@ merging.addEventListener('click', () => {
                 summarizedList.splice(indexes[i], 1);
                 chrome.storage.sync.set({ 'summarizedList': summarizedList })
             })
+            chrome.storage.sync.get(['citationList'], citList=> {
+                let citationList = citList.citationList;
+                citationList == undefined && (citationList = []);
+                citationList.splice(indexes[i], 1);
+                chrome.storage.sync.set({ 'citationList': citationList})
+            })
             chrome.storage.sync.set({ 'list': list });
         })
         list1[indexes[i]].remove();
@@ -637,45 +635,54 @@ merging.addEventListener('click', () => {
  */
 function downloadClipboardTextAsDoc(){
     chrome.storage.sync.get(['list'], clipboard => {
-        chrome.storage.sync.get(['summarizedList'], summclipboard => {
-        let list = clipboard.list;
-        let summList = summclipboard.summarizedList;
-        let emptyDiv = document.getElementById('empty-div');
-        if (list === undefined || list.length === 0) {
-            emptyDiv.classList.remove('hide-div');
-            console.log("Nothing to download")
-        }
-        else {
-            var list_of_items = []
-            //var list_of_summ_items = []
-            emptyDiv.classList.add('hide-div');
-            if (typeof list !== undefined){
-                list.forEach(item => {
-                    list_of_items = list_of_items + item + "\n\n"
-                });
-            if (typeof summList !== undefined){
-                summList.forEach(item => {
-                    console.log(item);
-                    list_of_items = list_of_items + item + "\n\n"
-                });
-            var link, blob, url;
-            blob = new Blob(['\ufeff', list_of_items], {
-                type: 'application/msword'
-            });
-
-                url = URL.createObjectURL(blob);
-                link = document.createElement('A');
-                link.href = url;
-                link.download = 'SimplyClip';
-                document.body.appendChild(link);
-                if (navigator.msSaveOrOpenBlob )
-                    navigator.msSaveOrOpenBlob( blob, 'SimplyClip.doc');
-                else link.click();  // other browsers
-                document.body.removeChild(link);
+        chrome.storage.sync.get(['citationList'], citclipboard => {
+            chrome.storage.sync.get(['summarizedList'], summclipboard => {
+            let list = clipboard.list;
+            let summList = summclipboard.summarizedList;
+            let citList = citclipboard.citationList;
+            let emptyDiv = document.getElementById('empty-div');
+            if (list === undefined || list.length === 0) {
+                emptyDiv.classList.remove('hide-div');
+                console.log("Nothing to download")
             }
+            else {
+                var list_of_items = []
+                //var list_of_summ_items = []
+                emptyDiv.classList.add('hide-div');
+                if (typeof list !== undefined){
+                    list.forEach(item => {
+                        list_of_items = list_of_items + item + "\n\n"
+                    });
+                if (typeof summList !== undefined){
+                    summList.forEach(item => {
+                        console.log(item);
+                        list_of_items = list_of_items + item + "\n\n"
+                    });
+                if (typeof citList !== undefined){
+                    citList.forEach(item => {
+                        console.log(item);
+                        list_of_items = list_of_items + item + "\n\n"
+                    });
 
-        }
-    }
+                var link, blob, url;
+                blob = new Blob(['\ufeff', list_of_items], {
+                    type: 'application/msword'
+                });
+
+                    url = URL.createObjectURL(blob);
+                    link = document.createElement('A');
+                    link.href = url;
+                    link.download = 'SimplyClip';
+                    document.body.appendChild(link);
+                    if (navigator.msSaveOrOpenBlob )
+                        navigator.msSaveOrOpenBlob( blob, 'SimplyClip.doc');
+                    else link.click();  // other browsers
+                    document.body.removeChild(link);
+                }
+                }
+                }
+            }
+        });
     });
    });
 }
