@@ -159,5 +159,7 @@ About
 #js doc documentation
 out/
 
+simplyclip_backend/myenv
+
 
 .DS_Store
