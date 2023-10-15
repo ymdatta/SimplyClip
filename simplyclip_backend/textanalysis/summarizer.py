@@ -8,7 +8,7 @@ def generate_summary(text):
     print(summarize_text)
     print ("SUMMARIZED TEST END IS: ")
     new_list = []
-    new_list.append(summarized_text[0]['summary_text'])
+    new_list.append(summarize_text[0]['summary_text'])
     return new_list 
 
 
