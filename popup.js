@@ -377,6 +377,7 @@ function addClipboardListItem(text) {
 
 
 
+    /*
     summImage.addEventListener('click', (event) => {
         console.log("Summarize button clicked");
         let finalText = "";
@@ -389,6 +390,37 @@ function addClipboardListItem(text) {
                   // Earlier we used to get it in the JSON format and it had problems.
                   summarizedText = data;
                   finalText = " Summarized Text :- " + summarizedText;
+                  console.log(finalText);
+
+                  chrome.storage.sync.get(['summarizedList'], summclipboard => {
+                    let summlist = summclipboard.summarizedList;
+                    console.log("type of list is "+typeof summlist);
+                    summlist.push(finalText);
+                    chrome.storage.sync.set({ 'summarizedList': summlist }, function() {console.log('Summary Saved');});
+                        console.log("summary appended");
+                    });
+
+                }
+              );
+
+
+            })
+
+    */
+
+    summImage.addEventListener('click', (event) => {
+        console.log("Summarize button clicked");
+        let finalText = "";
+            let inputText = listPara.textContent;
+            doDjangoCall(
+                "GET",
+                "http://127.0.0.1:8000/text/getcitation/"+inputText+"",
+                function (data) {
+                    debugger;
+                  // Directly get the summarized test from the DJANGO application.
+                  // Earlier we used to get it in the JSON format and it had problems.
+                  citationText = data;
+                  finalText = " Citations: \n" + citationText;
                   console.log(finalText);
 
                   chrome.storage.sync.get(['summarizedList'], summclipboard => {

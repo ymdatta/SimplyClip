@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.core.files import File
 from django.core.files.storage import FileSystemStorage
 from . import summarizer
+from . import citation
 import os
 from zipfile import ZipFile
 from os.path import basename
@@ -19,6 +20,12 @@ def summarize(request, summ_input):
         body_data = summ_input
         summarized_output = summarizer.generate_summary(body_data)
         return HttpResponse(summarized_output, content_type='text/plain')
+
+@csrf_exempt
+def getcitation(request, citation_input):
+    if request.method == 'GET':
+        citation_output = citation.generate_citation(citation_input)
+        return HttpResponse(citation_output, content_type='text/plain')
 
 @csrf_exempt
 def upload(request):
@@ -46,7 +53,3 @@ def fetch(request, summ_input):
             response = FileResponse(doczip)
             print("files returned")
             return response
-       
-    
-
-
