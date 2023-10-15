@@ -175,6 +175,7 @@ function addClipboardListItem(text) {
         upArrowDiv = document.createElement("div"),
         downArrowDiv = document.createElement("div");
         summDiv = document.createElement("div")
+        citDiv = document.createElement("div")
 
     editImage.setAttribute("data-toggle", "tooltip");
     editImage.setAttribute("data-placement", "bottom");
@@ -197,6 +198,11 @@ function addClipboardListItem(text) {
     summImage.setAttribute("data-toggle", "tooltip");
     summImage.setAttribute("data-placement", "bottom");
     summImage.setAttribute("title", "Click to summarize the text entry!");
+
+    citImage = document.createElement("img");
+    citImage.setAttribute("data-toggle", "tooltip");
+    citImage.setAttribute("data-placement", "bottom");
+    citImage.setAttribute("title", "Click to generate Citations!");
 
     let listPara = document.createElement("p");
     let listText = document.createTextNode(text);
@@ -259,6 +265,8 @@ function addClipboardListItem(text) {
     downArrowImage.classList.add("downArrow");
     summImage.src = './images/summarize.png';
     summImage.classList.add("summarize");
+    citImage.src = './images/citation.png';
+    citImage.classList.add("citation");
 
     var checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
@@ -335,6 +343,8 @@ function addClipboardListItem(text) {
     contentDiv.appendChild(downArrowDiv);
     summDiv.appendChild(summImage);
     contentDiv.appendChild(summDiv);
+    citDiv.appendChild(citImage);
+    contentDiv.appendChild(citDiv);
 
     contentDiv.classList.add("content");
     listItem.appendChild(contentDiv);
