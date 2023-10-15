@@ -8,18 +8,16 @@ import os
 from zipfile import ZipFile
 from os.path import basename
 import json
+import pdb
 
 
 from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
-def summarize(self, request, summ_input):
-    if request.method == 'POST':
+def summarize(request, summ_input):
+    if request.method == 'GET':
         body_data = summ_input
-        print(type(body_data))
-        print(body_data)
         summarized_output = summarizer.generate_summary(body_data)
-        #print(summarized_output)
         return HttpResponse(summarized_output, content_type='text/plain')
 
 @csrf_exempt
@@ -35,8 +33,10 @@ def upload(request):
         return HttpResponse(msg, content_type='text/plain')
 
 @csrf_exempt
-def fetch(request):
+def fetch(request, summ_input):
+    print(summ_input)
     if request.method == 'GET':
+        pdb.set_trace()
         with ZipFile('docs.zip', 'w') as zipObj:
             folderName, subfolders, filenames = os.walk("docs/")
             for filename in filenames:
