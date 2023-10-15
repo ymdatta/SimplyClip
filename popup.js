@@ -421,7 +421,6 @@ function addClipboardListItem(text) {
                 "GET",
                 "http://127.0.0.1:8000/text/getcitation/"+inputText+"",
                 function (data) {
-                    debugger;
                   // Directly get the summarized test from the DJANGO application.
                   // Earlier we used to get it in the JSON format and it had problems.
                   citationText = data;
