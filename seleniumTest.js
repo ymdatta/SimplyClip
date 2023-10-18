@@ -263,6 +263,33 @@ describe('Check the text color functionality',function() {
     }).timeout(10000);
 });
 
+describe('Check citation functionality',function() {
+    it('copied text should exist in SimplyClip clipboard', async function () {
+        // Open the Chrome Browser with a custom profile
+        const options = new chrome.Options()
+            .addArguments('--user-data-dir=/Users/risha/Desktop');
+
+        // Initialise driver to launch Chrome
+        const driver = new webdriver.Builder()
+            .forBrowser('chrome')
+            .setChromeOptions(options)
+            .build();
+
+        // Launch Google.com
+        driver.get('http://google.com');
+
+        // Search for citation button
+        const citationCheck = driver.findElement(By.xpath("/html/body/ul/li[1]/div/div[8]/img"));
+        citationCheck.click();
+
+        // Close the browser
+        driver.close();
+
+        // Quit the browser
+        driver.quit();
+    }).timeout(10000);
+});
+
 describe('Check Merge functionality',function() {
     it('copied text should exist in SimplyClip clipboard', async function () {
         // Open the Chrome Browser with a custom profile
