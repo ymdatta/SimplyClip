@@ -3,7 +3,7 @@
 # SimplyClip -->
 
 
-[![DOI](https://zenodo.org/badge/429889373.svg)](https://zenodo.org/badge/latestdoi/429889373)
+[![DOI](https://zenodo.org/badge/703844222.svg)](https://zenodo.org/badge/latestdoi/703844222)
 
 
 ![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m789313708-ea25af592e8a7a84c009055e)
