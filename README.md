@@ -276,7 +276,9 @@ Users can download the list of  copied items as a document file or CSV file. The
 3. Ashritha Bommagani (abommag@ncsu.edu)
 4. Abhishek Arvindkumar Upadhyay (aaupadhy@ncsu.edu)
 5. Akash Mukesh Sanghani (amsangha@ncsu.edu)
-6. Sreehith Yachamaneni (syacham@ncsu)
+6. Sreehith Yachamaneni (syacham@ncsu.edu)
+7. Mohan Yelugoti (myelugo@ncsu.edu)
+8. Rishabh Kala (rkala@ncsu.edu)
 
 ***Enjoy using SimplyClip. Make sure to follow the page for any new updates!*** 
 
