@@ -200,6 +200,33 @@ describe('Check Doc export functionality',function() {
     }).timeout(10000);
 });
 
+describe('Check edit text functionality',function() {
+    it('copied text should exist in SimplyClip clipboard', async function () {
+        // Open the Chrome Browser with a custom profile
+        const options = new chrome.Options()
+            .addArguments('--user-data-dir=/Users/risha/Desktop');
+
+        // Initialise driver to launch Chrome
+        const driver = new webdriver.Builder()
+            .forBrowser('chrome')
+            .setChromeOptions(options)
+            .build();
+
+        // Launch Google.com
+        driver.get('http://google.com');
+
+        // Search for edit text button
+        const priority_down = driver.findElement(By.xpath("/html/body/ul/li/div/div[2]/img"));
+        priority_down.click();
+
+        // Close the browser
+        driver.close();
+
+        // Quit the browser
+        driver.quit();
+    }).timeout(10000);
+});
+
 describe('Check Merge functionality',function() {
     it('copied text should exist in SimplyClip clipboard', async function () {
         // Open the Chrome Browser with a custom profile
