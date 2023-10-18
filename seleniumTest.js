@@ -245,8 +245,15 @@ describe('Check the text color functionality',function() {
         // Search for the color dropdown
         const colorBlue = driver.findElement(By.xpath("/html/body/ul/li/div/div[2]/img"));
         colorBlue.click();
-        colorBlue = sendKeys('Blue');
+        colorBlue.sendKeys('Blue');
+
+        const colorRed = driver.findElement(By.xpath("/html/body/ul/li/div/div[2]/img"));
+        colorRed.click();
+        colorRed.sendKeys('Red');
+
+        const colorGreen = driver.findElement(By.xpath("/html/body/ul/li/div/div[2]/img"));
         colorBlue.click();
+        colorBlue.sendKeys('Green');
         
         // Close the browser
         driver.close();
