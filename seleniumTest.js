@@ -11,7 +11,7 @@ describe('Verify setup with Google Search',function() {
 
         // Open the Chrome Browser with a custom profile
         const options = new chrome.Options()
-            .addArguments('--user-data-dir=/Users/nehakotcherlakota/Desktop');
+            .addArguments('--user-data-dir=/Users/risha/Desktop');
 
         // Initialise driver to launch Chrome
         const driver = new webdriver.Builder()
@@ -44,7 +44,7 @@ describe('Check browser copy functionality',function() {
 
         // Open the Chrome Browser with a custom profile
         const options = new chrome.Options()
-            .addArguments('--user-data-dir=/Users/nehakotcherlakota/Desktop');
+            .addArguments('--user-data-dir=/Users/risha/Desktop');
 
         // Initialise driver to launch Chrome
         const driver = new webdriver.Builder()
@@ -79,7 +79,7 @@ describe('Check simply clip functionality',function() {
     it('copied text should exist in SimplyClip clipboard', async function () {
         // Open the Chrome Browser with a custom profile
         const options = new chrome.Options()
-            .addArguments('--user-data-dir=/Users/nehakotcherlakota/Desktop');
+            .addArguments('--user-data-dir=/Users/risha/Desktop');
 
         // Initialise driver to launch Chrome
         const driver = new webdriver.Builder()
@@ -121,7 +121,7 @@ describe('Check dark mode functionality',function() {
     it('copied text should exist in SimplyClip clipboard', async function () {
         // Open the Chrome Browser with a custom profile
         const options = new chrome.Options()
-            .addArguments('--user-data-dir=/Users/nehakotcherlakota/Desktop');
+            .addArguments('--user-data-dir=/Users/risha/Desktop');
 
         // Initialise driver to launch Chrome
         const driver = new webdriver.Builder()
@@ -150,7 +150,7 @@ describe('Check sorting functionality',function() {
     it('copied text should exist in SimplyClip clipboard', async function () {
         // Open the Chrome Browser with a custom profile
         const options = new chrome.Options()
-            .addArguments('--user-data-dir=/Users/nehakotcherlakota/Desktop');
+            .addArguments('--user-data-dir=/Users/risha/Desktop');
 
         // Initialise driver to launch Chrome
         const driver = new webdriver.Builder()
@@ -173,11 +173,38 @@ describe('Check sorting functionality',function() {
     }).timeout(10000);
 });
 
+describe('Check Doc export functionality',function() {
+    it('copied text should exist in SimplyClip clipboard', async function () {
+        // Open the Chrome Browser with a custom profile
+        const options = new chrome.Options()
+            .addArguments('--user-data-dir=/Users/risha/Desktop');
+
+        // Initialise driver to launch Chrome
+        const driver = new webdriver.Builder()
+            .forBrowser('chrome')
+            .setChromeOptions(options)
+            .build();
+
+        // Launch Google.com
+        driver.get('http://google.com');
+
+        // Search for download as doc button
+        const priority_down = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[3]/img"));
+        priority_down.click();
+
+        // Close the browser
+        driver.close();
+
+        // Quit the browser
+        driver.quit();
+    }).timeout(10000);
+});
+
 describe('Check Merge functionality',function() {
     it('copied text should exist in SimplyClip clipboard', async function () {
         // Open the Chrome Browser with a custom profile
         const options = new chrome.Options()
-            .addArguments('--user-data-dir=/Users/nehakotcherlakota/Desktop');
+            .addArguments('--user-data-dir=/Users/risha/Desktop');
 
         // Initialise driver to launch Chrome
         const driver = new webdriver.Builder()
