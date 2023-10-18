@@ -1,5 +1,7 @@
 import habanero
-import pdb
+
+class CitationError(Exception):
+    pass
 
 def generate_citation(text):
     citation_types = ['apa', 'bibtex', 'chicago-author-date', 'modern-language-association', 'vancouver']
@@ -11,15 +13,12 @@ def generate_citation(text):
             citation_text += ":\n"
             citation_text += habanero.cn.content_negotiation(ids=text, format='text', style=citation) 
             citation_text += "\n"
-
+    except Exception as e:
+        raise CitationError("Error in citation generation: " + str(e))
     except:
         citation_text = ""
         citation_text += "URL: \n"
         citation_text += text
 
-    print("Citation is: ")
-    
-    print(citation_text)
-    #pdb.set_trace()
     output_list = [citation_text]
     return output_list
