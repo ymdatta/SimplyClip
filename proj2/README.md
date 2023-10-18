@@ -2,9 +2,9 @@
 | ----------- | ----------- | -- |
 | Total |   |  | 
 | Video |   |  | 
-| Workload is spread over the whole team (one team member is often Xtimes more productive than the others...but nevertheless, here is a track record that everyone is contributing a lot) |  |  |
-| Number of commits |  |  | 
-| Number of commits: by different people |  | |
+| Workload is spread over the whole team (one team member is often Xtimes more productive than the others...but nevertheless, here is a track record that everyone is contributing a lot) | 3 | https://github.com/ymdatta/SimplyClip/graphs/contributors |
+| Number of commits | 3 | https://github.com/ymdatta/SimplyClip/commits/main | 
+| Number of commits: by different people | 3 | https://github.com/ymdatta/SimplyClip/graphs/contributors |
 | Issues reports: there are many | 3 | https://github.com/ymdatta/SimplyClip/issues |
 | Issues are being closed | 3 | https://github.com/ymdatta/SimplyClip/issues?q=is%3Aissue+is%3Aclosed| 
 | DOI badge: exists |  |  |
@@ -84,17 +84,18 @@
 | Do you list your project's publications on your website or link to a resource where these are available? |  |  |
 | Do you list third-party publications that refer to your software on your website or link to a resource where these are available? |  |  |
 | Can users subscribe to notifications to changes to your source code repository? | 3 | Yes, they can click on 'watch' option on Github repository and get notifications. |
-| Do you accept contributions (e.g. bug fixes, enhancements, documentation updates, tutorials) from people who are not part of your project? |  |  |
-| Do you have a contributions policy? |  |  |
-| Is your contributions' policy publicly available? |  |  |
+| If your software is developed as an open source project (and, not just a project developing open source software), do you have a governance model? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/LICENSE |
+| Do you accept contributions (e.g. bug fixes, enhancements, documentation updates, tutorials) from people who are not part of your project? | 3 | Yes: https://github.com/ymdatta/SimplyClip/blob/main/CONTRIBUTING.md |
+| Do you have a contributions policy? | 3 | Yes: https://github.com/ymdatta/SimplyClip/blob/main/CONTRIBUTING.md |
+| Is your contributions' policy publicly available? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/CONTRIBUTING.md |
 | Do contributors keep the copyright/IP of their contributions? |  |  |
-| Does your website and documentation clearly state the copyright owners of your software and documentation? |  |  |
+| Does your website and documentation clearly state the copyright owners of your software and documentation? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/README.md, https://github.com/ymdatta/SimplyClip/blob/main/LICENSE |
 | Does each of your source code files include a copyright statement? |  |  |
-| Does your website and documentation clearly state the licence of your software? |  |  |
-| Is your software released under an open source licence? |  |  |
-| Is your software released under an OSI-approved open-source licence? |  |  |
+| Does your website and documentation clearly state the licence of your software? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/LICENSE |
+| Is your software released under an open source licence? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/LICENSE |
+| Is your software released under an OSI-approved open-source licence? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/LICENSE |
 | Does each of your source code files include a licence header? |  |  |
 | Do you have a recommended citation for your software? |  |  |
-| Does your website or documentation include a project roadmap (a list of project and development milestones for the next 3, 6 and 12 months)? |  |  |
+| Does your website or documentation include a project roadmap (a list of project and development milestones for the next 3, 6 and 12 months)? | 3 | Yeshttps://github.com/ymdatta/SimplyClip/tree/main#railway_track-roadmap |
 | Does your website or documentation describe how your project is funded, and the period over which funding is guaranteed? |  |  |
-| Do you make timely announcements of the deprecation of components, APIs, etc.? |  |  |
+| Do you make timely announcements of the deprecation of components, APIs, etc.? |  |  | 
