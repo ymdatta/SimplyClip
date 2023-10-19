@@ -131,7 +131,7 @@ These are the only 4 files you will be working on and rest all are just configur
 We will be more than happy to help you extend the functionality of this extension. <br>
 **Happy Coding!!!!** 😄😄
  
-## :gear: Getting started Add SimplyClip to Google Chrome
+## :gear: Getting started Add SimplyClip to Google Chrome/Chromium based browser like Edge, Brave etc
 All you need is Google Chrome! 🕺
 
 1.  Get the repsitory using any of the below two methords :
@@ -147,11 +147,16 @@ All you need is Google Chrome! 🕺
     - Enable the chrome extension. <br/>
 ![Extension](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/images/enableSimplyClip.png)
 
-## Backend Instructions to Run
+## Backend Instructions to Run (Needed for summarizer and citation functionality)
 1.  ```
     cd simplyclip_backend
     ```
-2.  ```
+2.  We highly suggest creating a python virtual env to install the dependencies in a clean manner.
+
+    This would not affect the packages running on your system.
+    [Python Documentation on virtual environments](https://docs.python.org/3/library/venv.html)
+
+    ```
     python3 -m pip install -r requirements.txt
     ```
 3.  ```
