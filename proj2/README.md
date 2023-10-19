@@ -1,6 +1,7 @@
+scorecard
 | Rubric | Assesment| Evidence |
 | ----------- | ----------- | -- |
-| Video |   |  | 
+| Video | 3  | https://www.youtube.com/watch?v=llurFu89NCg | 
 | Workload is spread over the whole team (one team member is often Xtimes more productive than the others...but nevertheless, here is a track record that everyone is contributing a lot) | 3 | https://github.com/ymdatta/SimplyClip/graphs/contributors |
 | Number of commits | 3 | https://github.com/ymdatta/SimplyClip/commits/main | 
 | Number of commits: by different people | 3 | https://github.com/ymdatta/SimplyClip/graphs/contributors |
@@ -11,7 +12,7 @@
 | Docs: what: point descriptions of each class/function (in isolation) |  |  | 
 | Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z |  |  | 
 | Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing |  |  |
-| Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code |  |  |
+| Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code | 3 | https://github.com/ymdatta/SimplyClip#-punch-line, https://www.youtube.com/watch?v=llurFu89NCg |
 | Use of version control tools | 3 | https://github.com/ymdatta/SimplyClip#version-control-tools |
 | Use of style checkers | 3 | https://github.com/ymdatta/SimplyClip#-ide-and-packages|
 | Use of code formatters | 3 | https://github.com/ymdatta/SimplyClip#-ide-and-packages |
@@ -23,7 +24,7 @@
 | Issues are discussed before they are closed | 3 | https://chat.whatsapp.com/HZetASi4W6P3hpTYOP751A (issues are discussed in chat channel)| 
 | Chat channel: exists | 3 | https://chat.whatsapp.com/HZetASi4W6P3hpTYOP751A  |
 | Test cases: a large proportion of the issues related to handling failing cases | 3 | https://github.com/ymdatta/SimplyClip/issues?q=is%3Aissue+is%3Aclosed |
-| Evidence that the whole team is using the same tools: everyone can get to all tools and files |  | everone has muliplt commits to this repository: https://github.com/ymdatta/SimplyClip/pulse |
+| Evidence that the whole team is using the same tools: everyone can get to all tools and files | 3 | everone has muliplt commits to this repository: https://github.com/ymdatta/SimplyClip/pulse |
 | Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people | 3 | everone has muliplt commits to this repository: https://github.com/ymdatta/SimplyClip/pulse |
 | Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer | 3 | everone has muliplt commits to this repository: https://github.com/ymdatta/SimplyClip/pulse |
 | Evidence that the members of the team are working across multiple places in the code base | 3 |  https://github.com/ymdatta/SimplyClip/blob/main/popup.js, https://github.com/ymdatta/SimplyClip/blob/main/popup.html, https://github.com/ymdatta/SimplyClip/blob/main/popup.css |
@@ -81,7 +82,7 @@
 | Do you provide success stories on your website? |  |  |
 | Do you list your important partners and collaborators on your website? | 3 | Contributors are mentioned: https://github.com/ymdatta/SimplyClip#handshake-contributors|
 | Do you list your project's publications on your website or link to a resource where these are available? |  |  |
-| Do you list third-party publications that refer to your software on your website or link to a resource where these are available? |  |  |
+| Do you list third-party publications that refer to your software on your website or link to a resource where these are available? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/LICENSE |
 | Can users subscribe to notifications to changes to your source code repository? | 3 | Yes, they can click on 'watch' option on Github repository and get notifications. |
 | If your software is developed as an open source project (and, not just a project developing open source software), do you have a governance model? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/LICENSE |
 | Do you accept contributions (e.g. bug fixes, enhancements, documentation updates, tutorials) from people who are not part of your project? | 3 | Yes: https://github.com/ymdatta/SimplyClip/blob/main/CONTRIBUTING.md |
@@ -95,6 +96,8 @@
 | Is your software released under an OSI-approved open-source licence? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/LICENSE |
 | Does each of your source code files include a licence header? | 3 | yes: https://github.com/ymdatta/SimplyClip/blob/main/popup.js, https://github.com/ymdatta/SimplyClip/blob/main/popup.html, https://github.com/ymdatta/SimplyClip/blob/main/popup.css  |
 | Do you have a recommended citation for your software? | 3 | yes: https://github.com/ymdatta/SimplyClip/blob/main/CITATION.md |
-| Does your website or documentation include a project roadmap (a list of project and development milestones for the next 3, 6 and 12 months)? | 3 | Yeshttps://github.com/ymdatta/SimplyClip/tree/main#railway_track-roadmap |
+| Does your website or documentation include a project roadmap (a list of project and development milestones for the next 3, 6 and 12 months)? | 3 | Yes https://github.com/ymdatta/SimplyClip/tree/main#railway_track-roadmap |
 | Does your website or documentation describe how your project is funded, and the period over which funding is guaranteed? | NA | Not Applicable |
 | Do you make timely announcements of the deprecation of components, APIs, etc.? | NA | Not Applicable | 
+
+Link to video: https://www.youtube.com/watch?v=llurFu89NCg
