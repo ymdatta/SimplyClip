@@ -288,6 +288,7 @@ Users can add color labels (black, red, blue and green) to copied text in the ex
 - [ ] Syncing with online note taking services, to automatically store content information.
 - [ ] Syncing with online note taking services, to retreive any previous notes.
  
+ Link to Project Board: [SimplyClip Project Board](https://github.com/users/ymdatta/projects/2) 
 ---
 ## :handshake: Contributors
 
