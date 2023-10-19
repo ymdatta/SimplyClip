@@ -7,6 +7,11 @@ def generate_citation(text):
     citation_types = ['apa', 'bibtex', 'chicago-author-date', 'modern-language-association', 'vancouver']
     citation_text = ""
 
+    if len(text) > 100:
+        # Mark it as a URL
+        citation_text = "Can't cite: This doesn't look like a DOI. Please check!"
+        return [citation_text]
+
     try:
         for citation in citation_types:
             citation_text += citation.upper()
