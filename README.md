@@ -216,6 +216,13 @@ User can select the text chunk to copy from the extension clipboard by simply cl
 User is even allowed to edit the text entry copied to the extension clipboard. The user can edit the entry by clicking on the pencil icon and edit the text entry. Once edited, the entry gets saved automatically on clicking anywhere outside the focus of the text entry.
 #### 4. Downloading your copied text :
 Users can download the list of  copied items as a document file or CSV file. The CSV file has many more columns, such as updated text, original copied text, URL of  copied text, and so on.
+#### 5. Summarizing the copied text :
+Users can summarize the copied items by clicking the summarizer icon on the extension. When user downloads the copied content into DOC file, the summarized content is also downloaded automatically.
+#### 6. Fetch citations of copied DOI :
+Users can fetch the citation of copied DOI in multiple formats including APA, BibiTex, Chicago author date, Modern Langauge association (MLA), and Vancouver format.
+#### 7. Add labels to copied text :
+Users can add color labels (black, red, blue and green) to copied text in the extension. This can help them with keeping track of their research.
+
 
 ## :interrobang: Troubleshooting
 1) If the text doesn't get copied, please make sure that the page has the permission to access and modify the system clipboard.
