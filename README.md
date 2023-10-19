@@ -37,19 +37,21 @@
 ---
 # Description
 
-SimplyClip3.0 :paperclips: is a google chrome extension which enables singular shared clipboard for research students and power users. Unlimited focus!!!
+ClipItPack (An extension to SimplyClip 4.0) :paperclips: is a google chrome extension which enables singular shared clipboard for research students and power users. Unlimited focus!!!
  
- ## :white_check_mark: What Simply Clip Can Do?
+ ## :white_check_mark: What ClipItPack Can Do?
 
 - Select multiple text snippets from a single tab (or more!) and magically paste all off them!
 - Summarize content from different text selections
 - Merge different text selections
 - Sort text selections based on priority
+- Provide citations in multiple formats to help in research
 - Set Reminders for your research
 - Ability to manage what selection you want to keep or get rid of.
 - No more switching tabs, say no to all distractions!!
 - Download the copied content to CSV or DOC file with a single click.
 - Work in Dark Mode!
+- Add colours to different sections of copied texts to improve information processing and retention by the user!
 - Search for any text from the copied content.
 - Helps you to save website URLs from which the text is copied.
 - Disable any time with a toggle, if you don't want the content to copy to extension.
@@ -69,7 +71,7 @@ While working on finding reuse we spent significant amount of time searching and
  
 ---
 <p align="center">
-  <a href="#white_check_mark-what-simply-clip-can-do">Simply Clip</a>
+  <a href="#white_check_mark-what-clipitpack-can-do">ClipItPack</a>
   |
   <a href="#gear-getting-started-add-simplyclip-to-google-chrome">Installation</a>
   |
@@ -275,14 +277,16 @@ Users can add color labels (black, red, blue and green) to copied text in the ex
 ### Phase 4 : SimplyClip 4.0: 
 
 - [x] Revamped summarization protocol with state of art model for clipboard content. Summarization now works! 
-- [x] Citation fetching for a given DOI in APA format
-- [x] Citation fetching for a given DOI in BibiTex format
-- [x] Citation fetching for a given DOI in Chicago author date format
-- [x] Citation fetching for a given DOI in Modern Language assocation (MLA) format
-- [x] Citation fetching for a given DOI in Vancouver format
+- [x] Citation fetching for a given DOI in APA format.
+- [x] Citation fetching for a given DOI in BibiTex format.
+- [x] Citation fetching for a given DOI in Chicago author date format.
+- [x] Citation fetching for a given DOI in Modern Language assocation (MLA) format.
+- [x] Citation fetching for a given DOI in Vancouver format.
 - [x] Labelling copied content in the extension to 4 colors to separate research work. 
 - [x] New and improved format for clipboard content, it's summarized content and citations when downloaded as DOC file.
+- [x] Added more automated tests to seleniumTest.js to thoroughly test the functionalities and added unit tests to assess the citation capability.
 - [x] Extension Manifest updated to v3, to make the extension future proof till next version.
+- [x] Came up with a new name ('ClipItPack') to be free from copyright violations!  
 
 ### Future Enhancements:
 
