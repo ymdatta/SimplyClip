@@ -215,6 +215,7 @@ function addClipboardListItem(text) {
     let imagePopup = document.createElement('img');
     prevText = text;
 
+    /*
     if (imageUrl.length > 0) {
         console.log("IMage Url found")
         imagePopup.src = imageUrl;
@@ -232,8 +233,8 @@ function addClipboardListItem(text) {
         popupLink.target = '_blank';
         popupLink.appendChild(imagePopup);
         listDiv.appendChild(popupLink);
-
     }
+    */
 
     listPara.appendChild(listText)
     listDiv.appendChild(listPara);
