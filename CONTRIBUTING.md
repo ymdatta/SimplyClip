@@ -11,7 +11,7 @@ Have you identified a reproducible problem in our sample code? Have a feature re
 
 ### Where to Report
 
-You can report the issues by contacting us on adityajadhav537@gmail.com.
+You can report the issues by contacting us on clipitpack@googlegroups.com.
 
 
 
