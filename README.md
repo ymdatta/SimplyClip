@@ -8,14 +8,14 @@
 
 ![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m789313708-ea25af592e8a7a84c009055e)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Release](https://img.shields.io/github/release/aditya4196/SimplyClip)](https://github.com/aditya4196/SimplyClip)
-![GitHub language count](https://img.shields.io/github/languages/count/aditya4196/SimplyClip)
-[![GitHub issues](https://img.shields.io/github/issues/aditya4196/SimplyClip)](https://github.com/aditya4196/SimplyClip)
-[![GitHub-closed-issues](https://img.shields.io/github/issues-closed-raw/aditya4196/SimplyClip)](https://github.com/aditya4196/SimplyClip)
+[![GitHub Release](https://img.shields.io/github/release/ymdatta/SimplyClip)](https://github.com/ymdatta/SimplyClip)
+![GitHub language count](https://img.shields.io/github/languages/count/ymdatta/SimplyClip)
+[![GitHub issues](https://img.shields.io/github/issues/ymdatta/SimplyClip)](https://github.com/ymdatta/SimplyClip)
+[![GitHub-closed-issues](https://img.shields.io/github/issues-closed-raw/ymdatta/SimplyClip)](https://github.com/ymdatta/SimplyClip)
 ![Test Cases](https://img.shields.io/badge/tests-passing-green)
-![GitHub contributors](https://img.shields.io/github/contributors/aditya4196/SimplyClip)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/aditya4196/SimplyClip)
-[![GitHub-size](https://img.shields.io/github/languages/code-size/aditya4196/SimplyClip)](https://github.com/aditya4196/SimplyClip)
+![GitHub contributors](https://img.shields.io/github/contributors/ymdatta/SimplyClip)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/ymdatta/SimplyClip)
+[![GitHub-size](https://img.shields.io/github/languages/code-size/ymdatta/SimplyClip)](https://github.com/ymdatta/SimplyClip)
 [![basic badge](https://github.com/umagnanasundaram2128/SimplyClip/actions/workflows/coverage.yml/badge.svg)](https://github.com/umagnanasundaram2128/SimplyClip/actions/workflows/coverage.yml/badge.svg)
 [![Coverage Status](https://img.shields.io/badge/code%20coverage-88%25-brightgreen)](https://github.com/aditya4196/SimplyClip#-testcase-coverage)
 
@@ -274,12 +274,12 @@ Users can download the list of  copied items as a document file or CSV file. The
 
 ### Future Enhancements:
 
-- [] Given a clipboard content, running content analysis on it to aid the researcher.
-- [] Copying images to clipboard 
-- [] Downloading color labels as well in DOC, this can help researcher in keeping archives. 
-- [] Given a citation, finding similar citations in this area. 
-- [] Syncing with online note taking services, to automatically store content information.
-- [] Syncing with online note taking services, to retreive any previous notes.
+- [ ] Given a clipboard content, running content analysis on it to aid the researcher.
+- [ ] Copying images to clipboard 
+- [ ] Downloading color labels as well in DOC, this can help researcher in keeping archives. 
+- [ ] Given a citation, finding similar citations in this area. 
+- [ ] Syncing with online note taking services, to automatically store content information.
+- [ ] Syncing with online note taking services, to retreive any previous notes.
  
 ---
 ## :handshake: Contributors
