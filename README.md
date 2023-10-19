@@ -260,25 +260,35 @@ Users can download the list of  copied items as a document file or CSV file. The
 - [x] Export the summarised content to DOC file
 
 
+### Phase 4 : SimplyClip 4.0: 
+
+- [x] Revamped summarization protocol with state of art model for clipboard content. Summarization now works! 
+- [x] Citation fetching for a given DOI in APA format
+- [x] Citation fetching for a given DOI in BibiTex format
+- [x] Citation fetching for a given DOI in Chicago author date format
+- [x] Citation fetching for a given DOI in Modern Language assocation (MLA) format
+- [x] Citation fetching for a given DOI in Vancouver format
+- [x] Labelling copied content in the extension to 4 colors to separate research work. 
+- [x] New and improved format for clipboard content, it's summarized content and citations when downloaded as DOC file.
+- [x] Extension Manifest updated to v3, to make the extension future proof till next version.
+
 ### Future Enhancements:
 
-- [ ] Domain Entity for similar content
-- [ ] Citation fetching
-- [ ] Better training  data for Summariser 
-- [ ] Copy image to clipboard
+- [] Given a clipboard content, running content analysis on it to aid the researcher.
+- [] Copying images to clipboard 
+- [] Downloading color labels as well in DOC, this can help researcher in keeping archives. 
+- [] Given a citation, finding similar citations in this area. 
+- [] Syncing with online note taking services, to automatically store content information.
+- [] Syncing with online note taking services, to retreive any previous notes.
  
 ---
 ## :handshake: Contributors
 
+(in alphabetical order)
 
-1. Aditya Ravikant Jadhav (ajadhav3@ncsu.edu)
-2. Harsh Vijay Bathija (hbathij@ncsu.edu)
-3. Ashritha Bommagani (abommag@ncsu.edu)
-4. Abhishek Arvindkumar Upadhyay (aaupadhy@ncsu.edu)
-5. Akash Mukesh Sanghani (amsangha@ncsu.edu)
-6. Sreehith Yachamaneni (syacham@ncsu.edu)
-7. Mohan Yelugoti (myelugo@ncsu.edu)
-8. Rishabh Kala (rkala@ncsu.edu)
+1. Mohan Yelugoti (myelugo@ncsu.edu)
+2. Rishabh Kala (rkala@ncsu.edu)
+3. Sreehith Yachamaneni (syacham@ncsu.edu)
 
 ***Enjoy using SimplyClip. Make sure to follow the page for any new updates!*** 
 
