@@ -390,10 +390,11 @@ function addClipboardListItem(text,item_color) {
                 "GET",
                 "http://127.0.0.1:8000/text/summarize/"+inputText+"",
                 function (data) {
-                  // Directly get the summarized test from the DJANGO application.
+                  // Directly get the summarized text from the DJANGO application.
                   // Earlier we used to get it in the JSON format and it had problems.
                   summarizedText = data;
-                  finalText = " Summarized Text :- " + summarizedText;
+                  finalText = "Text: " + inputText + "\n\n"; 
+                  finalText = finalText + "Summarized Text :- " + summarizedText;
                   console.log(finalText);
 
                   chrome.storage.sync.get(['summarizedList'], summclipboard => {
@@ -406,8 +407,6 @@ function addClipboardListItem(text,item_color) {
 
                 }
               );
-
-
             })
 
     citImage.addEventListener('click', (event) => {
@@ -418,10 +417,10 @@ function addClipboardListItem(text,item_color) {
                 "GET",
                 "http://127.0.0.1:8000/text/getcitation/"+inputText+"",
                 function (data) {
-                  // Directly get the summarized test from the DJANGO application.
+                  // Directly get the citation text from the DJANGO application.
                   // Earlier we used to get it in the JSON format and it had problems.
                   citationText = data;
-                  finalText = " Citations: \n" + citationText;
+                  finalText = " Citations for: " + inputText + "\n\n" + citationText;
                   console.log(finalText);
 
                   chrome.storage.sync.get(['citationList'], citclipboard => {
@@ -655,21 +654,32 @@ function downloadClipboardTextAsDoc(){
             }
             else {
                 var list_of_items = []
+                var cache = []
                 //var list_of_summ_items = []
                 emptyDiv.classList.add('hide-div');
+                list_of_items = list_of_items + "CONTENTS: " + "\n\n";
                 if (typeof list !== undefined){
                     list.forEach(item => {
-                        list_of_items = list_of_items + item + "\n\n"
+                        list_of_items = list_of_items + item + "\n\n";
+                        cache.push(item);
                     });
+                list_of_items = list_of_items + "SUMMARIZED CONTENTS: " + "\n\n";
                 if (typeof summList !== undefined){
                     summList.forEach(item => {
                         console.log(item);
-                        list_of_items = list_of_items + item + "\n\n"
+                        if (cache.includes(item) == false) {
+                            list_of_items = list_of_items + item + "\n\n"
+                            cache.push(item);
+                        }
                     });
+                list_of_items = list_of_items + "CITATION CONTENTS: " + "\n\n";
                 if (typeof citList !== undefined){
                     citList.forEach(item => {
                         console.log(item);
-                        list_of_items = list_of_items + item + "\n\n"
+                        if (cache.includes(item) == false) {
+                            list_of_items = list_of_items + item + "\n\n"
+                            cache.push(item);
+                        }
                     });
 
                 var link, blob, url;
