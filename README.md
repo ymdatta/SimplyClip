@@ -32,7 +32,7 @@
 ---
 
  
-&emsp; &emsp; &emsp; &emsp; &emsp;  ![](https://github.com/ymdatta/SimplyClip/blob/main/images/ClipItPack.gif)
+&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  ![](https://github.com/ymdatta/SimplyClip/blob/main/images/ClipItPack.gif)
 
 ---
 # Description
