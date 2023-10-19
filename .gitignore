@@ -159,7 +159,11 @@ About
 #js doc documentation
 out/
 
-simplyclip_backend/myenv
 
 
 .DS_Store
+
+
+simplyclip_backend/myenv
+*.patch
+*__pycache__
