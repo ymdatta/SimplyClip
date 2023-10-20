@@ -8,10 +8,10 @@ scorecard
 | Issues reports: there are many | 3 | https://github.com/ymdatta/SimplyClip/issues |
 | Issues are being closed | 3 | https://github.com/ymdatta/SimplyClip/issues?q=is%3Aissue+is%3Aclosed| 
 | DOI badge: exists | 3 | https://zenodo.org/badge/latestdoi/703844222 |
-| Docs: doco generated, format not ugly |  |  |
-| Docs: what: point descriptions of each class/function (in isolation) |  |  | 
-| Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z |  |  | 
-| Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing |  |  |
+| Docs: doco generated, format not ugly | 3 | https://github.com/ymdatta/SimplyClip/tree/main/Docs/Group38_Version4_Documentation |
+| Docs: what: point descriptions of each class/function (in isolation) | 3 | https://github.com/ymdatta/SimplyClip/blob/main/Docs/Group38_Version4_Documentation/SimplyClip4_Funtional_Documentation.pdf | 
+| Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z | 3 | https://github.com/ymdatta/SimplyClip/tree/main/Docs/Group38_Version4_Documentation/UsecaseTutorials | 
+| Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing | 3 | https://github.com/ymdatta/SimplyClip/blob/main/Docs/Group38_Version4_Documentation/SimplyClip4_Why_did_we_do_it.pdf |
 | Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code | 3 | https://github.com/ymdatta/SimplyClip#-punch-line, https://www.youtube.com/watch?v=llurFu89NCg |
 | Use of version control tools | 3 | https://github.com/ymdatta/SimplyClip#version-control-tools |
 | Use of style checkers | 3 | https://github.com/ymdatta/SimplyClip#-ide-and-packages|
@@ -32,8 +32,8 @@ scorecard
 | Does your website and documentation provide a clear, high-level overview of your software? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/README.md, https://github.com/ymdatta/SimplyClip/tree/main/Docs |
 | Does your website and documentation clearly describe the type of user who should use your software? | 3 | https://github.com/ymdatta/SimplyClip#description |
 | Do you publish case studies to show how your software has been used by yourself and others? | 3 | https://docs.google.com/document/d/16t_rOveG2AUmSnRRVfWI_2EL-hSuSD9XwVBZSvsUoUM/edit?usp=sharing | 
-| Is the name of your project/software unique |  |  |
-| Is your project/software name free from trademark violations? |  |  | 
+| Is the name of your project/software unique | 3 | we changed the name to ClipItPack, to prevent tradmark voilations https://github.com/ymdatta/SimplyClip/blob/main/images/ClipItPack.gif |
+| Is your project/software name free from trademark violations? | 3 | we changed the name to ClipItPack, to prevent tradmark voilations https://github.com/ymdatta/SimplyClip/blob/main/images/ClipItPack.gif | 
 | Is your software available as a package that can be deployed without building it? | 3 | Yes: https://github.com/ymdatta/SimplyClip#gear-getting-started-add-simplyclip-to-google-chrome |
 | Is your software available for free | 3 | Yes: https://github.com/ymdatta/SimplyClip/blob/main/LICENSE |
 | Is your source code publicly available to download, either as a downloadable bundle or via access to a source code repository | 3 | https://github.com/ymdatta/SimplyClip |
