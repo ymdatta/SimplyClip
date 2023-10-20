@@ -103,7 +103,7 @@ https://www.youtube.com/watch?v=llurFu89NCg
 ---
 
 ## :techstack: TechStack
- <code><a href="https://www.javascript.com/" target="_blank"><img height="50" src="https://cdn.freelogovectors.net/wp-content/uploads/2020/11/javascript_logo-768x873.png"></a></code>
+ <code><a href="https://www.javascript.com/" target="_blank"><img height="50" src="images/logo-javascript.svg/"></a></code>
  <code><a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank"><img src = "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" width="50"/></a></code>
  <code><a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank"><img height="50" src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png"></a></code>
 <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"><img height="50" src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png"></a></code>
@@ -124,10 +124,10 @@ https://www.youtube.com/watch?v=llurFu89NCg
  
 ## :shipit: Developers Note
 Basic knowledge of **JavaScript**, **HTML** ,**CSS** should be good enough to contribute to the project
-- [**popup.js**](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/popup.js)
-- [**popup.html**](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/popup.html)
-- [**popup.css**](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/popup.css)
-- [**content.js**](https://github.com/umagnanasundaram2128/SimplyClip/blob/main/content.js)
+- [**popup.js**](https://github.com/ymdatta/SimplyClip/blob/main/popup.js)
+- [**popup.html**](https://github.com/ymdatta/SimplyClip/blob/main/popup.html)
+- [**popup.css**](https://github.com/ymdatta/SimplyClip/blob/main/popup.css)
+- [**content.js**](https://github.com/ymdatta/SimplyClip/blob/main/content.js)
 
 These are the only 4 files you will be working on and rest all are just configuration and documentation files. <br><br>
 We will be more than happy to help you extend the functionality of this extension. <br>
@@ -137,7 +137,7 @@ We will be more than happy to help you extend the functionality of this extensio
 All you need is Google Chrome! 🕺
 
 1.  Get the repsitory using any of the below two methords :
-    - Download :arrow_down: the ***[repository](https://github.com/umagnanasundaram2128/SimplyClip)*** using Code > Download Zip on our project github page.
+    - Download :arrow_down: the ***[repository](https://github.com/ymdatta/SimplyClip)*** using Code > Download Zip on our project github page.
     - Clone the reporitory using  ***[GIT](https://git-scm.com)*** 
     ```
     https://github.com/umagnanasundaram2128/SimplyClip/
