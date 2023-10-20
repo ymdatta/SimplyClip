@@ -87,6 +87,10 @@ While working on finding reuse we spent significant amount of time searching and
   
 --- 
 ## 🥊 Punch Line 
+
+“Work is hard. Distractions are plentiful. And time is short.” – Adam 
+Hochschild  <br/>
+To Read the detailed explanation---> https://github.com/ymdatta/SimplyClip/blob/main/Docs/Group38_Version4_Documentation/SimplyClip4_Why_did_we_do_it.pdf
  
  <!--https://github.com/umagnanasundaram2128/SimplyClip/blob/main/videos/Simply_clip.mp4-->
  
