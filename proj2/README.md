@@ -28,7 +28,7 @@ scorecard
 | Evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people | 3 | everone has muliplt commits to this repository: https://github.com/ymdatta/SimplyClip/pulse |
 | Evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer | 3 | everone has muliplt commits to this repository: https://github.com/ymdatta/SimplyClip/pulse |
 | Evidence that the members of the team are working across multiple places in the code base | 3 |  https://github.com/ymdatta/SimplyClip/blob/main/popup.js, https://github.com/ymdatta/SimplyClip/blob/main/popup.html, https://github.com/ymdatta/SimplyClip/blob/main/popup.css |
-| Short release cycles |  |  |
+| Short release cycles | 3 | https://github.com/ymdatta/SimplyClip/releases |
 | Does your website and documentation provide a clear, high-level overview of your software? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/README.md, https://github.com/ymdatta/SimplyClip/tree/main/Docs |
 | Does your website and documentation clearly describe the type of user who should use your software? | 3 | https://github.com/ymdatta/SimplyClip#description |
 | Do you publish case studies to show how your software has been used by yourself and others? | 3 | https://docs.google.com/document/d/16t_rOveG2AUmSnRRVfWI_2EL-hSuSD9XwVBZSvsUoUM/edit?usp=sharing | 
@@ -57,13 +57,13 @@ scorecard
 | Does your software allow data to be imported and exported using open data formats? | 3 | In features it is mentioned that it can export data in doc and csv formats: https://github.com/ymdatta/SimplyClip#white_check_mark-what-simply-clip-can-do | 
 | Does your software allow communications using open communications protocols? | 3 | Yes, it can copy text from a webpage and epr form various functions on it: https://github.com/ymdatta/SimplyClip#white_check_mark-what-simply-clip-can-do |
 | Is your software cross-platform compatible? | 3 | ye it is compatable in all chromium browsers https://github.com/ymdatta/SimplyClip/tree/main#gear-getting-started-add-simplyclip-to-google-chromechromium-based-browser-like-edge-brave-etc |
-| Does your software adhere to appropriate accessibility conventions or standards? |  |  |
+| Does your software adhere to appropriate accessibility conventions or standards? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/README.md |
 | Does your documentation adhere to appropriate accessibility conventions or standards? | 3 |https://github.com/ymdatta/SimplyClip/tree/main/Docs |
 | Is your source code stored in a repository under revision control? | 3 | Yes, on github: https://github.com/ymdatta/SimplyClip |
 | Is each source code release a snapshot of the repository? | 3 | https://github.com/ymdatta/SimplyClip/releases/tag/v4.0 |
 | Are releases tagged in the repository? | 3 | https://github.com/ymdatta/SimplyClip/releases/tag/v4.0 |
 | Is there a branch of the repository that is always stable? (i.e. tests always pass, code always builds successfully) | 3 | Yes, the main: https://github.com/ymdatta/SimplyClip |
-| Do you back-up your repository? |  |  |
+| Do you back-up your repository? | 3 | Every one in the team has forked the repo and has it in their local machine https://github.com/ymdatta/SimplyClip |
 | Do you provide publicly-available instructions for building your software from the source code? | 3 | Yes: https://github.com/ymdatta/SimplyClip#gear-getting-started-add-simplyclip-to-google-chrome | 
 | Can you build, or package, your software using an automated tool? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/seleniumTest.js |
 | Do you provide publicly-available instructions for deploying your software? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/README.md |
@@ -76,11 +76,11 @@ scorecard
 | Do you use continuous integration, automatically running tests whenever changes are made to your source code? | 3 | Yes, CI implemented with Django: django.yml https://github.com/ymdatta/SimplyClip/blob/main/.github/workflows/django.yml|
 | Are your test results publicly visible? | 3 | https://github.com/ymdatta/SimplyClip/tree/main#-testcase-coverage |
 | Are all manually-run tests documented? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/seleniumTest.js |
-| Does your project have resources (e.g. blog, Twitter, RSS feed, Facebook page, wiki, mailing list) that are regularly updated with information about your software? | 2 | https://github.com/ymdatta/SimplyClip/blob/main/README.md |
-| Does your website state how many projects and users are associated with your project? |  |  |
+| Does your project have resources (e.g. blog, Twitter, RSS feed, Facebook page, wiki, mailing list) that are regularly updated with information about your software? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/README.md |
+| Does your website state how many projects and users are associated with your project? | 3 | https://github.com/ymdatta/SimplyClip/projects?query=is%3Aopen |
 | Do you provide success stories on your website? | 3 | we have taken feedback from the user of our extension and the response was ver positive. https://docs.google.com/document/d/16t_rOveG2AUmSnRRVfWI_2EL-hSuSD9XwVBZSvsUoUM/edit?usp=sharing |
 | Do you list your important partners and collaborators on your website? | 3 | Contributors are mentioned: https://github.com/ymdatta/SimplyClip#handshake-contributors|
-| Do you list your project's publications on your website or link to a resource where these are available? |  |  |
+| Do you list your project's publications on your website or link to a resource where these are available? | 3 | https://github.com/ymdatta/SimplyClip |
 | Do you list third-party publications that refer to your software on your website or link to a resource where these are available? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/LICENSE |
 | Can users subscribe to notifications to changes to your source code repository? | 3 | Yes, they can click on 'watch' option on Github repository and get notifications. |
 | If your software is developed as an open source project (and, not just a project developing open source software), do you have a governance model? | 3 | https://github.com/ymdatta/SimplyClip/blob/main/LICENSE |
