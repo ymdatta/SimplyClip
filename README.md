@@ -37,7 +37,7 @@
 ---
 # Description
 
-ClipItPack (An extension to SimplyClip 4.0) :paperclips: is a google chrome extension which enables singular shared clipboard for research students and power users. Unlimited focus!!!
+ClipItPack (An extension to SimplyClip 3.0) :paperclips: is a google chrome extension which enables singular shared clipboard for research students and power users. Unlimited focus!!!
  
  ## :white_check_mark: What ClipItPack Can Do?
 
