@@ -140,7 +140,7 @@ All you need is Google Chrome! 🕺
     - Download :arrow_down: the ***[repository](https://github.com/ymdatta/SimplyClip)*** using Code > Download Zip on our project github page.
     - Clone the reporitory using  ***[GIT](https://git-scm.com)*** 
     ```
-    https://github.com/umagnanasundaram2128/SimplyClip/
+    https://github.com/ymdatta/SimplyClip/
     ```
 1. Manually install Entension using below steps.
     - Enable the developer mode from Chrome > Settings > extension.
