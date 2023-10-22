@@ -1,6 +1,8 @@
 scorecard
+
 | Rubric | Assesment| Evidence |
 | ----------- | ----------- | -- |
+| total | 285 |  | 
 | Video | 3  | https://www.youtube.com/watch?v=llurFu89NCg | 
 | Workload is spread over the whole team (one team member is often Xtimes more productive than the others...but nevertheless, here is a track record that everyone is contributing a lot) | 3 | https://github.com/ymdatta/SimplyClip/graphs/contributors |
 | Number of commits | 3 | https://github.com/ymdatta/SimplyClip/commits/main | 
